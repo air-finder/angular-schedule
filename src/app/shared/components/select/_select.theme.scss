@@ -1,0 +1,7 @@
+@use './select.component.scss' as select;
+@use './select-option/select-option.component.scss' as select-option;
+
+@mixin get-theme($theme) {
+  @include select.get-theme($theme);
+  @include select-option.get-theme($theme);
+}

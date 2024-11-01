@@ -1,0 +1,9 @@
+@use './breadcrumb/breadcrumb.theme' as breadcrumb;
+@use './layout-aside/layout-aside.theme' as layout-aside;
+@use './layout.component.scss' as layout;
+
+@mixin get-theme($theme) {
+  @include breadcrumb.get-theme($theme);
+  @include layout-aside.get-theme($theme);
+  @include layout.get-theme($theme);
+}

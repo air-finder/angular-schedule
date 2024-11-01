@@ -1,0 +1,9 @@
+@use './button';
+@use './icon-button';
+@use './anchor';
+
+@mixin get-theme($theme) {
+  @include button.get-theme($theme);
+  @include icon-button.get-theme($theme);
+  @include anchor.get-theme($theme);
+}

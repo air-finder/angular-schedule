@@ -1,0 +1,16 @@
+:host {
+  width: 100%;
+  display: block;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+@mixin get-theme($theme) {
+  $background: map-get($theme, background);
+  .select-option {
+    background: transparent;
+    &:hover {
+      background: map-get($background, hover);
+    }
+  }
+}

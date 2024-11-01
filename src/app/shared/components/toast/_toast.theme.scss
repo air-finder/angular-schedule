@@ -1,0 +1,5 @@
+@use './toast-item/toast-item.component.scss' as toast-item;
+
+@mixin get-theme($theme) {
+  @include toast-item.get-theme($theme);
+}

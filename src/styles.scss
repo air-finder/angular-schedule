@@ -1,0 +1,5 @@
+@use 'assets/sass/style';
+
+app-root div:first-child {
+  height: -webkit-fill-available;
+}

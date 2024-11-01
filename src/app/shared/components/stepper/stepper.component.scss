@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.actions {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
+@mixin get-theme($theme) {}

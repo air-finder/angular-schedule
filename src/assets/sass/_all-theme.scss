@@ -1,0 +1,34 @@
+@use '../../app/layout/layout.theme' as layout;
+@use '../../app/shared/components/stepper/stepper.theme' as stepper;
+@use '../../app/shared/components/form-field/form-field.theme' as form-field;
+@use '../../app/shared/components/toast/toast.theme' as toast;
+@use '../../app/shared/components/button/button-theme' as button;
+@use '../../app/shared/components/select/select.theme' as select;
+@use 'themes/components/input-theme' as input;
+
+@mixin all-components-theme($theme) {
+  @include project-theme($theme);
+  @include stepper.get-theme($theme);
+  @include form-field.get-theme($theme);
+  @include toast.get-theme($theme);
+  @include input.get-theme($theme);
+  @include button.get-theme($theme);
+  @include select.get-theme($theme);
+  @include layout.get-theme($theme);
+}
+
+@mixin project-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $secondary: map-get($theme, secondary);
+  * {
+    color: map-get($foreground, base);
+  }
+  .outside-layout {
+    background: linear-gradient(map-get($primary, default), map-get($secondary, default));
+    .content {
+      background: map-get($background, card);
+    }
+  }
+}

@@ -1,0 +1,46 @@
+:host {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+
+  .toast-close {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+    margin-left: 5px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin get-theme($theme) {
+  $success: map-get($theme, success);
+  $danger: map-get($theme, error);
+  $warn: map-get($theme, warning);
+  $info: map-get($theme, info);
+  .toast {
+    &--success {
+      background-color: map-get($success, darker);
+      color: map-get($success, text);
+    }
+    &--danger {
+      background-color: map-get($danger, darker);
+      color: map-get($danger, text);
+    }
+    &--warn {
+      background-color: map-get($warn, darker);
+      color: map-get($warn, text);
+    }
+    &--info {
+      background-color: map-get($info, darker);
+      color: map-get($info, text);
+    }
+  }
+}

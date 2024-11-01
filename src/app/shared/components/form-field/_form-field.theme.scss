@@ -1,0 +1,7 @@
+@use './form-field.component.scss' as form-field;
+@use './error/error.component.scss' as error;
+
+@mixin get-theme($theme) {
+  @include form-field.get-theme($theme);
+  @include error.get-theme($theme);
+}

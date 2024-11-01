@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  height: -webkit-fill-available;
+}
+
+@mixin get-theme($theme) {
+  $background: map-get($theme, background);
+  .main-layout {
+    background-color: map-get($background, base);
+  }
+}

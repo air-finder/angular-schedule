@@ -1,0 +1,10 @@
+@use './button-base';
+
+:host.icon-button {
+  outline: none;
+  border: none;
+  @include button-base.icon-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,4 @@
+<a (click)="goToPage(item().route)" class="aside-item__anchor">
+  <img [src]="item().iconPath" alt="icon" class="aside-item__icon">
+  <h2 [class.hidden-title]="!openAside()" class="aside-item__title">{{item().title}}</h2>
+</a>

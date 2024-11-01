@@ -1,0 +1,50 @@
+{
+  "pages": {
+    "login": {
+      "title": "Login",
+      "password": "Password",
+      "login": "Login",
+      "forgot-password": "Forgot password?",
+      "enter": "Enter",
+      "not-registered-yet": "Not registered yet?",
+      "register": "Register"
+    },
+    "forgot-password": {
+      "forgot-password": "Forgot password",
+      "user": "User",
+      "code": "Code",
+      "password": "New password",
+      "confirm-password": "Confirm password",
+      "submit": "Submit"
+    },
+    "register": {
+      "register": "Register",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "gender": "Gender",
+      "gender-male": "Male",
+      "gender-female": "Female",
+      "gender-unknown": "I prefer not to say",
+      "birthday": "Birthday",
+      "login": "Login",
+      "password": "Password",
+      "confirm-password": "Confirm password",
+      "terms": "Terms and conditions",
+      "privacy": "Privacy policy",
+      "agree-terms": "I agree to the terms and conditions",
+      "agree-privacy": "I agree to the privacy policy",
+      "register-now": "Register now",
+      "steps": {
+        "personal": "Personal",
+        "account": "Account",
+        "terms": "Terms"
+      }
+    }
+  },
+  "form-field": {
+    "errors": {
+      "required": "This field is required"
+    }
+  }
+}

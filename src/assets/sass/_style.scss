@@ -1,0 +1,23 @@
+@use './shadows';
+@use './typography';
+@use './all-theme';
+@use './themes/pre-built/green-blue' as main-theme;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: -webkit-fill-available;
+}
+
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s,
+    color 5000s ease-in-out 0s;
+}
+
+.light-theme {
+  @include all-theme.all-components-theme(main-theme.$light-theme);
+}
+.dark-theme {
+  @include all-theme.all-components-theme(main-theme.$dark-theme);
+}

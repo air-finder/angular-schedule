@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: -webkit-fill-available;
+}
+
+.content {
+  border-radius: 2rem;
+  width: 250px;
+  min-height: 400px;
+  max-height: 500px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  &.button-hidden {
+    display: none;
+  }
+}

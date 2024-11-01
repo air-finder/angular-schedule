@@ -1,0 +1,5 @@
+@use './breadcrumb-item/breadcrumb-item.theme' as breadcrumb-item;
+
+@mixin get-theme($theme) {
+  @include breadcrumb-item.get-theme($theme);
+}

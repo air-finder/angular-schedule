@@ -1,0 +1,83 @@
+@use 'palettes/green' as green-colors;
+@use 'palettes/blue' as blue-colors;
+@use 'palettes/orange' as orange-colors;
+@use 'palettes/red' as red-colors;
+
+@function define-palette($palette, $default: 50, $lighter: 30, $darker: 70, $text: white) {
+  @return (
+    default: map-get($palette, $default),
+    lighter: map-get($palette, $lighter),
+    darker: map-get($palette, $darker),
+    text: $text
+  );
+}
+
+@function define-dark-background() {
+  @return (
+    base: #666666,
+    hover: rgba(white, 0.04),
+    active:  rgba(white, 0.12),
+    disabled: rgba(white, 0.3),
+    card: #424242,
+  );
+}
+@function define-light-background() {
+  @return (
+    base: #fafafa,
+    hover: rgba(black, 0.04),
+    active:  rgba(black, 0.12),
+    disabled: rgba(black, 0.26),
+    card: #f5f5f5,
+  );
+}
+
+@function define-dark-foreground() {
+  @return (
+    base: white,
+    hint: rgba(white, 0.38),
+    disabled: rgba(white, 0.38),
+    text: white
+  );
+}
+@function define-light-foreground() {
+  @return (
+    base: rgba(black, 0.87),
+    hint: rgba(black, 0.5),
+    disabled: rgba(black, 0.5),
+    text: rgba(black, 0.87)
+  );
+}
+
+@function define-light-theme($theme) {
+  @if map-get($theme, palettes) {
+    $palettes: map-get($theme, palettes);
+    @return (
+      primary: define-palette(map-get($palettes, primary)),
+      secondary: define-palette(map-get($palettes, secondary)),
+      success: define-palette(green-colors.$palette),
+      error: define-palette(red-colors.$palette),
+      warning: define-palette(orange-colors.$palette),
+      info: define-palette(blue-colors.$palette),
+      background: define-light-background(),
+      foreground: define-light-foreground()
+    );
+  }
+  @error 'No palettes defined for light theme';
+}
+@function define-dark-theme($theme) {
+  @if map-get($theme, palettes) {
+    $palettes: map-get($theme, palettes);
+    $text: white;
+    @return (
+      primary: define-palette(map-get($palettes, primary)),
+      secondary: define-palette(map-get($palettes, secondary)),
+      success: define-palette(green-colors.$palette),
+      error: define-palette(red-colors.$palette),
+      warning: define-palette(orange-colors.$palette),
+      info: define-palette(blue-colors.$palette),
+      background: define-dark-background(),
+      foreground: define-dark-foreground()
+    );
+  }
+  @error 'No palettes defined for dark theme';
+}

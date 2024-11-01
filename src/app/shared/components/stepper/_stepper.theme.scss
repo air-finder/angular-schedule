@@ -1,0 +1,7 @@
+@use './stepper.component.scss' as stepper;
+@use './step/step.component.scss' as step;
+
+@mixin get-theme($theme) {
+  @include stepper.get-theme($theme);
+  @include step.get-theme($theme);
+}

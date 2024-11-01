@@ -1,0 +1,90 @@
+$line-width: 1.5rem;
+$line-height: 2px;
+
+@mixin base-line() {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  width: $line-width;
+  height: $line-height;
+}
+
+:host {
+  &:not(.first-step) {
+    .step-header:before {
+      @include base-line();
+      left: -$line-width;
+    }
+  }
+  &:not(.last-step) {
+    .step-header:after {
+      @include base-line();
+      right: -$line-width;
+    }
+  }
+}
+
+.step-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 1.5rem;
+  .step-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+  }
+  .step-name {
+    position: absolute;
+    bottom: 0;
+    text-wrap: nowrap;
+  }
+}
+
+.ocult-content {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+@mixin get-theme($theme) {
+  $primary: map-get($theme, primary);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  .step-header:before, .step-header:after {
+    background-color: map-get($primary, lighter);
+  }
+  .step-header {
+    .step-number {
+      background-color: map-get($primary, lighter);
+      color: map-get($foreground, base);
+    }
+    .step-name {
+      color: map-get($foreground, base);
+    }
+  }
+  .passed-step {
+    .step-header {
+      .step-number {
+        background-color: map-get($primary, darker);
+      }
+      &:before, &:after {
+        background-color: map-get($primary, darker);
+      }
+    }
+  }
+  .active {
+    .step-header {
+      &:before {
+        background-color: map-get($primary, darker);
+      }
+      .step-number {
+        background-color: map-get($primary, darker);
+      }
+    }
+  }
+}

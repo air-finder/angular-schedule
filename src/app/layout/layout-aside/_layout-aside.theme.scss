@@ -1,0 +1,7 @@
+@use './layout-aside-item/layout-aside-item.theme' as layout-aside-item;
+@use './layout-aside.component.scss' as layout-aside;
+
+@mixin get-theme($theme) {
+  @include layout-aside-item.get-theme($theme);
+  @include layout-aside.get-theme($theme);
+}

@@ -1,0 +1,56 @@
+<stepper>
+  <step [label]="'pages.register.steps.personal' | translate">
+    <form [formGroup]="form.person">
+      <form-field controlName="name">
+        <label for="name">{{ 'pages.register.name' | translate }}</label>
+        <input type="text" id="name" formControlName="name" [placeholder]="'pages.register.name' | translate">
+      </form-field>
+      <form-field controlName="email">
+        <label for="email">{{ 'pages.register.email' | translate }}</label>
+        <input type="email" id="email" formControlName="email" [placeholder]="'pages.register.email' | translate">
+      </form-field>
+      <form-field controlName="phone">
+        <label for="phone">{{ 'pages.register.phone' | translate }}</label>
+        <input type="tel" id="phone" formControlName="phone" [placeholder]="'pages.register.phone' | translate">
+      </form-field>
+      <form-field controlName="gender">
+        <label for="gender">{{ 'pages.register.gender' | translate }}</label>
+        <custom-select id="gender" formControlName="gender" [placeholder]="'pages.register.gender' | translate">
+          <select-option [value]="Gender.Male" [display]="'pages.register.gender-male' | translate"></select-option>
+          <select-option [value]="Gender.Female" [display]="'pages.register.gender-female' | translate"></select-option>
+          <select-option [value]="Gender.Unknown" [display]="'pages.register.gender-unknown' | translate"></select-option>
+        </custom-select>
+      </form-field>
+    </form>
+  </step>
+  <step [label]="'pages.register.steps.account' | translate">
+    <form [formGroup]="form.user">
+      <form-field controlName="login">
+        <label for="login">{{ 'pages.register.login' | translate }}</label>
+        <input type="text" id="login" formControlName="login" [placeholder]="'pages.register.login' | translate">
+      </form-field>
+      <form-field controlName="password">
+        <label for="password">{{ 'pages.register.password' | translate }}</label>
+        <input type="password" id="password" formControlName="password" [placeholder]="'pages.register.password' | translate">
+      </form-field>
+      <form-field controlName="confirm-password">
+        <label for="confirm-password">{{ 'pages.register.confirm-password' | translate }}</label>
+        <input type="password" id="confirm-password" formControlName="confirm-password" [placeholder]="'pages.register.confirm-password' | translate">
+      </form-field>
+    </form>
+  </step>
+  <step [label]="'pages.register.steps.terms' | translate">
+    <form [formGroup]="form.terms">
+      <form-field controlName="terms">
+        <label for="terms">{{ 'pages.register.terms' | translate }}</label>
+        <input type="checkbox" id="terms" formControlName="terms">
+      </form-field>
+      <form-field controlName="privacy">
+        <label for="privacy">{{ 'pages.register.privacy' | translate }}</label>
+        <input type="checkbox" id="privacy" formControlName="privacy">
+      </form-field>
+    </form>
+  </step>
+
+  <button custom-button (click)="submit()">Submit</button>
+</stepper>
