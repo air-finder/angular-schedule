@@ -1,0 +1,52 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checar o código do repositório
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Instalar Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    # Step 3: Instalar dependências
+    - name: Install dependencies
+      run: npm install
+
+    # Step 4: Rodar os testes e verificar a cobertura
+    - name: Run tests with coverage
+      run: npm run test -- --coverage
+
+    # Step 5: Verificar se a cobertura de testes é de pelo menos 70%
+    - name: Check test coverage
+      run: |
+        COVERAGE=$(grep -Po '"branches": \{\K[^}]*' coverage/coverage-summary.json | grep -Po '"pct": \K[0-9.]+')
+        echo "Current coverage: $COVERAGE%"
+        if (( $(echo "$COVERAGE < 70" | bc -l) )); then
+          echo "Test coverage is below 70%!";
+          exit 1;
+        fi
+
+    # Step 6: Build Docker image
+    - name: Build Docker image
+      run: |
+        REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2 | tr '[:upper:]' '[:lower:]')
+        docker build . -t brunovbs/$REPO_NAME-dev:latest
+
+    # Step 7: Publicar a imagem no Docker Hub
+    - name: Publish Docker image
+      run: |
+        docker login -u brunovbs -p ${{ secrets.DOCKER_HUB_TOKEN }}
+        REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2 | tr '[:upper:]' '[:lower:]')
+        docker push brunovbs/$REPO_NAME-dev:latest
