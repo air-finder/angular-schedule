@@ -1,6 +1,0 @@
-@if(last()) {
-  <a [routerLink]="[breadcrumb().url]" routerLinkActive="router-link-active">{{breadcrumb().label}}</a>
-}
-@else {
-  <span>{{breadcrumb().label}}</span>
-}

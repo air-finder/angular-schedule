@@ -1,6 +1,12 @@
-<aside layout class="lg-shadow"></aside>
+<header class="main-header">
+  <div>
+    <img src="assets/icon-72x72.png" alt="image logo">
+  </div>
+  <div class="main-header-actions">
+    <a [routerLink]="['/login']" routerLinkActive="router-link-active" ]>Entrar</a>
+  </div>
+</header>
 <main>
-  <breadcrumb></breadcrumb>
   <h2>{{title()}}</h2>
   <router-outlet></router-outlet>
 </main>
