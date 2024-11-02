@@ -1,5 +1,6 @@
 :host {
   display: flex;
+  flex-direction: column;
   position: relative;
   width: 100vw;
   height: -webkit-fill-available;
@@ -9,5 +10,45 @@
   $background: map-get($theme, background);
   .main-layout {
     background-color: map-get($background, base);
+  }
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+
+  .main-header-user {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    .main-header-name {
+      text-wrap: nowrap;
+    }
+  }
+}
+
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+
+  .main-footer-separator {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .footer-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
   }
 }

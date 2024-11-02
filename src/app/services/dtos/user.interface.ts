@@ -5,4 +5,6 @@ export interface User {
   personId: string;
   login: string;
   role: UserRole;
+  name: string;
+  email: string;
 }

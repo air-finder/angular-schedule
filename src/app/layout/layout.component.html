@@ -1,12 +1,29 @@
-<header class="main-header">
-  <div>
-    <img src="assets/icon-72x72.png" alt="image logo">
-  </div>
-  <div class="main-header-actions">
-    <a [routerLink]="['/login']" routerLinkActive="router-link-active" ]>Entrar</a>
-  </div>
+<header class="main-header sm-shadow">
+  <img src="assets/icon-72x72.png" alt="image logo">
+  @if (isAuthenticated$()) {
+    <div class="main-header-user">
+      <span class="main-header-name">{{sessionUser$().profile.name}}</span>
+      <button custom-button (click)="logout()">{{'header.buttons.logout' | translate}}</button>
+    </div>
+  }
+  @else {
+    <div class="main-header-actions">
+      <button routerLink="/login" custom-button>{{'header.buttons.enter' | translate}}</button>
+    </div>
+  }
 </header>
+
 <main>
-  <h2>{{title()}}</h2>
   <router-outlet></router-outlet>
 </main>
+
+<footer class="main-footer">
+  <hr class="main-footer-separator">
+  <div class="footer-box">
+    <a routerLink="/contact" custom-link>{{'footer.links.contact' | translate}}</a>
+    <a routerLink="/about" custom-link>{{'footer.links.about' | translate}}</a>
+    <a routerLink="/terms" custom-link>{{'footer.links.terms' | translate}}</a>
+    <a routerLink="/privacy" custom-link>{{'footer.links.privacy' | translate}}</a>
+  </div>
+  <p>© Secretaria Virtual - 2021</p>
+</footer>

@@ -1,13 +1,28 @@
 {
+  "header": {
+    "buttons": {
+      "enter": "Enter",
+      "logout": "Logout"
+    }
+  },
+  "footer": {
+    "links": {
+      "about": "About",
+      "contact": "Contact",
+      "terms": "Terms",
+      "privacy": "Privacy"
+    }
+  },
   "pages": {
     "login": {
       "title": "Login",
       "password": "Password",
       "login": "Login",
-      "forgot-password": "Forgot password?",
+      "forgot-password-click": "Click here",
       "enter": "Enter",
       "not-registered-yet": "Not registered yet?",
-      "register": "Register"
+      "did-you-forget-your-password": "Did you forget your password?",
+      "register-click": "Create your account here"
     },
     "forgot-password": {
       "forgot-password": "Forgot password",

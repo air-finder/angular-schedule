@@ -14,11 +14,11 @@
 
 @function define-dark-background() {
   @return (
-    base: #666666,
+    base: #131313,
     hover: rgba(white, 0.04),
     active:  rgba(white, 0.12),
     disabled: rgba(white, 0.3),
-    card: #424242,
+    card: #202020,
   );
 }
 @function define-light-background() {

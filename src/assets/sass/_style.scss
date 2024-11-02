@@ -15,9 +15,9 @@ input:-webkit-autofill {
     color 5000s ease-in-out 0s;
 }
 
-.light-theme {
-  @include all-theme.all-components-theme(main-theme.$light-theme);
-}
 .dark-theme {
   @include all-theme.all-components-theme(main-theme.$dark-theme);
 }
+// .light-theme {
+//   @include all-theme.all-components-theme(main-theme.$light-theme);
+// }

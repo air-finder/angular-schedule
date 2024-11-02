@@ -1,1 +1,13 @@
-@mixin get-theme($theme) {}
+@mixin get-theme($theme) {
+  $primary: map-get($theme, primary);
+  .link {
+    text-decoration: none;
+    >span {
+      color: map-get($primary, default);
+    }
+    :hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

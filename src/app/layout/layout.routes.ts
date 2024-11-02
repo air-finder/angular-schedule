@@ -1,10 +1,9 @@
 import { Routes } from "@angular/router";
-import { LoginComponent } from "../pages/login/login.component";
+import { AuthService } from "../core/service/auth.service";
+import { inject } from "@angular/core";
 
 export const routes: Routes = [
-  {
-    path: '',
-    title: 'Login',
-    component: LoginComponent
-  },
+  { path: '', canMatch: [() => inject(AuthService).isAuthenticated()], loadChildren: () => import('./logged.routes').then(m => m.routes) },
+  { path: '', canMatch: [() => !inject(AuthService).isAuthenticated()], loadChildren: () => import('./user.routes').then(m => m.routes) },
+  { path: '', loadChildren: () => import('./static.routes').then(m => m.routes) }
 ];
