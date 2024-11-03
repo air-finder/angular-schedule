@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+  <form-field controlName="name">
+    <label for="name">{{ 'pages.register.name' | translate }}</label>
+    <input type="text" id="name" formControlName="name" [placeholder]="'pages.register.name' | translate">
+  </form-field>
+  <form-field controlName="email">
+    <label for="email">{{ 'pages.register.email' | translate }}</label>
+    <input type="email" id="email" formControlName="email" [placeholder]="'pages.register.email' | translate">
+  </form-field>
+  <form-field controlName="phone">
+    <label for="phone">{{ 'pages.register.phone' | translate }}</label>
+    <input type="tel" id="phone" formControlName="phone" [placeholder]="'pages.register.phone' | translate">
+  </form-field>
+</form>

@@ -35,6 +35,12 @@
   border-radius: 50%;
 }
 
+@mixin mini-icon-size {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
 @mixin absolute-position {
   position: absolute;
   top: 0;

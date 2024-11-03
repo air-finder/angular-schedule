@@ -4,7 +4,8 @@ type Theme = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info'
 
 const HOST_SELECTOR_CLASS: {attribute: string; classes: string[]}[] = [
   { attribute: 'custom-button', classes: ['button'] },
-  { attribute: 'custom-icon', classes: ['icon-button'] },
+  { attribute: 'icon-button', classes: ['icon-button'] },
+  { attribute: 'mini-icon-button', classes: ['mini-icon-button'] },
   { attribute: 'custom-link', classes: ['link'] },
 ]
 

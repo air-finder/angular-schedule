@@ -41,11 +41,11 @@
   </step>
   <step [label]="'pages.register.steps.terms' | translate">
     <form [formGroup]="form.terms">
-      <form-field controlName="terms">
+      <form-field controlName="terms" type="check">
         <label for="terms">{{ 'pages.register.terms' | translate }}</label>
         <input type="checkbox" id="terms" formControlName="terms">
       </form-field>
-      <form-field controlName="privacy">
+      <form-field controlName="privacy" type="check">
         <label for="privacy">{{ 'pages.register.privacy' | translate }}</label>
         <input type="checkbox" id="privacy" formControlName="privacy">
       </form-field>

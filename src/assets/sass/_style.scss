@@ -18,6 +18,6 @@ input:-webkit-autofill {
 .dark-theme {
   @include all-theme.all-components-theme(main-theme.$dark-theme);
 }
-// .light-theme {
-//   @include all-theme.all-components-theme(main-theme.$light-theme);
-// }
+.light-theme {
+  @include all-theme.all-components-theme(main-theme.$light-theme);
+}

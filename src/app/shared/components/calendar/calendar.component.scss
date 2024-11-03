@@ -1,0 +1,48 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: -webkit-fill-available;
+  min-height: -webkit-fill-available;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-days {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .label-day {
+    flex-basis: calc(100% / 7);
+    text-align: center;
+  }
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: .25rem;
+  align-items: center;
+  .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: calc(100% / 7 - .25rem);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: lightseagreen;
+
+    &--current-month {
+      background-color: blue;
+    }
+
+    &--unavailable {
+      background-color: lightgray;
+    }
+  }
+}

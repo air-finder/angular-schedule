@@ -1,0 +1,23 @@
+<div class="actions">
+  <button class="action" (click)="previousMonth()" mini-icon-button>
+    <icon custom-icon icon="arrow-left"></icon>
+  </button>
+  <span class="label-month">{{_currentMonth()+1}}/{{_currentYear()}}</span>
+  <button class="action" (click)="nextMonth()" mini-icon-button>
+    <icon custom-icon icon="arrow-right"></icon>
+  </button>
+</div>
+
+<div class="label-days">
+  @for (item of labelDays$(); track $index) {
+    <p class="label-day">{{item}}</p>
+  }
+</div>
+
+<div class="days">
+  @for (item of days$(); track $index) {
+    <div class="day" [class.day--current-month]="item.isCurrentMonth" [class.day--unavailable]="!item.isAvailable">
+      <span>{{ item.date | date: 'dd' }}</span>
+    </div>
+  }
+</div>

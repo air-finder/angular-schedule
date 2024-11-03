@@ -1,0 +1,21 @@
+<h2>Select your professional</h2>
+<form [formGroup]="form">
+  @for (item of workers$(); track $index) {
+    <form-field controlName="worker" type="check">
+      <input type="radio" [id]="'worker-'+$index" formControlName="worker" [value]="item.id">
+      <label [for]="'worker-'+$index">{{ item.worker.person.name }}</label>
+    </form-field>
+  }
+  <form-field controlName="worker" type="check">
+    <input type="radio" id="worker-a" formControlName="worker" [value]="123">
+    <label for="worker-a">test 123</label>
+  </form-field>
+  <form-field controlName="worker" type="check">
+    <input type="radio" id="worker-b" formControlName="worker" [value]="124">
+    <label for="worker-b">test 124</label>
+  </form-field>
+  <form-field controlName="worker" type="check">
+    <input type="radio" id="worker-c" formControlName="worker" [value]="125">
+    <label for="worker-c">test 125</label>
+  </form-field>
+</form>

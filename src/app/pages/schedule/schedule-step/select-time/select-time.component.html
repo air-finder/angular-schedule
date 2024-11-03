@@ -1,0 +1,11 @@
+<h2>
+  Select a time
+</h2>
+
+<div class="buttons">
+  @for (item of times$(); track $index) {
+    <button custom-button>
+      {{item | date: 'HH:mm'}}
+    </button>
+  }
+</div>

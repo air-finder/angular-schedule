@@ -1,10 +1,17 @@
 @use './button-base';
 
-:host.icon-button {
+:host {
   outline: none;
   border: none;
-  @include button-base.icon-size;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
+  &.icon-button {
+    @include button-base.icon-size;
+  }
+  
+  &.mini-icon-button {
+    @include button-base.mini-icon-size;
+  }
 }

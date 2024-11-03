@@ -1,6 +1,6 @@
-import { User } from "../../services/dtos/user.interface";
+import { UserAuth } from "../../services/dtos/user-auth.interface";
 
 export interface SessionUser {
-  profile: User;
+  profile: UserAuth;
   scopes: string[];
 }

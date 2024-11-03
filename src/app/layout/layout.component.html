@@ -15,15 +15,15 @@
 
 <main>
   <router-outlet></router-outlet>
+  
+  <footer class="main-footer">
+    <hr class="main-footer-separator">
+    <div class="footer-box">
+      <a routerLink="/contact" custom-link>{{'footer.links.contact' | translate}}</a>
+      <a routerLink="/about" custom-link>{{'footer.links.about' | translate}}</a>
+      <a routerLink="/terms" custom-link>{{'footer.links.terms' | translate}}</a>
+      <a routerLink="/privacy" custom-link>{{'footer.links.privacy' | translate}}</a>
+    </div>
+    <p>© {{currentYear}} Secretária Virtual</p>
+  </footer>
 </main>
-
-<footer class="main-footer">
-  <hr class="main-footer-separator">
-  <div class="footer-box">
-    <a routerLink="/contact" custom-link>{{'footer.links.contact' | translate}}</a>
-    <a routerLink="/about" custom-link>{{'footer.links.about' | translate}}</a>
-    <a routerLink="/terms" custom-link>{{'footer.links.terms' | translate}}</a>
-    <a routerLink="/privacy" custom-link>{{'footer.links.privacy' | translate}}</a>
-  </div>
-  <p>© Secretaria Virtual - 2021</p>
-</footer>

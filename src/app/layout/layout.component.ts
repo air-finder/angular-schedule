@@ -22,6 +22,7 @@ import { SessionUserService } from '../core/service/session-user.service';
   }
 })
 export class LayoutComponent {
+  currentYear = new Date().getFullYear();
   logout() {
     this._authService.logout();
   }

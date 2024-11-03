@@ -7,6 +7,14 @@
   ::ng-deep >input, >textarea {
     width: 100%;
   }
+  &.check-container {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    ::ng-deep >input {
+      width: 20px;
+    }
+  }
 }
 
 .form-field-error-container {

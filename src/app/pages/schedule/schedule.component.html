@@ -1,0 +1,16 @@
+<stepper #stepper>
+  <step label="services">
+    <app-service-step [serviceProviderId$]="serviceProviderId$()"></app-service-step>
+  </step>
+  <step label="schedule">
+    <app-schedule-step></app-schedule-step>
+  </step>
+  <step label="personal">
+    <app-personal-step></app-personal-step>
+  </step>
+  <step label="confirm">
+    <app-confirm-step></app-confirm-step>
+  </step>
+  <button custom-button theme="secondary" (click)="stepper.previous()" [disabled]="stepper.currentIndex() == 0">previous</button>
+  <button custom-button (click)="stepper.next()">next</button>
+</stepper>

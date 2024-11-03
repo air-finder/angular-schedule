@@ -2,7 +2,7 @@ import { Component, ElementRef, NgZone } from '@angular/core';
 import { AnchorBase, ButtonBase } from './button-base';
 
 @Component({
-  selector: 'button[icon-button]',
+  selector: 'button[icon-button],button[mini-icon-button]',
   standalone: true,
   imports: [],
   templateUrl: './icon-button.component.html',
@@ -18,7 +18,7 @@ export class IconButtonComponent extends ButtonBase {
 }
 
 @Component({
-  selector: 'a[icon-button]',
+  selector: 'a[icon-button],a[mini-icon-button]',
   standalone: true,
   imports: [],
   templateUrl: './icon-button.component.html',

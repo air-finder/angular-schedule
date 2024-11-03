@@ -61,5 +61,18 @@
     "errors": {
       "required": "This field is required"
     }
+  },
+  "calendar": {
+    "label": {
+      "short": {
+        "sunday": "Sun",
+        "monday": "Mon",
+        "tuesday": "Tue",
+        "wednesday": "Wed",
+        "thursday": "Thu",
+        "friday": "Fri",
+        "saturday": "Sat"
+      }
+    }
   }
 }
