@@ -1,2 +1,2 @@
-<app-select-services></app-select-services>
-<app-select-worker [serviceProviderId$]="serviceProviderId$()"></app-select-worker>
+<app-select-services [form]="form().controls.services" [serviceProviderId$]="serviceProviderId$()"></app-select-services>
+<app-select-worker [form]="form()" [serviceProviderId$]="serviceProviderId$()"></app-select-worker>

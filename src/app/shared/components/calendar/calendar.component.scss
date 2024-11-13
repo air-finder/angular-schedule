@@ -1,9 +1,36 @@
 :host {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: -webkit-fill-available;
-  min-height: -webkit-fill-available;
+  &.calendar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: -webkit-fill-available;
+    min-height: -webkit-fill-available;
+    padding: 1rem;
+    border-radius: .5rem;
+  }
+}
+
+@mixin get-theme($theme) {
+  $primary: map-get($theme, primary);
+  $secondary: map-get($theme, secondary);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  .calendar {
+    background-color: map-get($background, card);
+    .days {
+      .day {
+        &--current-month {
+          background-color: map-get($primary, darker);
+        }
+        &--unavailable { 
+          background-color: map-get($background, disabled);
+        }
+        &--selected {
+          background-color: map-get($secondary, darker);
+        }
+      }
+    }
+  }
 }
 
 .actions {
@@ -35,14 +62,8 @@
     flex-basis: calc(100% / 7 - .25rem);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    background-color: lightseagreen;
-
-    &--current-month {
-      background-color: blue;
-    }
-
-    &--unavailable {
-      background-color: lightgray;
+    &:not(.day--unavailable) {
+      cursor: pointer;
     }
   }
 }

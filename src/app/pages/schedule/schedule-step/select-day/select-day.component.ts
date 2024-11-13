@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject, input, model } from '@angular/core';
 import { CalendarComponent } from "../../../../shared/components/calendar/calendar.component";
+import { ServiceWorkerService } from '../../../../services/service-worker.service';
+import { ScheduleStepModel } from '../../../../models/pages/schedule/schedule-step/schedule-step.model';
+import { TimeSpanHelper } from '../../../../shared/helpers/time-span';
+import { ScheduleStepForm } from '../schedule-step.form';
 
 @Component({
   selector: 'app-select-day',
@@ -9,12 +13,17 @@ import { CalendarComponent } from "../../../../shared/components/calendar/calend
   styleUrl: './select-day.component.scss'
 })
 export class SelectDayComponent {
-  date = null;
-  maxDate = null;
-  availableDates = [
-    new Date(2024, 9, 1),
-    new Date(2024, 10, 2),
-    new Date(2024, 10, 4),
-    new Date(2024, 10, 5)
-  ]
+  form = input.required<ScheduleStepForm>();
+  private _serviceWorkerService = inject(ServiceWorkerService);
+  scheduleStep$ = model.required<ScheduleStepModel>();
+  public availableDates$ = this._serviceWorkerService.availableDates$;
+
+  public selectDate(date: Date) {
+    this.form().date.setValue(date);
+    this._serviceWorkerService.getAvailableTimes({
+      serviceWorkerId: this.scheduleStep$().serviceWorkerId!,
+      appointmentDuration: TimeSpanHelper.FromMinutes(this.scheduleStep$().duration),
+      date: this.form().date.value?.toISOString().split('T')[0] ?? ''
+    });
+  }
 }

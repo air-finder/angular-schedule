@@ -1,6 +1,11 @@
 import { DatePipe } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, computed, inject, input, model, signal } from '@angular/core';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
+import { ServiceWorkerService } from '../../../../services/service-worker.service';
+import { DateHelper } from '../../../../shared/helpers/date-helper';
+import { TimeModel } from '../../../../models/pages/schedule/schedule-step/time.model';
+import { ScheduleStepModel } from '../../../../models/pages/schedule/schedule-step/schedule-step.model';
+import { ScheduleStepForm } from '../schedule-step.form';
 
 @Component({
   selector: 'app-select-time',
@@ -13,12 +18,28 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
   styleUrl: './select-time.component.scss'
 })
 export class SelectTimeComponent {
-  private _times = signal<Date[]>([
-    new Date(2024, 0, 1, 8, 0),
-    new Date(2024, 0, 1, 9, 0),
-    new Date(2024, 0, 1, 10, 45),
-    new Date(2024, 0, 1, 12, 0),
-    new Date(2024, 0, 1, 13, 0),
-  ])
-  protected times$ = this._times.asReadonly();
+  form = input.required<ScheduleStepForm>();
+  scheduleStep$ = model.required<ScheduleStepModel>();
+  private _serviceWorkerService = inject(ServiceWorkerService);
+
+  public loading = false;
+
+  protected times$ = computed<TimeModel[]>(() => this.getTimesObject(this._serviceWorkerService.availableTimes$()));
+  private _selectedTime = signal<Date | null>(null);
+
+  private getTimesObject(dates: Date[]): TimeModel[] {
+    return dates.map(date => { 
+      return { date: date, theme: this.getButtonTheme(!!this._selectedTime() && this._selectedTime() === date) } 
+    });
+  }
+
+  public selectTime(time: Date) {
+    this.form().start.setValue(time);
+    this.form().end.setValue(new Date(time.getTime() + this.scheduleStep$().duration * 60000));
+    this._selectedTime.set(time);
+  }
+
+  getButtonTheme(selected: boolean) {
+    return selected ? 'secondary' : 'primary';
+  }
 }

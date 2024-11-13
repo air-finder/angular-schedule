@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, input, InputSignal } from '@angular/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormFieldComponent } from "../../../shared/components/form-field/form-field.component";
 import { TranslateModule } from '@ngx-translate/core';
+import { PersonalStepFormModel } from '@models/pages/schedule/personal-step/personal-step-form.model';
 
 @Component({
   selector: 'app-personal-step',
@@ -15,9 +16,5 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './personal-step.component.scss'
 })
 export class PersonalStepComponent {
-  form: FormGroup = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
-    phone: new FormControl('', Validators.required)
-  });
+  public form = input.required<FormGroup<PersonalStepFormModel>>()
 }

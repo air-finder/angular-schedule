@@ -4,6 +4,7 @@
 @use '../../app/shared/components/toast/toast.theme' as toast;
 @use '../../app/shared/components/button/button-theme' as button;
 @use '../../app/shared/components/select/select.theme' as select;
+@use '../../app/shared/components/calendar/calendar.theme' as calendar;
 @use 'themes/components/input-theme' as input;
 
 @mixin all-components-theme($theme) {
@@ -15,6 +16,7 @@
   @include button.get-theme($theme);
   @include select.get-theme($theme);
   @include layout.get-theme($theme);
+  @include calendar.get-theme($theme);
 }
 
 @mixin project-theme($theme) {

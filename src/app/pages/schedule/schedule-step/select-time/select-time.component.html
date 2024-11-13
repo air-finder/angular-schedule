@@ -4,8 +4,6 @@
 
 <div class="buttons">
   @for (item of times$(); track $index) {
-    <button custom-button>
-      {{item | date: 'HH:mm'}}
-    </button>
+    <button custom-button (click)="selectTime(item.date)" [theme]="item.theme">{{item.date | date: 'HH:mm'}}</button>
   }
 </div>

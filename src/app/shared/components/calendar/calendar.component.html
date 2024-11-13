@@ -16,7 +16,8 @@
 
 <div class="days">
   @for (item of days$(); track $index) {
-    <div class="day" [class.day--current-month]="item.isCurrentMonth" [class.day--unavailable]="!item.isAvailable">
+    <div class="day" [class.day--current-month]="item.isCurrentMonth" [class.day--unavailable]="!item.isAvailable"
+      [class.day--selected]="item.selected" (click)="selectDate(item)">
       <span>{{ item.date | date: 'dd' }}</span>
     </div>
   }

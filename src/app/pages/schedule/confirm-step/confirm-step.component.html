@@ -1,1 +1,33 @@
-<p>confirm-step works!</p>
+<h2>Confirm your schedule</h2>
+
+@if(form().serviceStep.valid) {
+  <h3>Services</h3>
+  <p class="line">Worker: {{worker$()}}</p>
+  <ul>
+    @for (item of services$(); track $index) {
+      <li><span class="line">{{ item.name }} - {{ item.price | currency: 'BRL' }}</span></li>
+    }
+  </ul>
+}
+
+@if(form().scheduleStep.valid) {
+  <h3>Schedule</h3>
+  <ul>
+    <li><span class="line">{{form().scheduleStep.date.value | date: 'dd/MM/YYYY'}} from {{form().scheduleStep.start.value | date: 'HH:mm'}} to {{form().scheduleStep.end.value | date: 'HH:mm'}}</span></li>
+  </ul>
+}
+
+@if(form().personalStep.valid) {
+  <h3>Personal Information</h3>
+  <ul>
+    <li><span class="line">Name: {{form().personalStep.name.value}}</span></li>
+    <li><span class="line">Email: {{form().personalStep.email.value}}</span></li>
+    <li><span class="line">Phone: {{form().personalStep.phone.value}}</span></li>
+  </ul>
+}
+
+@if(form().serviceStep.valid){
+  <hr>
+  <p>Total: {{total$() | currency: 'BRL'}}</p>
+  <p>** We do not receive any payments from here, all payments for service is from provider **</p>
+}

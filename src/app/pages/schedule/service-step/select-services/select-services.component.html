@@ -1,9 +1,14 @@
 <h2>Select what you want to do</h2>
-<form [formGroup]="form">
-  @for (item of services$(); track $index) {
-    <form-field controlName="services" type="check">
-      <input type="checkbox" [id]="'services-'+$index" [formControlName]="item.id" [value]="item.id">
-      <label [for]="'services-'+$index">{{item.name}}</label>
-    </form-field>
+<form [formGroup]="form()">
+  @if(loaded){
+    @for (item of services$(); track $index) {
+      <form-field controlName="services" type="check">
+        <input type="checkbox" [id]="'services-'+$index" [formControlName]="item.id" [value]="item.id">
+        <label [for]="'services-'+$index">{{item.name}} - {{item.price | currency: 'BRL'}}</label>
+      </form-field>
+      <div class="description">
+        <span>{{item.description}}</span>
+      </div>
+    }
   }
 </form>

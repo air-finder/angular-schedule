@@ -6,5 +6,4 @@ export interface ServiceWorkerDto {
   serviceProviderId: string;
   description: string;
   worker: UserSchedule;
-
 }

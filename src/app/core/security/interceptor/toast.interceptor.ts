@@ -4,7 +4,7 @@ import { ToastService } from '../../../shared/components/toast/service/toast.ser
 import { inject } from '@angular/core';
 
 export const toastInterceptor: HttpInterceptorFn = (req, next) => {
-  let toastService = inject(ToastService);
+  const toastService = inject(ToastService);
   return next(req).pipe(
     tap({ error: err => {
       switch (err.status) {

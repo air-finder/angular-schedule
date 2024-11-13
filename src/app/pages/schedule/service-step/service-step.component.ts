@@ -1,6 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, input, model } from '@angular/core';
 import { SelectServicesComponent } from "./select-services/select-services.component";
 import { SelectWorkerComponent } from "./select-worker/select-worker.component";
+import { ServiceStepModel } from '../../../models/pages/schedule/service-step/service-step.model';
+import { ServiceStepForm } from './service-step.form';
 
 @Component({
   selector: 'app-service-step',
@@ -11,4 +13,5 @@ import { SelectWorkerComponent } from "./select-worker/select-worker.component";
 })
 export class ServiceStepComponent {
   public serviceProviderId$ = input.required<string>();
+  form = input.required<ServiceStepForm>();
 }

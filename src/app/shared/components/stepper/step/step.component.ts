@@ -1,4 +1,4 @@
-import { Component, computed, effect, ElementRef, inject, input, Renderer2, ViewChild, viewChild } from '@angular/core';
+import { Component, computed, effect, ElementRef, input, Renderer2, viewChild } from '@angular/core';
 import { StepperComponent } from '../stepper.component';
 
 @Component({

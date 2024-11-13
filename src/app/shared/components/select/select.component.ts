@@ -37,7 +37,7 @@ export class SelectComponent<T> implements ControlValueAccessor {
 
   private ngControl = inject(NgControl, { optional: true });
   protected onTouched? = () => {};
-  protected onChange? = (value?: T | T[]) => {};
+  protected onChange? = (_?: T | T[]) => {};
   protected isDisabled = signal(false);
   protected openned = signal(false);
   protected selectIcon = computed(() => this.openned() ? 'arrow-up' : 'arrow-down');

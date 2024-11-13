@@ -1,15 +1,9 @@
 import { DatePipe } from '@angular/common';
-import { Component, computed, input, OnInit, signal } from '@angular/core';
+import { Component, computed, input, OnInit, output, signal } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { IconButtonComponent } from '../button/icon-button.component';
 import { IconComponent } from '../icon/icon.component';
-
-type DateCalendar = {
-  date: Date;
-  isCurrentMonth: boolean;
-  isAvailable: boolean;
-}
-
+import { DateCalendar } from './models/date-calendar';
 @Component({
   selector: 'calendar',
   standalone: true,
@@ -20,13 +14,17 @@ type DateCalendar = {
     IconComponent
   ],
   templateUrl: './calendar.component.html',
-  styleUrl: './calendar.component.scss'
+  styleUrl: './calendar.component.scss',
+  host: {
+    class: 'calendar'
+  }
 })
 export class CalendarComponent implements OnInit {
 
   public minDate = input<Date | null>(null);
   public maxDate = input<Date | null>(null);
   public availableDates = input<Date[] | null>(null);
+  public onSelectDate = output<Date>();
 
   private _currentDate = signal<Date>(new Date());
   protected _currentMonth = computed<number>(() => this._currentDate().getMonth());
@@ -34,8 +32,8 @@ export class CalendarComponent implements OnInit {
 
   private _labelDays = signal<string[]>([]);
   public labelDays$ = this._labelDays.asReadonly();
-
   public days$ = computed<DateCalendar[]>(() => this.getDays());
+  private _selectedDate = signal<Date | null>(null);
 
   constructor(private translate: TranslateService) {}
 
@@ -57,24 +55,25 @@ export class CalendarComponent implements OnInit {
   }
 
   private getDays() : DateCalendar[] {
-    let days = [];
-    let startDay = new Date(this._currentYear(), this._currentMonth(), 1);
-    let startDayOfWeek = startDay.getDay();
-    let lastMonthStartDay = new Date(this._currentYear(), this._currentMonth(), 1-startDayOfWeek);
-    let lastDayOfMonth = new Date(this._currentYear(), this._currentMonth()+1, 0);
-    let lastDayOfMonthDay = lastDayOfMonth.getDay();
-    let lastDay = new Date(this._currentYear(), this._currentMonth()+1, 13-lastDayOfMonthDay);
+    const days = [];
+    const startDay = new Date(this._currentYear(), this._currentMonth(), 1);
+    const startDayOfWeek = startDay.getDay();
+    const lastMonthStartDay = new Date(this._currentYear(), this._currentMonth(), 1-startDayOfWeek);
+    const lastDayOfMonth = new Date(this._currentYear(), this._currentMonth()+1, 0);
+    const lastDayOfMonthDay = lastDayOfMonth.getDay();
+    const lastDay = new Date(this._currentYear(), this._currentMonth()+1, 13-lastDayOfMonthDay);
 
     let currentDay = lastMonthStartDay;
 
     while (currentDay <= lastDay) {
-      let isUnavailable = this.minDate() && currentDay < this.minDate()! ||
+      const isUnavailable = this.minDate() && currentDay < this.minDate()! ||
        this.maxDate() && currentDay > this.maxDate()! ||
        this.availableDates() && !this.availableDates()!.some(date => date.toDateString() === currentDay.toDateString());
       days.push({
         date: currentDay,
         isCurrentMonth: currentDay.getMonth() === this._currentMonth(),
-        isAvailable: !isUnavailable
+        isAvailable: !isUnavailable,
+        selected: !!this._selectedDate() && this._selectedDate()!.toDateString() === currentDay.toDateString()
       });
       currentDay = new Date(currentDay.getFullYear(), currentDay.getMonth(), currentDay.getDate() + 1);
     }
@@ -88,5 +87,11 @@ export class CalendarComponent implements OnInit {
 
   public previousMonth() {
     this._currentDate.update(date => new Date(date.getFullYear(), date.getMonth() - 1, 1));
+  }
+
+  public selectDate(date: DateCalendar) {
+    if (!date.isAvailable) return
+    this._selectedDate.set(date.date);
+    this.onSelectDate.emit(date.date);
   }
 }

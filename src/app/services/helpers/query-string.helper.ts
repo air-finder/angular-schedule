@@ -9,7 +9,7 @@ export class QueryStringHelper {
     return urlParams.join('&');
   }
 
-  private static MapSingleParam<T>(value: T | T[], name: string, concated: boolean = true): string {
+  private static MapSingleParam<T>(value: T | T[], name: string, concated = true): string {
     if (value === undefined || value === null) {
       return '';
     }

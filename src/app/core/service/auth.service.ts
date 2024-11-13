@@ -1,5 +1,4 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { UserService } from '../../services/user.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 

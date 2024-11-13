@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, inject, input, model, signal } from '@angular/core';
+import { Component, HostListener, inject, input, model, signal } from '@angular/core';
 import { SelectComponent } from '../select.component';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, viewChild } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { StepperComponent } from '../../shared/components/stepper/stepper.component';
 import { StepComponent } from '../../shared/components/stepper/step/step.component';
 import { RegisterForm } from './register.form';

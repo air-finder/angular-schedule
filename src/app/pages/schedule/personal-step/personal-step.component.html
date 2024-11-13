@@ -1,4 +1,4 @@
-<form [formGroup]="form">
+<form [formGroup]="form()">
   <form-field controlName="name">
     <label for="name">{{ 'pages.register.name' | translate }}</label>
     <input type="text" id="name" formControlName="name" [placeholder]="'pages.register.name' | translate">

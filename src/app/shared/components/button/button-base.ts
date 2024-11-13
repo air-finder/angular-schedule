@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef, NgZone, OnDestroy, OnInit, booleanAttribute, effect, input } from "@angular/core";
+import { Directive, ElementRef, NgZone, OnDestroy, OnInit, booleanAttribute, effect, input } from "@angular/core";
 
 type Theme = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info'
 
@@ -10,9 +10,10 @@ const HOST_SELECTOR_CLASS: {attribute: string; classes: string[]}[] = [
 ]
 
 @Directive()
-export class ButtonBase implements AfterViewInit {
+export class ButtonBase {
   theme = input<Theme>('primary');
   disabled = input(false, {transform: booleanAttribute});
+  private lastTheme: Theme | null = null;
 
   constructor(
     public _elementRef: ElementRef,
@@ -23,16 +24,17 @@ export class ButtonBase implements AfterViewInit {
       if(this.disabled()) element.classList.add('disabled');
       else element.classList.remove('disabled');
     })
-  }
-
-  ngAfterViewInit(): void {
-    const element = this._elementRef.nativeElement;
-    for (const {attribute, classes} of HOST_SELECTOR_CLASS) {
-      if(element.hasAttribute(attribute)) {
-        element.classList.add(...classes);
-        if(this.theme()) element.classList.add(`${classes[0]}--${this.theme()}`);
+    effect(() => {
+      const element = this._elementRef.nativeElement;
+      for (const {attribute, classes} of HOST_SELECTOR_CLASS) {
+        if(element.hasAttribute(attribute)) {
+          element.classList.add(...classes);
+          if(this.lastTheme) element.classList.remove(`${classes[0]}--${this.lastTheme}`);
+          if(this.theme()) element.classList.add(`${classes[0]}--${this.theme()}`);
+          this.lastTheme = this.theme();
+        }
       }
-    }
+    })
   }
 }
 

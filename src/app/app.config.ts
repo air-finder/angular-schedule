@@ -1,5 +1,5 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { ActivatedRoute, provideRouter, TitleStrategy } from '@angular/router';
+import { provideRouter, TitleStrategy } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
@@ -9,6 +9,7 @@ import { HttpClient, provideHttpClient, withFetch, withInterceptors } from '@ang
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HttpInterceptors } from './core/security/interceptor';
 import { AppTitle } from './app.title';
+import { DatePipe } from '@angular/common';
 
 function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -28,6 +29,7 @@ export const appConfig: ApplicationConfig = {
         loader: { provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] }
       })
     ),
-    { provide: TitleStrategy, useClass: AppTitle }
+    { provide: TitleStrategy, useClass: AppTitle },
+    DatePipe
   ]
 };

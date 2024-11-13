@@ -1,9 +1,11 @@
-import { Component, inject, input, OnInit, signal } from '@angular/core';
+import { Component, inject, input, InputSignal, model, OnInit, signal } from '@angular/core';
 import { ServiceProviderService } from '../../../../services/service-provider.service';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ServiceWorkerDto } from '../../../../services/dtos/service-worker.interface';
 import { FormFieldComponent } from "../../../../shared/components/form-field/form-field.component";
 import { TranslateModule } from '@ngx-translate/core';
+import { ServiceStepForm } from '../service-step.form';
+import { ServiceStepFormModel } from '@models/pages/schedule/service-step/service-step-form.model';
 
 @Component({
   selector: 'app-select-worker',
@@ -18,25 +20,20 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './select-worker.component.scss'
 })
 export class SelectWorkerComponent implements OnInit {
-  form: FormGroup = new FormGroup({
-    worker: new FormControl('', Validators.required)
-  });
-
   public serviceProviderId$ = input.required<string>();
+  form = input.required<FormGroup<ServiceStepFormModel>>()
+
   private _providerService = inject(ServiceProviderService);
-
-  private _workers = signal<ServiceWorkerDto[]>([]);
-  public workers$ = this._workers.asReadonly();
+  public workers$ = this._providerService.workers$;
+  loading = false;
   
-  ngOnInit(): void {
-    this.getWorkers(this.serviceProviderId$())
-      .then(workers => this._workers.set(workers.result))
-      .finally(() => console.log(this.workers$()));
-
-    this.form.valueChanges.subscribe(console.log);
+  async ngOnInit(): Promise<void> {
+    await this.getWorkers(this.serviceProviderId$());
   }
 
   private async getWorkers(providerId: string) {
-    return await this._providerService.getWorkers(providerId);
+    this.loading = true;
+    await this._providerService.getWorkers(providerId)
+      .finally(() => this.loading = false);
   }
 }

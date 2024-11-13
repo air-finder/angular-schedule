@@ -1,11 +1,10 @@
-import { AfterViewInit, Component, signal } from '@angular/core';
-import { FormFieldComponent } from "../../../../shared/components/form-field/form-field.component";
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-
-type Service = {
-  id: string;
-  name: string;
-}
+import { AfterViewInit, Component, inject, input } from '@angular/core';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SelectServiceForm } from './select-service.form';
+import { FormFieldComponent } from '@components/form-field/form-field.component';
+import { ServiceProviderService } from '@services/service-provider.service';
+import { Service } from '@services/dtos/service.interface';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-select-services',
@@ -13,31 +12,26 @@ type Service = {
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    FormFieldComponent
+    FormFieldComponent,
+    CurrencyPipe
   ],
   templateUrl: './select-services.component.html',
   styleUrl: './select-services.component.scss'
 })
 export class SelectServicesComponent implements AfterViewInit {
+  private _providerService = inject(ServiceProviderService);
+  public serviceProviderId$ = input.required<string>();
+  form = input.required<SelectServiceForm>()
+  protected services$ = this._providerService.currentServices$;
+  protected loaded = false;
 
-  form: FormGroup = new FormGroup({});
-
-  private _services = signal<Service[]>([]);
-  public services$ = this._services.asReadonly();
-
-  ngAfterViewInit(): void {
-    this.form.valueChanges.subscribe(console.log);
-    [
-      { id: '1', name: 'Service 1' },
-      { id: '2', name: 'Service 2' },
-      { id: '3', name: 'Service 3' },
-      { id: '4', name: 'Service 4' },
-      { id: '5', name: 'Service 5' }
-    ].forEach(service => this.appendService(service));
+  async ngAfterViewInit(): Promise<void> {
+    await this._providerService.getServices(this.serviceProviderId$())
+      .then(response => response.result.forEach(service => this.pushService(service)))
+      .finally(() => this.loaded = true);
   }
 
-  private async appendService(service: Service) {
-    this._services.update(services => [...services, service]);
-    this.form.addControl(service.id, new FormControl(false));
+  private pushService(service: Service) {
+    this.form().addControl(service.id, new FormControl(false));
   }
 }
