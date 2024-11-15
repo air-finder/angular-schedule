@@ -1,15 +1,15 @@
 <stepper #stepper>
   <step label="services">
-    <app-service-step [form]="form.controls.serviceStep" [serviceProviderId$]="serviceProviderId$()"></app-service-step>
+    <app-service-step [form]="form.controls.serviceStep" [serviceProviderId$]="serviceProviderId$()" #serviceStep></app-service-step>
   </step>
   <step label="schedule">
-    <app-schedule-step [form]="form.controls.scheduleStep" [(scheduleStep$)]="scheduleStep$"></app-schedule-step>
+    <app-schedule-step [form]="form.controls.scheduleStep" [(scheduleStep$)]="scheduleStep$" #scheduleStep></app-schedule-step>
   </step>
   <step label="personal">
-    <app-personal-step [form]="form.controls.personalStep"></app-personal-step>
+    <app-personal-step [form]="form.controls.personalStep" #personalStep></app-personal-step>
   </step>
   <step label="confirm">
-    <app-confirm-step [form]="form"></app-confirm-step>
+    <app-confirm-step [form]="form" #confirmStep></app-confirm-step>
   </step>
   <button custom-button theme="secondary" (click)="previousStep()" [disabled]="stepper.currentIndex() === 0">previous</button>
   <button custom-button (click)="nextStep()" [disabled]="getDisabled()">next</button>

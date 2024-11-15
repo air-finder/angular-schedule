@@ -1,9 +1,8 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { ScheduleForm } from '../schedule.form';
 import { CurrencyPipe, DatePipe } from '@angular/common';
-import { ServiceProviderService } from '@services/service-provider.service';
-
-type ServiceSummary = { name: string; price: number }
+import { ServiceProviderService } from '@services/service-provider/service-provider.service';
+import { ServiceSummary } from '@models/pages/schedule/confirm-step/service-summary';
 
 @Component({
   selector: 'app-confirm-step',

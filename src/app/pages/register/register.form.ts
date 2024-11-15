@@ -1,6 +1,6 @@
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { Gender } from "../../services/enums/gender";
-import { AddUserRequest } from "../../services/models/people/add-user.request";
+import { Gender } from "../../models/services/enums/gender";
+import { AddUserRequest } from "../../models/services/people/add-user.request";
 
 export interface IRegisterForm {
   person: FormGroup<PersonStepRegisterForm>;

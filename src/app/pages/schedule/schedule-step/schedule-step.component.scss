@@ -1,0 +1,16 @@
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .5rem;
+  button {
+    flex: calc(100% / 3 - .5rem);
+  }
+}
+
+.loading-card {
+  border-radius: .5rem;
+  width: 100%;
+  aspect-ratio: 1/1;
+}

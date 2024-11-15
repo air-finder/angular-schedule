@@ -1,4 +1,4 @@
-import { Component, input, InputSignal } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormFieldComponent } from "../../../shared/components/form-field/form-field.component";
 import { TranslateModule } from '@ngx-translate/core';

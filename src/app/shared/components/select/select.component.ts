@@ -36,8 +36,8 @@ export class SelectComponent<T> implements ControlValueAccessor {
   protected display = computed<string>(() => this.valueRef().filter(v => v.selected).map(x => x.display).join(', '));
 
   private ngControl = inject(NgControl, { optional: true });
-  protected onTouched? = () => {};
-  protected onChange? = (_?: T | T[]) => {};
+  protected onTouched? = () => {throw new Error('Method not implemented.');};
+  protected onChange? = (_?: T | T[]) => {throw new Error('Method not implemented.');};
   protected isDisabled = signal(false);
   protected openned = signal(false);
   protected selectIcon = computed(() => this.openned() ? 'arrow-up' : 'arrow-down');
@@ -45,9 +45,9 @@ export class SelectComponent<T> implements ControlValueAccessor {
   constructor() {
     if (this.ngControl) this.ngControl.valueAccessor = this;
     effect(() => {
-      if(this.multiple()) this.onChange && this.onChange(this.value());
-      if(!this.multiple()) this.onChange && this.onChange(this.value()[0]);
-      else if(this.ngControl?.control?.dirty) this.onChange && this.onChange();
+      if(this.multiple() && this.onChange) this.onChange(this.value());
+      if(!this.multiple() && this.onChange) this.onChange(this.value()[0]);
+      else if(this.ngControl?.control?.dirty && this.onChange) this.onChange();
     });
   }
 
@@ -58,10 +58,10 @@ export class SelectComponent<T> implements ControlValueAccessor {
     if(!this.multiple() && obj)
       this.options().find(x => x.value() === obj)?.selected.set(true);
   }
-  registerOnChange(fn: any): void {
+  registerOnChange(fn: never): void {
     this.onChange = fn;
   }
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: never): void {
     this.onTouched = fn;
   }
   setDisabledState?(isDisabled: boolean): void {

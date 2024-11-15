@@ -12,6 +12,6 @@ export class ScheduleStepForm extends FormGroup<ScheduleStepFormModel> {
       date: new FormControl<Date | null>(null, [Validators.required]),
       start: new FormControl<Date | null>(null, [Validators.required]),
       end: new FormControl<Date | null>(null, [Validators.required]),
-    });
+    } as ScheduleStepFormModel);
   }
 }

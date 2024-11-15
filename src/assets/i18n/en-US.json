@@ -59,7 +59,10 @@
   },
   "form-field": {
     "errors": {
-      "required": "This field is required"
+      "required": "This field is required",
+      "invalid-name": "Invalid name",
+      "invalid-email": "Invalid email",
+      "invalid-phone": "Invalid phone"
     }
   },
   "calendar": {

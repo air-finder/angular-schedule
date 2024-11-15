@@ -1,7 +1,7 @@
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { ForgotPasswordRequest } from "../../services/models/user/forgot-password.request";
-import { ForgotPasswordCodeRequest } from "../../services/models/user/forgot-password-code.request";
-import { ForgotPasswordUpdateRequest } from "../../services/models/user/forgot-password-update.request";
+import { ForgotPasswordRequest } from "../../models/services/users/forgot-password.request";
+import { ForgotPasswordCodeRequest } from "../../models/services/users/forgot-password-code.request";
+import { ForgotPasswordUpdateRequest } from "../../models/services/users/forgot-password-update.request";
 
 export interface IForgotPasswordForm {
   'first-step': FormGroup<IFirstStepForgotPasswordForm>;

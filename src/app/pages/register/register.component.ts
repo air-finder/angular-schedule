@@ -7,8 +7,8 @@ import { FormFieldComponent } from '../../shared/components/form-field/form-fiel
 import { TranslateModule } from '@ngx-translate/core';
 import { SelectComponent } from '../../shared/components/select/select.component';
 import { SelectOptionComponent } from '../../shared/components/select/select-option/select-option.component';
-import { Gender } from '../../services/enums/gender';
-import { PeopleService } from '../../services/people.service';
+import { Gender } from '../../models/services/enums/gender';
+import { PeopleService } from '../../services/people/people.service';
 import { Router } from '@angular/router';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 

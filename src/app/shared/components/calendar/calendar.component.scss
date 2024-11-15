@@ -19,6 +19,7 @@
     background-color: map-get($background, card);
     .days {
       .day {
+        background-color: map-get($primary, lighter);
         &--current-month {
           background-color: map-get($primary, darker);
         }
@@ -27,6 +28,9 @@
         }
         &--selected {
           background-color: map-get($secondary, darker);
+        }
+        &--disabled {
+          background-color: map-get($background, disabled);
         }
       }
     }

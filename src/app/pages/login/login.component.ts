@@ -1,16 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormFieldComponent } from "../../shared/components/form-field/form-field.component";
-import { SelectComponent } from '../../shared/components/select/select.component';
-import { SelectOptionComponent } from '../../shared/components/select/select-option/select-option.component';
-import { UserService } from '../../services/user.service';
-import { LoginRequest } from '../../services/models/user/login.request';
+import { UserService } from '../../services/user/user.service';
+import { LoginRequest } from '../../models/services/users/login.request';
 import { AuthService } from '../../core/service/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AnchorComponent, ButtonComponent } from '../../shared/components/button/button.component';
-import { IconButtonComponent } from '../../shared/components/button/icon-button.component';
-import { IconComponent } from '../../shared/components/icon/icon.component';
 
 @Component({
   selector: 'app-login',
@@ -19,12 +15,8 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
     FormsModule,
     ReactiveFormsModule,
     FormFieldComponent,
-    SelectComponent,
-    SelectOptionComponent,
     AnchorComponent,
     ButtonComponent,
-    IconButtonComponent,
-    IconComponent,
     TranslateModule,
     RouterLink
   ],

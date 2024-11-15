@@ -1,7 +1,6 @@
-import { Component, input, model } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { SelectServicesComponent } from "./select-services/select-services.component";
 import { SelectWorkerComponent } from "./select-worker/select-worker.component";
-import { ServiceStepModel } from '../../../models/pages/schedule/service-step/service-step.model';
 import { ServiceStepForm } from './service-step.form';
 
 @Component({
@@ -14,4 +13,8 @@ import { ServiceStepForm } from './service-step.form';
 export class ServiceStepComponent {
   public serviceProviderId$ = input.required<string>();
   form = input.required<ServiceStepForm>();
+  latitude = 51.678418;
+  longitude = 7.809007;
+  zoom = 8;
+  center = { lat: this.latitude, lng: this.longitude };
 }

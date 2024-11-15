@@ -1,10 +1,8 @@
-import { Component, inject, input, InputSignal, model, OnInit, signal } from '@angular/core';
-import { ServiceProviderService } from '../../../../services/service-provider.service';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ServiceWorkerDto } from '../../../../services/dtos/service-worker.interface';
+import { Component, inject, input, OnInit } from '@angular/core';
+import { ServiceProviderService } from '../../../../services/service-provider/service-provider.service';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormFieldComponent } from "../../../../shared/components/form-field/form-field.component";
 import { TranslateModule } from '@ngx-translate/core';
-import { ServiceStepForm } from '../service-step.form';
 import { ServiceStepFormModel } from '@models/pages/schedule/service-step/service-step-form.model';
 
 @Component({

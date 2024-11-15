@@ -1,5 +1,6 @@
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { PersonalStepFormModel } from "@models/pages/schedule/personal-step/personal-step-form.model";
+import { CustomValidators } from "@validators/custom-validators";
 
 export class PersonalStepForm extends FormGroup<PersonalStepFormModel> {
 
@@ -9,9 +10,9 @@ export class PersonalStepForm extends FormGroup<PersonalStepFormModel> {
 
   constructor() {
     super({
-      name: new FormControl<string>('', [Validators.required]),
-      phone: new FormControl<string>('', [Validators.required]),
-      email: new FormControl<string>('', [Validators.required]),
+      name: new FormControl<string | null>('', [Validators.required, CustomValidators.nameValidator]),
+      phone: new FormControl<string | null>('', [Validators.required, CustomValidators.phoneValidator]),
+      email: new FormControl<string | null>('', [Validators.required, CustomValidators.emailValidator]),
     } as PersonalStepFormModel);
   }
 }

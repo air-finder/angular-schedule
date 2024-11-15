@@ -1,2 +1,22 @@
-<app-select-day [(scheduleStep$)]="scheduleStep$" [form]="form()"></app-select-day>
-<app-select-time [(scheduleStep$)]="scheduleStep$" [form]="form()"></app-select-time>
+<h2>Select a day</h2>
+<form [formGroup]="form()">
+  @if(scheduleStep$().serviceWorkerId) {
+    <calendar formControlName="date" [availableDates]="availableDates$()" #calendar></calendar>
+  }
+</form>
+
+<h2>Select a time</h2>
+@defer (when isLoading) {
+  <div class="buttons">
+    @for (item of times$(); track $index) {
+      <button custom-button (click)="selectTime(item.date)" [theme]="item.theme">{{item.date | date: 'HH:mm'}}</button>
+    }
+  </div>
+} 
+@placeholder {
+  <h4>Select first a day</h4>
+}
+@loading (minimum 300ms) {
+  <div class="loading-card phantom"></div>
+}
+

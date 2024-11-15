@@ -1,7 +1,7 @@
 import { FormControl } from "@angular/forms";
 
 export interface PersonalStepFormModel {
-  name: FormControl<string | null>;
-  phone: FormControl<string | null>;
-  email: FormControl<string | null>;
+  name: FormControl<string>;
+  phone: FormControl<string>;
+  email: FormControl<string>;
 }

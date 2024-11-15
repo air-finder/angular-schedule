@@ -3,6 +3,8 @@ import { ServiceStepForm } from "./service-step/service-step.form";
 import { PersonalStepForm } from "./personal-step/personal-step.form";
 import { ScheduleStepForm } from "./schedule-step/schedule-step.form";
 import { ScheduleFormModel } from "@models/pages/schedule/schedule-form.model";
+import { PostAppointmentRequest } from "@models/services/schedules";
+import { DateHelper } from "@helpers/date-helper";
 
 export class ScheduleForm extends FormGroup<ScheduleFormModel> {
 
@@ -16,5 +18,18 @@ export class ScheduleForm extends FormGroup<ScheduleFormModel> {
       personalStep: new PersonalStepForm(),
       scheduleStep: new ScheduleStepForm()
     });
+  }
+
+  public GetAppointmentRequest(description: string): PostAppointmentRequest {
+    if (!this.valid) throw new Error('Form is not valid');
+    return {
+      serviceWorkerId: this.serviceStep.serviceWorkerId.value,
+      start: DateHelper.getTicksFromDate(this.scheduleStep.start.value!),
+      end: DateHelper.getTicksFromDate(this.scheduleStep.end.value!),
+      description: description,
+      email: this.personalStep.email.value,
+      phone: this.personalStep.phone.value,
+      name: this.personalStep.name.value
+    }
   }
 }

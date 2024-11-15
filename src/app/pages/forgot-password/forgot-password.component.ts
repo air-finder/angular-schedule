@@ -4,7 +4,7 @@ import { FormFieldComponent } from '../../shared/components/form-field/form-fiel
 import { TranslateModule } from '@ngx-translate/core';
 import { StepperComponent } from '../../shared/components/stepper/stepper.component';
 import { StepComponent } from '../../shared/components/stepper/step/step.component';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user/user.service';
 import { ForgotPasswordForm } from './forgot-password.form';
 import { Router } from '@angular/router';
 import { ButtonComponent } from '../../shared/components/button/button.component';

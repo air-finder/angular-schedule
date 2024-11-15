@@ -11,4 +11,9 @@ export class DateHelper {
     const milliseconds = date.getTime();
     return epochTicks + milliseconds * ticksPerMillisecond;
   }
+
+  public static getDateFromISOString(dateISO: string): Date {
+    const [year, month, day] = dateISO.split('T')[0].split('-').map(n => parseInt(n, 10));
+    return new Date(year, month - 1, day);
+  }
 }

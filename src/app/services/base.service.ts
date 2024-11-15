@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { lastValueFrom, Observable } from 'rxjs';
-import { BaseResponse } from './models/base-response';
-import { QueryStringHelper } from './helpers/query-string.helper';
+import { BaseResponse } from '../models/services/base-response';
+import { QueryStringHelper } from '../shared/helpers/query-string.helper';
 
 @Injectable({
   providedIn: 'root'

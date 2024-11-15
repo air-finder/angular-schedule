@@ -28,6 +28,7 @@
       "@services/*": ["./src/app/services/*"],
       "@components/*": ["./src/app/shared/components/*"],
       "@helpers/*": ["./src/app/shared/helpers/*"],
+      "@validators/*": ["./src/app/shared/validators/*"],
       "@core/*": ["./src/app/core/*"],
       "@models/*": ["./src/app/models/*"],
     }
