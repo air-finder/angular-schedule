@@ -1,8 +1,8 @@
-<h2>Confirm your schedule</h2>
+<h2>{{'pages.schedule.confirm-step.title' | translate}}</h2>
 
 @if(form().serviceStep.valid) {
-  <h3>Services</h3>
-  <p class="line">Worker: {{worker$()}}</p>
+  <h3>{{'pages.schedule.confirm-step.services' | translate}}</h3>
+  <p class="line">{{'pages.schedule.confirm-step.worker' | translate}}: {{worker$()}}</p>
   <ul>
     @for (item of services$(); track $index) {
       <li><span class="line">{{ item.name }} - {{ item.price | currency: 'BRL' }}</span></li>
@@ -11,23 +11,23 @@
 }
 
 @if(form().scheduleStep.valid) {
-  <h3>Schedule</h3>
+  <h3>{{'pages.schedule.confirm-step.schedule' | translate}}</h3>
   <ul>
-    <li><span class="line">{{form().scheduleStep.date.value | date: 'dd/MM/YYYY'}} from {{form().scheduleStep.start.value | date: 'HH:mm'}} to {{form().scheduleStep.end.value | date: 'HH:mm'}}</span></li>
+    <li><span class="line">{{form().scheduleStep.date.value | date: 'dd/MM/YYYY'}} {{'pages.schedule.confirm-step.from' | translate}} {{form().scheduleStep.start.value | date: 'HH:mm'}} {{'pages.schedule.confirm-step.to' | translate}} {{form().scheduleStep.end.value | date: 'HH:mm'}}</span></li>
   </ul>
 }
 
 @if(form().personalStep.valid) {
-  <h3>Personal Information</h3>
+  <h3>{{'pages.schedule.confirm-step.personal-information' | translate}}</h3>
   <ul>
-    <li><span class="line">Name: {{form().personalStep.name.value}}</span></li>
-    <li><span class="line">Email: {{form().personalStep.email.value}}</span></li>
-    <li><span class="line">Phone: {{form().personalStep.phone.value}}</span></li>
+    <li><span class="line">{{'shared.primitive-entity.name' | translate}}: {{form().personalStep.name.value}}</span></li>
+    <li><span class="line">{{'shared.primitive-entity.email' | translate}}: {{form().personalStep.email.value}}</span></li>
+    <li><span class="line">{{'shared.primitive-entity.phone' | translate}}: {{form().personalStep.phone.value}}</span></li>
   </ul>
 }
 
 @if(form().serviceStep.valid){
   <hr>
-  <p>Total: {{total$() | currency: 'BRL'}}</p>
-  <p>** We do not receive any payments from here, all payments for service is from provider **</p>
+  <p>{{'pages.schedule.confirm-step.total' | translate}}: {{total$() | currency: 'BRL'}}</p>
+  <p>{{'pages.schedule.confirm-step.payments-information' | translate}}</p>
 }

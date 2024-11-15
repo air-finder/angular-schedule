@@ -8,6 +8,7 @@ import { ButtonComponent } from '@components/button/button.component';
 import { DatePipe } from '@angular/common';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScheduleStepFormModel } from '@models/pages/schedule/schedule-step/schedule-step-form.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-schedule-step',
@@ -17,7 +18,8 @@ import { ScheduleStepFormModel } from '@models/pages/schedule/schedule-step/sche
     ButtonComponent,
     DatePipe,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
   ],
   templateUrl: './schedule-step.component.html',
   styleUrl: './schedule-step.component.scss'

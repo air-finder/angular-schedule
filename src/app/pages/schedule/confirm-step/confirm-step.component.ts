@@ -3,11 +3,12 @@ import { ScheduleForm } from '../schedule.form';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
 import { ServiceSummary } from '@models/pages/schedule/confirm-step/service-summary';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-confirm-step',
   standalone: true,
-  imports: [ DatePipe, CurrencyPipe ],
+  imports: [ DatePipe, CurrencyPipe, TranslateModule ],
   templateUrl: './confirm-step.component.html',
   styleUrl: './confirm-step.component.scss',
 })

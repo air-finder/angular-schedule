@@ -1,4 +1,13 @@
 {
+  "shared": {
+    "primitive-entity": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "password": "Password",
+      "confirm-password": "Confirm password"
+    }
+  },
   "header": {
     "buttons": {
       "enter": "Enter",
@@ -54,6 +63,28 @@
         "personal": "Personal",
         "account": "Account",
         "terms": "Terms"
+      }
+    },
+    "schedule": {
+      "confirm-step": {
+        "title": "Confirm your appointment",
+        "services": "Services",
+        "worker": "Worker",
+        "schedule": "Schedule",
+        "from": "From",
+        "to": "To",
+        "personal-information": "Personal information",
+        "total": "Total",
+        "payments-information": "** We do not receive payments from here, you will pay directly to the professional **"
+      },
+      "schedule-step": {
+        "select-day": "Select a day",
+        "select-time": "Select a time",
+        "select-time-placeholder": "Select a day to choose the time"
+      },
+      "service-step": {
+        "professional-select" : "Select a professional",
+        "service-select" : "Select what you want to do"
       }
     }
   },

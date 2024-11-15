@@ -5,6 +5,7 @@ import { FormFieldComponent } from '@components/form-field/form-field.component'
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
 import { CurrencyPipe } from '@angular/common';
 import { Service } from '@models/services/dtos/service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-select-services',
@@ -13,7 +14,8 @@ import { Service } from '@models/services/dtos/service';
     FormsModule,
     ReactiveFormsModule,
     FormFieldComponent,
-    CurrencyPipe
+    CurrencyPipe,
+    TranslateModule
   ],
   templateUrl: './select-services.component.html',
   styleUrl: './select-services.component.scss'
