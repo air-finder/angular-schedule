@@ -4,8 +4,19 @@
       "name": "Name",
       "email": "Email",
       "phone": "Phone",
+      "login": "Login",
       "password": "Password",
-      "confirm-password": "Confirm password"
+      "confirm-password": "Confirm password",
+      "new-password": "New password"
+    },
+    "actions": {
+      "submit": "Submit",
+      "next": "Next",
+      "back": "Back",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "previous": "Previous",
+      "enter": "Enter"
     }
   },
   "header": {
@@ -25,35 +36,21 @@
   "pages": {
     "login": {
       "title": "Login",
-      "password": "Password",
-      "login": "Login",
       "forgot-password-click": "Click here",
-      "enter": "Enter",
       "not-registered-yet": "Not registered yet?",
       "did-you-forget-your-password": "Did you forget your password?",
       "register-click": "Create your account here"
     },
     "forgot-password": {
       "forgot-password": "Forgot password",
-      "user": "User",
-      "code": "Code",
-      "password": "New password",
-      "confirm-password": "Confirm password",
-      "submit": "Submit"
+      "code": "Code"
     },
     "register": {
       "register": "Register",
-      "name": "Name",
-      "email": "Email",
-      "phone": "Phone",
       "gender": "Gender",
       "gender-male": "Male",
       "gender-female": "Female",
       "gender-unknown": "I prefer not to say",
-      "birthday": "Birthday",
-      "login": "Login",
-      "password": "Password",
-      "confirm-password": "Confirm password",
       "terms": "Terms and conditions",
       "privacy": "Privacy policy",
       "agree-terms": "I agree to the terms and conditions",

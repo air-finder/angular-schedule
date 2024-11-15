@@ -2,15 +2,15 @@
 
 <form [formGroup]="form" (submit)="test()">
   <form-field controlName="login">
-    <label for="login">{{ 'pages.login.login' | translate }}</label>
-    <input type="text" id="login" formControlName="login" [placeholder]="'pages.login.login' | translate" autocomplete="off">
+    <label for="login">{{ 'shared.primitive-entity.login' | translate }}</label>
+    <input type="text" id="login" formControlName="login" [placeholder]="'shared.primitive-entity.login' | translate" autocomplete="off">
   </form-field>
   <form-field controlName="password">
-    <label for="password">{{ 'pages.login.password' | translate }}</label>
-    <input custom type="password" id="password" formControlName="password" [placeholder]="'pages.login.password' | translate" autocomplete="new-password">
+    <label for="password">{{ 'shared.primitive-entity.password' | translate }}</label>
+    <input custom type="password" id="password" formControlName="password" [placeholder]="'shared.primitive-entity.password' | translate" autocomplete="new-password">
   </form-field>
   <button custom-button type="submit" [disabled]="form.invalid || loading()" theme="primary">
-    {{ 'pages.login.enter' | translate }}
+    {{ 'shared.actions.enter' | translate }}
   </button>
 </form>
 

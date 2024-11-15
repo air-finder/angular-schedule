@@ -2,16 +2,16 @@
   <step [label]="'pages.register.steps.personal' | translate">
     <form [formGroup]="form.person">
       <form-field controlName="name">
-        <label for="name">{{ 'pages.register.name' | translate }}</label>
-        <input type="text" id="name" formControlName="name" [placeholder]="'pages.register.name' | translate">
+        <label for="name">{{ 'shared.primitive-entity.name' | translate }}</label>
+        <input type="text" id="name" formControlName="name" [placeholder]="'shared.primitive-entity.name' | translate">
       </form-field>
       <form-field controlName="email">
-        <label for="email">{{ 'pages.register.email' | translate }}</label>
-        <input type="email" id="email" formControlName="email" [placeholder]="'pages.register.email' | translate">
+        <label for="email">{{ 'shared.primitive-entity.email' | translate }}</label>
+        <input type="email" id="email" formControlName="email" [placeholder]="'shared.primitive-entity.email' | translate">
       </form-field>
       <form-field controlName="phone">
-        <label for="phone">{{ 'pages.register.phone' | translate }}</label>
-        <input type="tel" id="phone" formControlName="phone" [placeholder]="'pages.register.phone' | translate">
+        <label for="phone">{{ 'shared.primitive-entity.phone' | translate }}</label>
+        <input type="tel" id="phone" formControlName="phone" [placeholder]="'shared.primitive-entity.phone' | translate">
       </form-field>
       <form-field controlName="gender">
         <label for="gender">{{ 'pages.register.gender' | translate }}</label>
@@ -26,16 +26,16 @@
   <step [label]="'pages.register.steps.account' | translate">
     <form [formGroup]="form.user">
       <form-field controlName="login">
-        <label for="login">{{ 'pages.register.login' | translate }}</label>
-        <input type="text" id="login" formControlName="login" [placeholder]="'pages.register.login' | translate">
+        <label for="login">{{ 'shared.primitive-entity.login' | translate }}</label>
+        <input type="text" id="login" formControlName="login" [placeholder]="'shared.primitive-entity.login' | translate">
       </form-field>
       <form-field controlName="password">
-        <label for="password">{{ 'pages.register.password' | translate }}</label>
-        <input type="password" id="password" formControlName="password" [placeholder]="'pages.register.password' | translate">
+        <label for="password">{{ 'shared.primitive-entity.password' | translate }}</label>
+        <input type="password" id="password" formControlName="password" [placeholder]="'shared.primitive-entity.password' | translate">
       </form-field>
       <form-field controlName="confirm-password">
-        <label for="confirm-password">{{ 'pages.register.confirm-password' | translate }}</label>
-        <input type="password" id="confirm-password" formControlName="confirm-password" [placeholder]="'pages.register.confirm-password' | translate">
+        <label for="confirm-password">{{ 'shared.primitive-entity.confirm-password' | translate }}</label>
+        <input type="password" id="confirm-password" formControlName="confirm-password" [placeholder]="'shared.primitive-entity.confirm-password' | translate">
       </form-field>
     </form>
   </step>
@@ -52,5 +52,5 @@
     </form>
   </step>
 
-  <button custom-button (click)="submit()">Submit</button>
+  <button custom-button (click)="submit()">{{'shared.actions.submit' | translate}}</button>
 </stepper>

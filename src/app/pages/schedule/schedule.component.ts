@@ -14,6 +14,7 @@ import { TimeSpanHelper } from '@helpers/time-span';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
 import { ScheduleService } from '@services/schedule/schedule.service';
 import { DatePipe } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-schedule',
@@ -25,7 +26,8 @@ import { DatePipe } from '@angular/common';
     ServiceStepComponent,
     ScheduleStepComponent,
     PersonalStepComponent,
-    ConfirmStepComponent
+    ConfirmStepComponent,
+    TranslateModule
 ],
   templateUrl: './schedule.component.html',
   styleUrl: './schedule.component.scss'

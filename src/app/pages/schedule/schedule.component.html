@@ -11,6 +11,6 @@
   <step label="confirm">
     <app-confirm-step [form]="form" #confirmStep></app-confirm-step>
   </step>
-  <button custom-button theme="secondary" (click)="previousStep()" [disabled]="stepper.currentIndex() === 0">previous</button>
-  <button custom-button (click)="nextStep()" [disabled]="getDisabled()">next</button>
+  <button custom-button theme="secondary" (click)="previousStep()" [disabled]="stepper.currentIndex() === 0">{{'shared.actions.previous' | translate}}</button>
+  <button custom-button (click)="nextStep()" [disabled]="getDisabled()">{{'shared.actions.' + (stepper.currentIndex() === 3 ? 'submit' : 'next') | translate}}</button>
 </stepper>
