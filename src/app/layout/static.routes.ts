@@ -1,9 +1,9 @@
-import { PageNotFoundComponent } from "../pages/page-not-found/page-not-found.component";
-import { ContactComponent } from "../pages/contact/contact.component";
+import { PageNotFoundComponent } from "../pages/static/page-not-found/page-not-found.component";
+import { ContactComponent } from "../pages/static/contact/contact.component";
 import { Routes } from "@angular/router";
-import { AboutComponent } from "../pages/about/about.component";
-import { TermsComponent } from "../pages/terms/terms.component";
-import { PrivacyComponent } from "../pages/privacy/privacy.component";
+import { AboutComponent } from "../pages/static/about/about.component";
+import { TermsComponent } from "../pages/static/terms/terms.component";
+import { PrivacyComponent } from "../pages/static/privacy/privacy.component";
 
 export const routes: Routes = [
   { path: 'page-not-found', title: 'Page Not Found', component: PageNotFoundComponent },

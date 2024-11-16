@@ -36,8 +36,6 @@ export class SelectComponent<T> implements ControlValueAccessor {
   protected display = computed<string>(() => this.valueRef().filter(v => v.selected).map(x => x.display).join(', '));
 
   private ngControl = inject(NgControl, { optional: true });
-  protected onTouched? = () => {throw new Error('Method not implemented.');};
-  protected onChange? = (_?: T | T[]) => {throw new Error('Method not implemented.');};
   protected isDisabled = signal(false);
   protected openned = signal(false);
   protected selectIcon = computed(() => this.openned() ? 'arrow-up' : 'arrow-down');
@@ -52,18 +50,25 @@ export class SelectComponent<T> implements ControlValueAccessor {
   }
 
   writeValue(obj?: T | T[]): void {
-    this.options().filter(x => !x.selected).forEach(x => x.selected.set(false));
-    if(this.multiple() && Array.isArray(obj) && obj.length)
-      this.options().filter(x => obj.includes(x.value())).forEach(x => x.selected.set(true))
-    if(!this.multiple() && obj)
-      this.options().find(x => x.value() === obj)?.selected.set(true);
+    setTimeout(() => {
+      this.options().filter(x => !x.selected).forEach(x => x.selected.set(false));
+      if(this.multiple() && Array.isArray(obj) && obj.length)
+        this.options().filter(x => obj.includes(x.value())).forEach(x => x.selected.set(true))
+      if(!this.multiple() && obj)
+        this.options().find(x => x.value() === obj)?.selected.set(true);
+    });
   }
+
+  protected onChange? = (_?: T | T[]) => {};
   registerOnChange(fn: never): void {
     this.onChange = fn;
   }
+
+  protected onTouched? = () => {};
   registerOnTouched(fn: never): void {
     this.onTouched = fn;
   }
+
   setDisabledState?(isDisabled: boolean): void {
     this.isDisabled.set(isDisabled);
   }

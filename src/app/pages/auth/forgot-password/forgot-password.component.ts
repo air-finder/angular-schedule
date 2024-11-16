@@ -1,13 +1,13 @@
 import { Component, signal, viewChild } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormFieldComponent } from '../../shared/components/form-field/form-field.component';
+import { FormFieldComponent } from '../../../shared/components/form-field/form-field.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { StepperComponent } from '../../shared/components/stepper/stepper.component';
-import { StepComponent } from '../../shared/components/stepper/step/step.component';
-import { UserService } from '../../services/user/user.service';
+import { StepperComponent } from '../../../shared/components/stepper/stepper.component';
+import { StepComponent } from '../../../shared/components/stepper/step/step.component';
+import { UserService } from '../../../services/user/user.service';
 import { ForgotPasswordForm } from './forgot-password.form';
 import { Router } from '@angular/router';
-import { ButtonComponent } from '../../shared/components/button/button.component';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-forgot-password',

@@ -90,7 +90,13 @@
       "required": "This field is required",
       "invalid-name": "Invalid name",
       "invalid-email": "Invalid email",
-      "invalid-phone": "Invalid phone"
+      "invalid-phone": "Invalid phone",
+      "invalid-password-length": "Password must have at least 10 characters",
+      "invalid-password-lowercase": "Password must have at least one lowercase letter",
+      "invalid-password-uppercase": "Password must have at least one uppercase letter",
+      "invalid-password-number": "Password must have at least one number",
+      "invalid-password-special": "Password must have at least one special character",
+      "password-match": "Passwords do not match"
     }
   },
   "calendar": {

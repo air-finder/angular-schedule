@@ -1,4 +1,4 @@
-<stepper>
+<stepper #stepper>
   <step [label]="'pages.register.steps.personal' | translate">
     <form [formGroup]="form.person">
       <form-field controlName="name">
@@ -52,5 +52,5 @@
     </form>
   </step>
 
-  <button custom-button (click)="submit()">{{'shared.actions.submit' | translate}}</button>
+  <button custom-button [disabled]="checkDisabled()" (click)="submit()">{{'shared.actions.' + (stepper.currentIndex() === 2 ? 'submit' : 'next') | translate}}</button>
 </stepper>

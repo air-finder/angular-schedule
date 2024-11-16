@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { FormFieldComponent } from "../../shared/components/form-field/form-field.component";
-import { UserService } from '../../services/user/user.service';
-import { LoginRequest } from '../../models/services/users/login.request';
-import { AuthService } from '../../core/service/auth.service';
+import { FormFieldComponent } from "../../../shared/components/form-field/form-field.component";
+import { UserService } from '../../../services/user/user.service';
+import { LoginRequest } from '../../../models/services/users/login.request';
+import { AuthService } from '../../../core/service/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { AnchorComponent, ButtonComponent } from '../../shared/components/button/button.component';
+import { AnchorComponent, ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-login',

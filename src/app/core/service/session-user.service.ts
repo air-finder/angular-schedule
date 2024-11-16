@@ -12,11 +12,14 @@ export class SessionUserService {
   private decodedToken$ = computed(() => this.helper.decodeToken(this._authService.token()!));
   sessionUser$ = computed<SessionUser>(() => {
     return {
-      scopes: this.decodedToken$().scopes,
+      scopes: JSON.parse(this.decodedToken$().scopes),
       profile: JSON.parse(this.decodedToken$().profile)
     }
   });
 
   constructor(private _authService: AuthService) { }
 
+  public hasScope(scope: string): boolean {
+    return this.sessionUser$().scopes.includes(scope);
+  }
 }
