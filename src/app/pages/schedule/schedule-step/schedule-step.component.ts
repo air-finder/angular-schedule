@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, computed, input, model, signal } from '@angular/core';
 import { ScheduleStepModel } from '../../../models/pages/schedule/schedule-step/schedule-step.model';
 import { ServiceWorkerService } from '@services/service-worker/service-worker.service';
-import { TimeSpanHelper } from '@helpers/time-span';
+import { TimeSpanHelper } from '@helpers/time-span.helper';
 import { TimeModel } from '@models/pages/schedule/schedule-step/time.model';
 import { CalendarComponent } from "../../../shared/components/calendar/calendar.component";
 import { ButtonComponent } from '@components/button/button.component';

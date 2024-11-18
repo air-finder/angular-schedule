@@ -10,7 +10,7 @@ import { StepComponent } from '@components/stepper/step/step.component';
 import { ButtonComponent } from '@components/button/button.component';
 import { ServiceWorkerService } from '@services/service-worker/service-worker.service';
 import { ScheduleStepModel } from '@models/pages/schedule/schedule-step/schedule-step.model';
-import { TimeSpanHelper } from '@helpers/time-span';
+import { TimeSpanHelper } from '@helpers/time-span.helper';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
 import { ScheduleService } from '@services/schedule/schedule.service';
 import { DatePipe } from '@angular/common';

@@ -1,0 +1,13 @@
+<stepper #stepper>
+  <step [label]="'provider'">
+    <app-provider-step [form]="form.controls.provider"></app-provider-step>
+  </step>
+  <step [label]="'location'">
+    <app-location-step [form]="form.controls.location"></app-location-step>
+  </step>
+  <step [label]="'confirm'">
+    <app-confirm-step [form]="form"></app-confirm-step>
+  </step>
+  <button custom-button [disabled]="stepper.currentIndex() === 0" (click)="stepper.previous()">{{'shared.actions.previous' | translate}}</button>
+  <button custom-button theme="secondary" [disabled]="getDisabled()" (click)="submit()">{{'shared.actions.' + (stepper.currentIndex() === 2 ? 'submit' : 'next') | translate}}</button>
+</stepper>

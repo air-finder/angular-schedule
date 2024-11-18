@@ -1,0 +1,21 @@
+<h2>{{'pages.create-provider.confirm-step.title' | translate}}</h2>
+
+@if (form().provider) {
+  <h3>{{'pages.create-provider.confirm-step.provider' | translate}}</h3>
+  <ul>
+    <li><span class="line">{{'shared.primitive-entity.name' | translate}}: {{form().provider.controls.name.value}}</span></li>
+    <li><span class="line">{{'shared.primitive-entity.description' | translate}}: {{form().provider.controls.description.value}}</span></li>
+  </ul>
+}
+
+@if (form().location) {
+  <h3>{{'pages.create-provider.confirm-step.location' | translate}}</h3>
+  <ul>
+    <li><span class="line">{{'shared.primitive-entity.country' | translate}}: {{form().location.controls.country.value}}</span></li>
+    <li><span class="line">{{'shared.primitive-entity.state' | translate}}: {{form().location.controls.state.value}}</span></li>
+    <li><span class="line">{{'shared.primitive-entity.city' | translate}}: {{form().location.controls.city.value}}</span></li>
+    <li><span class="line">{{'shared.primitive-entity.neighborhood' | translate}}: {{form().location.controls.neighborhood.value}}</span></li>
+    <li><span class="line">{{'shared.primitive-entity.street' | translate}}: {{form().location.controls.street.value}}</span></li>
+    <li><span class="line">{{'shared.primitive-entity.number' | translate}}: {{form().location.controls.number.value}}</span></li>
+  </ul>
+}

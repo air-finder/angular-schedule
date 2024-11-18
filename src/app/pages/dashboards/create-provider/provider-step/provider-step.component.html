@@ -1,0 +1,18 @@
+<form [formGroup]="form()">
+  <form-field controlName="name">
+    <label for="name">{{ 'shared.primitive-entity.name' | translate }}</label>
+    <input type="text" id="name" formControlName="name" [placeholder]="'shared.primitive-entity.name' | translate" autocomplete="off">
+  </form-field>
+  <form-field controlName="description">
+    <label for="description">{{ 'shared.primitive-entity.description' | translate }}</label>
+    <input type="text" id="description" formControlName="description" [placeholder]="'shared.primitive-entity.description' | translate" autocomplete="off">
+  </form-field>
+  <form-field controlName="business-code">
+    <label for="business-code">{{ 'shared.primitive-entity.business-code' | translate }}</label>
+    <input type="text" id="business-code" formControlName="business-code" [placeholder]="'shared.primitive-entity.business-code' | translate" autocomplete="off"/>
+  </form-field>
+  <form-field controlName="utc-time">
+    <label for="utc-time">{{ 'shared.primitive-entity.utc-time' | translate }}</label>
+    <input type="text" id="utc-time" formControlName="utc-time" [placeholder]="'shared.primitive-entity.utc-time' | translate" readonly/>
+  </form-field>
+</form>

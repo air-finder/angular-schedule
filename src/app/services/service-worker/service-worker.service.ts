@@ -3,7 +3,7 @@ import { BaseService } from '../base.service';
 import { environment } from '../../../environments/environment';
 import { GetAvailableDaysRequest } from '../../models/services/service-workers/get-available-days.request';
 import { GetAvailableTimesRequest } from '../../models/services/service-workers/get-available-times.request';
-import { DateHelper } from '../../shared/helpers/date-helper';
+import { DateHelper } from '../../shared/helpers/date.helper';
 
 @Injectable({
   providedIn: 'root'

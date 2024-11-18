@@ -3,6 +3,8 @@ import { BaseService } from '../base.service';
 import { environment } from '../../../environments/environment';
 import { ServiceWorkerDto } from '@models/services/dtos/service-worker';
 import { Service } from '@models/services/dtos/service';
+import { PostServiceProviderRequest } from '@models/services/service-providers/post-service-provider.request';
+import { ServiceProviderDto } from '@models/services/dtos/service-provider';
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +37,9 @@ export class ServiceProviderService extends BaseService {
         this._currentServices.set(result);
         return services;
       });
+  }
+
+  async createProvider(request: PostServiceProviderRequest) {
+    return await this.PostAsync<ServiceProviderDto>('', request);
   }
 }

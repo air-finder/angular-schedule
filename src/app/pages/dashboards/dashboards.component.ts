@@ -1,20 +1,26 @@
 import { Component } from '@angular/core';
+import { SessionUserService } from '@core/service/session-user.service';
 import { TranslateModule } from '@ngx-translate/core';
-import { ServiceProviderService } from '@services/service-provider/service-provider.service';
-import { ServiceWorkerService } from '@services/service-worker/service-worker.service';
-import { UserService } from '@services/user/user.service';
+import { Scopes } from '../../shared/constants/scopes.constants';
+import { ButtonComponent } from '@components/button/button.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboards',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [
+    TranslateModule,
+    ButtonComponent,
+    RouterLink
+  ],
   templateUrl: './dashboards.component.html',
   styleUrl: './dashboards.component.scss'
 })
 export class DashboardsComponent {
-  constructor(
-    private _providerService: ServiceProviderService,
-    private _workerService: ServiceWorkerService,
-    private _userService: UserService
-  ) { }
+  protected Scopes = Scopes;
+  constructor(private _sessionUser: SessionUserService) { }
+
+  hasScope(scope: string): boolean {
+    return this._sessionUser.hasScope(scope);
+  }
 }

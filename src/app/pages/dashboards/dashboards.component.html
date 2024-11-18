@@ -1,2 +1,15 @@
 <h2>{{'pages.dashboard.title' | translate}}</h2>
-<h3>{{'pages.dashboard.subtitle' | translate}}</h3>
+<p>{{'pages.dashboard.subtitle' | translate}}</p>
+
+<div class="anchor-buttons">
+  @if (hasScope(Scopes.PROVIDER)) {
+    <button custom-button [routerLink]="['/provider']">{{'pages.dashboard.provider' | translate}}</button>
+  }
+  @if (hasScope(Scopes.ADULT) && !hasScope(Scopes.PROVIDER)) {
+    <button custom-button theme="secondary" [routerLink]="['/create-provider']">{{'pages.dashboard.create-provider' | translate}}</button>
+  }
+  @if (hasScope(Scopes.WORKER) && hasScope(Scopes.CAN_WORK)) {
+    <button custom-button [routerLink]="['/worker']">{{'pages.dashboard.worker' | translate}}</button>
+  }
+  <button custom-button [routerLink]="['/user']">{{'pages.dashboard.user' | translate}}</button>
+</div>

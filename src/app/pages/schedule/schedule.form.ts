@@ -4,7 +4,7 @@ import { PersonalStepForm } from "./personal-step/personal-step.form";
 import { ScheduleStepForm } from "./schedule-step/schedule-step.form";
 import { ScheduleFormModel } from "@models/pages/schedule/schedule-form.model";
 import { PostAppointmentRequest } from "@models/services/schedules";
-import { DateHelper } from "@helpers/date-helper";
+import { DateHelper } from "@helpers/date.helper";
 
 export class ScheduleForm extends FormGroup<ScheduleFormModel> {
 

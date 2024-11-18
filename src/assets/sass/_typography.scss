@@ -150,6 +150,6 @@ th {
   @include subtitle_1;
 }
 
-button, button > span {
+button, button > span, a.button > span {
   @include button;
 }

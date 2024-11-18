@@ -2,7 +2,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Gender } from "../../../models/services/enums/gender";
 import { AddUserRequest } from "../../../models/services/people/add-user.request";
 import { CustomValidators } from "@validators/custom-validators";
-import { DateHelper } from "@helpers/date-helper";
+import { DateHelper } from "@helpers/date.helper";
 import { RegisterFormModel } from "@models/pages/auth/register/register-form.model";
 import { PersonStepRegisterFormModel } from "@models/pages/auth/register/person-step-register-form.model";
 import { UserStepRegisterFormModel } from "@models/pages/auth/register/user-step-register-form.model";

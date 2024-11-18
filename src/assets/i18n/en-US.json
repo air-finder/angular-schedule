@@ -7,7 +7,16 @@
       "login": "Login",
       "password": "Password",
       "confirm-password": "Confirm password",
-      "new-password": "New password"
+      "new-password": "New password",
+      "description": "Description",
+      "utc-time": "UTC time",
+      "zip-code": "Zip code",
+      "street": "Street",
+      "number": "Number",
+      "neighborhood": "Neighborhood",
+      "city": "City",
+      "state": "State",
+      "country": "Country"
     },
     "actions": {
       "submit": "Submit",
@@ -82,6 +91,21 @@
       "service-step": {
         "professional-select" : "Select a professional",
         "service-select" : "Select what you want to do"
+      }
+    },
+    "dashboard": {
+      "title": "Welcome",
+      "subtitle": "What do you want to view today?",
+      "provider": "Provider dashboard",
+      "create-provider": "Register a provider",
+      "worker": "Worker dashboard",
+      "user": "User settings"    
+    },
+    "create-provider": {
+      "confirm-step": {
+        "title": "Confirm your information",
+        "provider": "Provider",
+        "location": "Location"
       }
     }
   },
