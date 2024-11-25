@@ -3,6 +3,9 @@
   flex-direction: column;
   position: relative;
   width: 100%;
+  > input {
+    padding: 0 16px;
+  }
 }
 
 .select-dropdown {

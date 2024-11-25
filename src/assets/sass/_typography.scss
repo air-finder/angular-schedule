@@ -4,38 +4,43 @@
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  padding: 0;
+  margin: 0;
 }
 
-@mixin baseheadline {
+@mixin base-headline {
   @include base-font;
-  line-height: 1.2;
+  line-height: 1.5;
   letter-spacing: 0.18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @mixin headline_1 {
   font-size: 28px;
   font-weight: 600;
-  @include baseheadline;
+  @include base-headline;
 }
 @mixin headline_2 {
   font-size: 24px;
   font-weight: 400;
-  @include baseheadline;
+  @include base-headline;
 }
 @mixin headline_3 {
   font-size: 22px;
   font-weight: 400;
-  @include baseheadline;
+  @include base-headline;
 }
 @mixin headline_4 {
   font-size: 20px;
   font-weight: 400;
-  @include baseheadline;
+  @include base-headline;
 }
 @mixin headline_5 {
   font-size: 16px;
   font-weight: 400;
-  @include baseheadline;
+  @include base-headline;
 }
 
 @mixin base-subtitle {

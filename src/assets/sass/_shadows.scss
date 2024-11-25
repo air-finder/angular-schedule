@@ -1,13 +1,13 @@
 @mixin sm-shadow {
-  box-shadow: 0px 4px 10px 0px #66666633;
+  box-shadow: 0px 0px 10px 0px #66666633;
 }
 
 @mixin md-shadow {
-  box-shadow: 0px 10px 30px 0px #6666664D;
+  box-shadow: 0px 0px 20px 0px #6666664D;
 }
 
 @mixin lg-shadow {
-  box-shadow: 0px 20px 46px 0px #66666680;
+  box-shadow: 0px 0px 30px 0px #66666680;
 }
 
 .sm-shadow {

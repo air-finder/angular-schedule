@@ -16,7 +16,9 @@
       "neighborhood": "Neighborhood",
       "city": "City",
       "state": "State",
-      "country": "Country"
+      "country": "Country",
+      "duration": "Duration",
+      "price": "Price"
     },
     "actions": {
       "submit": "Submit",
@@ -25,7 +27,8 @@
       "cancel": "Cancel",
       "confirm": "Confirm",
       "previous": "Previous",
-      "enter": "Enter"
+      "enter": "Enter",
+      "clear": "Clear"
     }
   },
   "header": {
@@ -107,6 +110,16 @@
         "provider": "Provider",
         "location": "Location"
       }
+    },
+    "dashboard-provider": {
+      "service": "Manage services",
+      "worker": "Manage workers",
+      "analitics": "View analitics"
+    },
+    "manage-services": {
+      "title": "Manage services",
+      "add-service": "Add service",
+      "current-services": "Current services"
     }
   },
   "form-field": {

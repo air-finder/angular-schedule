@@ -1,0 +1,6 @@
+@mixin get-theme($theme) {
+  $background: map-get($theme, background);
+  .card{
+    background: map-get($background, card);
+  }
+}

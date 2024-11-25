@@ -9,7 +9,7 @@ import { HttpClient, provideHttpClient, withFetch, withInterceptors } from '@ang
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HttpInterceptors } from './core/security/interceptor';
 import { AppTitle } from './app.title';
-import { DatePipe } from '@angular/common';
+import { CurrencyPipe, DATE_PIPE_DEFAULT_OPTIONS, DatePipe } from '@angular/common';
 
 function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -30,6 +30,8 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     { provide: TitleStrategy, useClass: AppTitle },
-    DatePipe
+    DatePipe,
+    { provide: DATE_PIPE_DEFAULT_OPTIONS, useValue: { locale: 'pt-BR' } },
+    CurrencyPipe
   ]
 };

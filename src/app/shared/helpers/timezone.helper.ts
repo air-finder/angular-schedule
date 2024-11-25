@@ -4,7 +4,7 @@ export class TimezoneHelper {
   }
 
   public static GetTimezone() {
-    return new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)![1];
+    return new Date().toString().match(/([A-Z]+[+-][0-9]+.*)/)![1];
   }
 
   public static GetTimezoneNumber() {

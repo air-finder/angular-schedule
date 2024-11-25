@@ -6,6 +6,7 @@
 @use '../../app/shared/components/select/select.theme' as select;
 @use '../../app/shared/components/calendar/calendar.theme' as calendar;
 @use 'themes/components/input-theme' as input;
+@use '../../app/shared/components/card/card' as card;
 
 @mixin all-components-theme($theme) {
   @include project-theme($theme);
@@ -17,6 +18,7 @@
   @include select.get-theme($theme);
   @include layout.get-theme($theme);
   @include calendar.get-theme($theme);
+  @include card.get-theme($theme);
 }
 
 @mixin project-theme($theme) {

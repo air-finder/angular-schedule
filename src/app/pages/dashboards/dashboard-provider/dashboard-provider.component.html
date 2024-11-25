@@ -1,1 +1,8 @@
-<p>dashboard-provider works!</p>
+@if(provider$()) {
+    <h2>{{ provider$()!.name }}</h2>
+    <p>{{ provider$()!.description }}</p>
+}
+
+<button custom-button routerLink="services">{{'pages.dashboard-provider.service' | translate}}</button>
+<button custom-button routerLink="workers">{{'pages.dashboard-provider.worker' | translate}}</button>
+<button custom-button routerLink="analitics">{{'pages.dashboard-provider.analitics' | translate}}</button>

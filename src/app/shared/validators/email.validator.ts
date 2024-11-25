@@ -1,6 +1,6 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
-const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+const regex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
 export function emailValidator(): ValidatorFn {
   return (control: AbstractControl) : ValidationErrors | null => {
