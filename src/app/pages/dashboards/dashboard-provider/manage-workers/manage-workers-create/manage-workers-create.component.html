@@ -1,0 +1,39 @@
+<h2>{{'pages.manage-workers.add-worker' | translate}}</h2>
+
+<form [formGroup]="form" (submit)="submit()">
+  <div class="form-row">
+    <form-field controlName="work-start">
+      <label for="work-start">{{'pages.manage-workers.work-start' | translate}}</label>
+      <input formControlName="work-start" id="work-start" type="time"/>
+    </form-field>
+    <form-field controlName="work-end">
+      <label for="work-end">{{'pages.manage-workers.work-end' | translate}}</label>
+      <input formControlName="work-end" id="work-end" type="time"/>
+    </form-field>
+  </div>
+  <form-field controlName="add-me" type="check">
+    <label for="add-me">{{'pages.manage-workers.add-me' | translate}}</label>
+    <input formControlName="add-me" id="add-me" type="checkbox"/>
+  </form-field>
+
+  @if(form.controls.worker){
+    <fieldset class="worker-fieldset">
+      <legend>{{'pages.manage-workers.worker' | translate}}</legend>
+      <form [formGroup]="form.controls.worker">
+        <form-field controlName="name">
+          <label for="worker-name">{{'shared.primitive-entity.name' | translate}}</label>
+          <input formControlName="name" id="worker-name" type="text" [placeholder]="'shared.primitive-entity.name' | translate"/>
+        </form-field>
+        <form-field controlName="email">
+          <label for="email">{{'shared.primitive-entity.email' | translate}}</label>
+          <input formControlName="email" id="email" type="email" [placeholder]="'shared.primitive-entity.email' | translate"/>
+        </form-field>
+      </form>
+    </fieldset>
+  }
+
+  <div class="buttons-row">
+    <button custom-button theme="secondary" type="button" (click)="clear()">{{'shared.actions.clear' | translate}}</button>
+    <button custom-button type="submit" [disabled]="form.invalid">{{'shared.actions.submit' | translate}}</button>
+  </div>
+</form>

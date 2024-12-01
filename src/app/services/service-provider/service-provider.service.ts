@@ -6,6 +6,7 @@ import { Service } from '@models/services/dtos/service';
 import { PostServiceProviderRequest } from '@models/services/service-providers/post-service-provider.request';
 import { ServiceProviderDto } from '@models/services/dtos/service-provider';
 import { PostServiceProviderServiceRequest } from '@models/services/service-providers/post-service-provider-service.request';
+import { AddWorkerRequest } from '@models/services/service-providers/add-worker.request';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,14 @@ export class ServiceProviderService extends BaseService {
   async getWorkers(providerId: string) {
     return await this.GetAsync<ServiceWorkerDto[]>(`${providerId}/workers`)
       .then(workers => {
+        this._workers.set(workers.result);
+        return workers;
+      });
+  }
+
+  async getAllWorkers() {
+    return await this.GetAsync<ServiceWorkerDto[]>(`workers`)
+      .then(workers => { 
         this._workers.set(workers.result);
         return workers;
       });
@@ -54,5 +63,9 @@ export class ServiceProviderService extends BaseService {
 
   async getProvider(providerId: string) {
     return await this.GetAsync<ServiceProviderDto>(providerId);
+  }
+
+  async addWorker(request: AddWorkerRequest) {
+    return await this.PostAsync<ServiceWorkerDto>('add-worker', request);
   }
 }

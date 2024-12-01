@@ -1,0 +1,54 @@
+@mixin get-theme($theme) {
+  $primary: map-get($theme, primary);
+  $secondary: map-get($theme, secondary);
+  $success: map-get($theme, success);
+  $error: map-get($theme, error);
+  $info: map-get($theme, info);
+  $warn: map-get($theme, warning);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  .pill {
+    &--primary {
+      border: 1px solid map-get($primary, darker);
+      background-color: map-get($primary, lighter);
+      .pill-span {
+        color: map-get($primary, darker);
+      }
+    }
+    &--secondary {
+      border: 1px solid map-get($secondary, darker);
+      background-color: map-get($secondary, lighter);
+      .pill-span {
+        color: map-get($secondary, darker);
+      }
+    }
+    &--success {
+      border: 1px solid map-get($success, darker);
+      background-color: map-get($success, lighter);
+      .pill-span {
+        color: map-get($success, darker);
+      }
+    }
+    &--danger {
+      border: 1px solid map-get($error, darker);
+      background-color: map-get($error, lighter);
+      .pill-span {
+        color: map-get($error, darker);
+      }
+    }
+    &--info {
+      border: 1px solid map-get($info, darker);
+      background-color: map-get($info, lighter);
+      .pill-span {
+        color: map-get($info, darker);
+      }
+    }
+    &--warning {
+      border: 1px solid map-get($warn, darker);
+      background-color: map-get($warn, lighter);
+      .pill-span {
+        color: map-get($warn, darker);
+      }
+    }
+  }
+}

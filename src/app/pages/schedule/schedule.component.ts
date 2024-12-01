@@ -77,7 +77,7 @@ export class ScheduleComponent implements AfterViewInit {
         });
         break;
       case 3:
-        await this._scheduleService.postAppointment(this.form.GetAppointmentRequest(this.getDescription()))
+        await this._scheduleService.postAppointment(this.form.GetAppointmentRequest())
           .then(() => this._router.navigate(['/']))
         break;
       default:
@@ -108,10 +108,5 @@ export class ScheduleComponent implements AfterViewInit {
       default:
         return this.form.invalid;
     }
-  }
-
-  private getDescription() {
-    const services = this._serviceProviderService.currentServices$().filter(service => this.getIds().includes(service.id)).reduce((acc, service) => `${acc}${service.name};\n`, '');
-    return `${this.form.personalStep.name.value} will receive the following services:\n${services}\nat ${this._datePipe.transform(this.form.scheduleStep.start.value, 'DD/MM/YYYY HH:mm')}`;
   }
 }

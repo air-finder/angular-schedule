@@ -10,5 +10,5 @@ export interface UserAuth {
   name: string;
   email: string;
   serviceProvider?: ServiceProviderDto;
-  servideWorker?: ServiceWorkerDto;
+  serviceWorker?: ServiceWorkerDto;
 }

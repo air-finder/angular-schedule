@@ -20,16 +20,22 @@ export class ScheduleForm extends FormGroup<ScheduleFormModel> {
     });
   }
 
-  public GetAppointmentRequest(description: string): PostAppointmentRequest {
+  public GetAppointmentRequest(): PostAppointmentRequest {
     if (!this.valid) throw new Error('Form is not valid');
     return {
       serviceWorkerId: this.serviceStep.serviceWorkerId.value,
       start: DateHelper.getTicksFromDate(this.scheduleStep.start.value!),
       end: DateHelper.getTicksFromDate(this.scheduleStep.end.value!),
-      description: description,
+      services: this.getServices(),
       email: this.personalStep.email.value,
       phone: this.personalStep.phone.value,
       name: this.personalStep.name.value
     }
+  }
+
+  private getServices() {
+    return Object.keys(this.serviceStep.services.value)
+      .filter(key => this.serviceStep.services.value[key])
+      .reduce((acc, service) => acc !== "" ? `${acc};${service}` : service, '');
   }
 }

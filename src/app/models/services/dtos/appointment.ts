@@ -1,11 +1,12 @@
 import { AppointmentStatus } from "../enums/appointment-status";
+import { Service } from "./service";
 
 export interface Appointment {
   id: string;
   serviceWorkerId: string;
   start: number;
   end: number;
-  description: string;
+  services: Service[];
   status: AppointmentStatus;
   email?: string;
   phone?: string;

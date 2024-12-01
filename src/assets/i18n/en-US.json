@@ -119,7 +119,18 @@
     "manage-services": {
       "title": "Manage services",
       "add-service": "Add service",
-      "current-services": "Current services"
+      "current-services": "Current services",
+      "empty-list": "No services added yet"
+    },
+    "manage-workers": {
+      "title": "Manage workers",
+      "add-worker": "Add worker",
+      "work-start": "Work start",
+      "work-end": "Work end",
+      "add-me": "Add me as a worker",
+      "worker": "Worker details",
+      "current-workers": "Current workers",
+      "empty-list": "No workers added yet"
     }
   },
   "form-field": {

@@ -1,6 +1,6 @@
 import { computed, Injectable, signal } from '@angular/core';
 
-const DEFAULT_TITLE = 'AirFinder';
+const DEFAULT_TITLE = 'CB Agenda';
 
 @Injectable({
   providedIn: 'root'

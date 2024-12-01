@@ -1,0 +1,9 @@
+<div class="worker__status" 
+  [class.worker__status--active]="worker().status === status.Active"
+  [class.worker__status--pending]="worker().status === status.Pending"
+  [class.worker__status--inactive]="worker().status === status.Inactive">
+</div>
+<h3 class="worker__name">{{worker().name}}</h3>
+<button icon-button class="worker__delete-button" (click)="deleteWorker()">
+  <icon custom-icon icon="delete"></icon>
+</button>

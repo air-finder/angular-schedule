@@ -1,7 +1,8 @@
 import { HttpContextToken, HttpErrorResponse, HttpHeaders, HttpInterceptorFn } from '@angular/common/http';
 import { AuthService } from '../../service/auth.service';
 import { inject, InjectionToken } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { catchError, tap, throwError } from 'rxjs';
+import { UserService } from '@services/user/user.service';
 
 const lang = 'pt-BR';
 export const headersAllowOrigin = new HttpHeaders({'Access-Control-Allow-Origin': '*'});
@@ -10,6 +11,7 @@ export const skipBearerToken = new HttpContextToken(() => false)
 
 export const authorizeInterceptor: HttpInterceptorFn = (req, next) => {
   const _authService = inject(AuthService);
+  const _userService = inject(UserService);
 
   if (!req.context.get(skipBearerToken)) {
     req = req.clone({
@@ -20,10 +22,14 @@ export const authorizeInterceptor: HttpInterceptorFn = (req, next) => {
     });
   }
   
-  return next(req).pipe(catchError(handleError));
+  return next(req).pipe(
+    tap({ error: err => {
+      if(err.status === 401) _userService.refreshToken();
+    }}),
+    catchError(handleError)
+  );
 };
 
 function handleError(err: HttpErrorResponse){  
   return throwError(() => err);
 }
-

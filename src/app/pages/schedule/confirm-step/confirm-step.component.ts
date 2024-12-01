@@ -16,7 +16,7 @@ export class ConfirmStepComponent {
   form = input.required<ScheduleForm>();
   private _providerService = inject(ServiceProviderService);
   public worker$ = computed(() => 
-    this._providerService.workers$().find(worker => worker.id === this.form().serviceStep.serviceWorkerId.value)?.worker.person.name
+    this._providerService.workers$().find(worker => worker.id === this.form().serviceStep.serviceWorkerId.value)?.name
   );
   protected services$ = computed<ServiceSummary[]>(() => {
     const ids = Object.keys(this.form().serviceStep.services.value).filter(key => this.form().serviceStep.services.value[key]);

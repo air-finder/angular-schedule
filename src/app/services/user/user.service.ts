@@ -6,17 +6,31 @@ import { ForgotPasswordRequest } from '../../models/services/users/forgot-passwo
 import { ForgotPasswordCodeRequest } from '../../models/services/users/forgot-password-code.request';
 import { ForgotPasswordUpdateRequest } from '../../models/services/users/forgot-password-update.request';
 import { environment } from '../../../environments/environment';
+import { LoginResponse } from '@models/services/users/login.response';
+import { AuthService } from '@core/service/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService extends BaseService {
-  constructor() {
+  constructor(
+    private _authService: AuthService,
+  ) {
     super(environment.authUrl, "user");
   }
 
   async login(request: LoginRequest) {
-    return await this.PostAsync<string>('', request);
+    return await this.PostAsync<LoginResponse>('', request)
+      .then(response => this._authService.login(response.result));
+  }
+
+  async refreshToken() {
+    const refreshToken = this._authService.refreshToken();
+    if (refreshToken) {
+      return await this.PostAsync<LoginResponse>('refresh-token', { refreshToken: refreshToken })
+        .then(response => this._authService.login(response.result));
+    }
+    this._authService.logout();
   }
 
   async password(request: UpdatePasswordRequest) {

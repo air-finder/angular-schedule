@@ -3,7 +3,7 @@
   @for (item of workers$(); track $index) {
     <form-field controlName="serviceWorkerId" type="check">
       <input type="radio" [id]="'worker-'+$index" formControlName="serviceWorkerId" [value]="item.id">
-      <label [for]="'worker-'+$index">{{ item.worker.person.name }}</label>
+      <label [for]="'worker-'+$index">{{ item.name }}</label>
     </form-field>
   }
 </form>

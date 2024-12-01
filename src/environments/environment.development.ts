@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  scheduleUrl: 'https://localhost:5000',
+  scheduleUrl: 'https://schedule-api.bvsilva.com',
   authUrl: 'https://auth-api.bvsilva.com',
 }

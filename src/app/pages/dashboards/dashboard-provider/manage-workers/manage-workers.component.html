@@ -1,1 +1,3 @@
-<p>manage-workers works!</p>
+<h1>{{'pages.manage-workers.title' | translate}}</h1>
+<app-manage-workers-create (onCreate)="list.refreshList()"></app-manage-workers-create>
+<app-manage-workers-list #list></app-manage-workers-list>

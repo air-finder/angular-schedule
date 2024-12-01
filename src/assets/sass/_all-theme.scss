@@ -7,6 +7,7 @@
 @use '../../app/shared/components/calendar/calendar.theme' as calendar;
 @use 'themes/components/input-theme' as input;
 @use '../../app/shared/components/card/card' as card;
+@use '../../app/shared/components/pill/pill.theme' as pill;
 
 @mixin all-components-theme($theme) {
   @include project-theme($theme);
@@ -19,6 +20,7 @@
   @include layout.get-theme($theme);
   @include calendar.get-theme($theme);
   @include card.get-theme($theme);
+  @include pill.get-theme($theme);
 }
 
 @mixin project-theme($theme) {
@@ -28,6 +30,7 @@
   $secondary: map-get($theme, secondary);
   * {
     color: map-get($foreground, base);
+    color-scheme: map-get($foreground, color-scheme);
   }
   .outside-layout {
     background: linear-gradient(map-get($primary, default), map-get($secondary, default));

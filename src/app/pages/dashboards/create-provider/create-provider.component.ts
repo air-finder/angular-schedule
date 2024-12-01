@@ -10,6 +10,7 @@ import { StepComponent } from "../../../shared/components/stepper/step/step.comp
 import { ProviderStepComponent } from "./provider-step/provider-step.component";
 import { LocationStepComponent } from "./location-step/location-step.component";
 import { ConfirmStepComponent } from './confirm-step/confirm-step.component';
+import { UserService } from '@services/user/user.service';
 
 @Component({
   selector: 'app-create-provider',
@@ -35,15 +36,11 @@ export class CreateProviderComponent {
 
   constructor(
     private _providerService: ServiceProviderService,
+    private _userService: UserService,
     private _router: Router
   ) {}
 
   submit() {
-    // if(this.form.invalid || this.loading) return;
-    // this.loading = true;
-    // this._providerService.createProvider((this.form as CreateProviderForm).getRequest())
-    //   .then(() => this._router.navigate(['/']))
-    //   .finally(() => this.loading = false);
     switch (this._stepper()?.currentIndex()) {
       case 0:
       case 1:
@@ -54,7 +51,10 @@ export class CreateProviderComponent {
         this.loading = true;
         this._providerService.createProvider((this.form as CreateProviderForm).getRequest())
           .then(() => this._router.navigate(['/']))
-          .finally(() => this.loading = false);
+          .finally(() => {
+            this._userService.refreshToken();
+            this.loading = false
+          });
     }
   }
 

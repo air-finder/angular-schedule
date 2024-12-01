@@ -1,0 +1,9 @@
+.form-row, .buttons-row {
+  display: flex;
+  gap: .5rem;
+  margin-top: .5rem
+}
+
+.worker-fieldset {
+  border-radius: .5rem;
+}

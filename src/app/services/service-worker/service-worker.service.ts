@@ -16,7 +16,7 @@ export class ServiceWorkerService extends BaseService{
   public availableTimes$ = this._availableTimes.asReadonly();
 
   constructor() {
-    super(environment.scheduleUrl, "serviceworker");
+    super(environment.scheduleUrl, "serviceWorker");
   }
 
   async getAvailableDays(params: GetAvailableDaysRequest) {
@@ -33,6 +33,10 @@ export class ServiceWorkerService extends BaseService{
         this._availableTimes.set(dates.result.map(date => DateHelper.getDateFromTicks(date)));
         return dates;
       });
+  }
+
+  async delete(workerId: string) {
+    return await this.DeleteAsync(`${workerId}`);
   }
 
   resetTimes() {

@@ -40,7 +40,6 @@ export class LoginComponent {
     this.loading.set(true);
     this.userService
       .login(this.form.value as LoginRequest)
-      .then(r => this.authService.login(r.result))
       .then(() => this._router.navigate(['']))
       .finally(() => this.loading.set(false));
   }
