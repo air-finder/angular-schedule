@@ -10,18 +10,17 @@ import { Router } from '@angular/router';
 import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
-  selector: 'app-forgot-password',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    TranslateModule,
-    FormFieldComponent,
-    StepperComponent,
-    StepComponent,
-    ButtonComponent
-  ],
-  templateUrl: './forgot-password.component.html',
-  styleUrl: './forgot-password.component.scss'
+    selector: 'app-forgot-password',
+    imports: [
+        ReactiveFormsModule,
+        TranslateModule,
+        FormFieldComponent,
+        StepperComponent,
+        StepComponent,
+        ButtonComponent
+    ],
+    templateUrl: './forgot-password.component.html',
+    styleUrl: './forgot-password.component.scss'
 })
 export class ForgotPasswordComponent {
   form = new ForgotPasswordForm();

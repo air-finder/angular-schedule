@@ -8,17 +8,16 @@ import { Service } from '@models/services/dtos/service';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-select-services',
-  standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    FormFieldComponent,
-    CurrencyPipe,
-    TranslateModule
-  ],
-  templateUrl: './select-services.component.html',
-  styleUrl: './select-services.component.scss'
+    selector: 'app-select-services',
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        FormFieldComponent,
+        CurrencyPipe,
+        TranslateModule
+    ],
+    templateUrl: './select-services.component.html',
+    styleUrl: './select-services.component.scss'
 })
 export class SelectServicesComponent implements AfterViewInit {
   private _providerService = inject(ServiceProviderService);

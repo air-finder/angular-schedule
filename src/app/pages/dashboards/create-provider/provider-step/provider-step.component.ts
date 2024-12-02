@@ -5,16 +5,15 @@ import { CreateProviderFirstStepFormModel } from '@models/pages/dashboard/create
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-provider-step',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FormFieldComponent
-  ],
-  templateUrl: './provider-step.component.html',
-  styleUrl: './provider-step.component.scss'
+    selector: 'app-provider-step',
+    imports: [
+        TranslateModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FormFieldComponent
+    ],
+    templateUrl: './provider-step.component.html',
+    styleUrl: './provider-step.component.scss'
 })
 export class ProviderStepComponent {
   form = input.required<FormGroup<CreateProviderFirstStepFormModel>>();

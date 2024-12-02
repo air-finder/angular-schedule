@@ -11,18 +11,17 @@ import { ScheduleStepFormModel } from '@models/pages/schedule/schedule-step/sche
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-schedule-step',
-  standalone: true,
-  imports: [
-    CalendarComponent,
-    ButtonComponent,
-    DatePipe,
-    FormsModule,
-    ReactiveFormsModule,
-    TranslateModule
-  ],
-  templateUrl: './schedule-step.component.html',
-  styleUrl: './schedule-step.component.scss'
+    selector: 'app-schedule-step',
+    imports: [
+        CalendarComponent,
+        ButtonComponent,
+        DatePipe,
+        FormsModule,
+        ReactiveFormsModule,
+        TranslateModule
+    ],
+    templateUrl: './schedule-step.component.html',
+    styleUrl: './schedule-step.component.scss'
 })
 export class ScheduleStepComponent implements AfterViewInit {
   scheduleStep$ = model.required<ScheduleStepModel>();

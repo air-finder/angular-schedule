@@ -2,11 +2,10 @@ import { Component, ElementRef, NgZone } from '@angular/core';
 import { AnchorBase, ButtonBase } from './button-base';
 
 @Component({
-  selector: 'button[custom-button], button[custom-link]',
-  standalone: true,
-  imports: [],
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.scss'
+    selector: 'button[custom-button], button[custom-link]',
+    imports: [],
+    templateUrl: './button.component.html',
+    styleUrl: './button.component.scss'
 })
 export class ButtonComponent extends ButtonBase {
   constructor(
@@ -18,11 +17,10 @@ export class ButtonComponent extends ButtonBase {
 }
 
 @Component({
-  selector: 'a[custom-button], a[custom-link]',
-  standalone: true,
-  imports: [],
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.scss'
+    selector: 'a[custom-button], a[custom-link]',
+    imports: [],
+    templateUrl: './button.component.html',
+    styleUrl: './button.component.scss'
 })
 export class AnchorComponent extends AnchorBase {
   constructor(

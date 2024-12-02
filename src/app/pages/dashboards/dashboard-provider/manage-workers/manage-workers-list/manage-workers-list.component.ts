@@ -5,14 +5,13 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
 
 @Component({
-  selector: 'app-manage-workers-list',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    WorkerCardComponent
-  ],
-  templateUrl: './manage-workers-list.component.html',
-  styleUrl: './manage-workers-list.component.scss'
+    selector: 'app-manage-workers-list',
+    imports: [
+        TranslateModule,
+        WorkerCardComponent
+    ],
+    templateUrl: './manage-workers-list.component.html',
+    styleUrl: './manage-workers-list.component.scss'
 })
 export class ManageWorkersListComponent implements AfterViewInit {
 

@@ -7,16 +7,15 @@ import { ViaCepService } from '@services/via-cep/via-cep.service';
 import { lastValueFrom } from 'rxjs';
 
 @Component({
-  selector: 'app-location-step',
-  standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    TranslateModule,
-    FormFieldComponent
-  ],
-  templateUrl: './location-step.component.html',
-  styleUrl: './location-step.component.scss'
+    selector: 'app-location-step',
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        TranslateModule,
+        FormFieldComponent
+    ],
+    templateUrl: './location-step.component.html',
+    styleUrl: './location-step.component.scss'
 })
 export class LocationStepComponent implements AfterViewInit {
   form = input.required<FormGroup<CreateProviderSecondStepFormModel>>();

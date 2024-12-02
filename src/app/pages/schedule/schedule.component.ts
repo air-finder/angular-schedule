@@ -17,20 +17,19 @@ import { DatePipe } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-schedule',
-  standalone: true,
-  imports: [
-    StepperComponent,
-    StepComponent,
-    ButtonComponent,
-    ServiceStepComponent,
-    ScheduleStepComponent,
-    PersonalStepComponent,
-    ConfirmStepComponent,
-    TranslateModule
-],
-  templateUrl: './schedule.component.html',
-  styleUrl: './schedule.component.scss'
+    selector: 'app-schedule',
+    imports: [
+        StepperComponent,
+        StepComponent,
+        ButtonComponent,
+        ServiceStepComponent,
+        ScheduleStepComponent,
+        PersonalStepComponent,
+        ConfirmStepComponent,
+        TranslateModule
+    ],
+    templateUrl: './schedule.component.html',
+    styleUrl: './schedule.component.scss'
 })
 export class ScheduleComponent implements AfterViewInit {
   private _stepper = viewChild(StepperComponent);

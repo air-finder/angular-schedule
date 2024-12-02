@@ -3,11 +3,10 @@ import { StepComponent } from './step/step.component';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'stepper',
-  standalone: true,
-  imports: [ TranslateModule ],
-  templateUrl: './stepper.component.html',
-  styleUrl: './stepper.component.scss'
+    selector: 'stepper',
+    imports: [TranslateModule],
+    templateUrl: './stepper.component.html',
+    styleUrl: './stepper.component.scss'
 })
 export class StepperComponent {
   steps = contentChildren(StepComponent);

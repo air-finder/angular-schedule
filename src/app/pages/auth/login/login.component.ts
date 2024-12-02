@@ -9,19 +9,18 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AnchorComponent, ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    FormFieldComponent,
-    AnchorComponent,
-    ButtonComponent,
-    TranslateModule,
-    RouterLink
-  ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+    selector: 'app-login',
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        FormFieldComponent,
+        AnchorComponent,
+        ButtonComponent,
+        TranslateModule,
+        RouterLink
+    ],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.scss'
 })
 export class LoginComponent {
   form = new FormGroup({

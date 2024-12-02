@@ -4,15 +4,14 @@ import { ManageServicesCreateComponent } from "./manage-services-create/manage-s
 import { ManageServicesListComponent } from "./manage-services-list/manage-services-list.component";
 
 @Component({
-  selector: 'app-manage-services',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    ManageServicesCreateComponent,
-    ManageServicesListComponent
-],
-  templateUrl: './manage-services.component.html',
-  styleUrl: './manage-services.component.scss'
+    selector: 'app-manage-services',
+    imports: [
+        TranslateModule,
+        ManageServicesCreateComponent,
+        ManageServicesListComponent
+    ],
+    templateUrl: './manage-services.component.html',
+    styleUrl: './manage-services.component.scss'
 })
 export class ManageServicesComponent {
 }

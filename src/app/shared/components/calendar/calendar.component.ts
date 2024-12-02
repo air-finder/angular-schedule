@@ -6,19 +6,18 @@ import { IconComponent } from '../icon/icon.component';
 import { DateCalendar } from './models/date-calendar';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 @Component({
-  selector: 'calendar',
-  standalone: true,
-  imports: [
-    DatePipe,
-    TranslateModule,
-    IconButtonComponent,
-    IconComponent
-  ],
-  templateUrl: './calendar.component.html',
-  styleUrl: './calendar.component.scss',
-  host: {
-    class: 'calendar'
-  }
+    selector: 'calendar',
+    imports: [
+        DatePipe,
+        TranslateModule,
+        IconButtonComponent,
+        IconComponent
+    ],
+    templateUrl: './calendar.component.html',
+    styleUrl: './calendar.component.scss',
+    host: {
+        class: 'calendar'
+    }
 })
 export class CalendarComponent implements OnInit, ControlValueAccessor {
 

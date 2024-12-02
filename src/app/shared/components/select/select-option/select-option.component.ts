@@ -2,14 +2,13 @@ import { Component, HostListener, inject, input, model, signal } from '@angular/
 import { SelectComponent } from '../select.component';
 
 @Component({
-  selector: 'select-option',
-  standalone: true,
-  imports: [],
-  template: `{{ display() }}`,
-  styleUrl: './select-option.component.scss',
-  host: {
-    class: 'select-option',
-  }
+    selector: 'select-option',
+    imports: [],
+    template: `{{ display() }}`,
+    styleUrl: './select-option.component.scss',
+    host: {
+        class: 'select-option',
+    }
 })
 export class SelectOptionComponent<T> {
   value = model.required<T>();

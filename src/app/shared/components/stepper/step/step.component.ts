@@ -2,20 +2,19 @@ import { Component, computed, effect, ElementRef, input, Renderer2, viewChild } 
 import { StepperComponent } from '../stepper.component';
 
 @Component({
-  selector: 'step',
-  standalone: true,
-  imports: [],
-  templateUrl: './step.component.html',
-  styleUrl: './step.component.scss',
-  host: {
-    '[class.first-step]': 'firstStep()',
-    '[class.last-step]': 'lastStep()',
-    '[class.passed-step]': 'passedStep()',
-    '[class.disabled]': 'disabled()',
-    '[class.active]': 'active()',
-    id: `step-{{stepPosition()}}`,
-    ngSkipHydration: 'true'
-  }
+    selector: 'step',
+    imports: [],
+    templateUrl: './step.component.html',
+    styleUrl: './step.component.scss',
+    host: {
+        '[class.first-step]': 'firstStep()',
+        '[class.last-step]': 'lastStep()',
+        '[class.passed-step]': 'passedStep()',
+        '[class.disabled]': 'disabled()',
+        '[class.active]': 'active()',
+        id: `step-{{stepPosition()}}`,
+        ngSkipHydration: 'true'
+    }
 })
 export class StepComponent {
   content = viewChild<ElementRef<HTMLElement>>('content');

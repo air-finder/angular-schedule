@@ -6,15 +6,14 @@ import { ButtonComponent } from '@components/button/button.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboards',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    ButtonComponent,
-    RouterLink
-  ],
-  templateUrl: './dashboards.component.html',
-  styleUrl: './dashboards.component.scss'
+    selector: 'app-dashboards',
+    imports: [
+        TranslateModule,
+        ButtonComponent,
+        RouterLink
+    ],
+    templateUrl: './dashboards.component.html',
+    styleUrl: './dashboards.component.scss'
 })
 export class DashboardsComponent {
   protected Scopes = Scopes;

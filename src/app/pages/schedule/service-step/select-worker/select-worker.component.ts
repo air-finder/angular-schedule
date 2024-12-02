@@ -6,16 +6,15 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ServiceStepFormModel } from '@models/pages/schedule/service-step/service-step-form.model';
 
 @Component({
-  selector: 'app-select-worker',
-  standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    FormFieldComponent,
-    TranslateModule
-],
-  templateUrl: './select-worker.component.html',
-  styleUrl: './select-worker.component.scss'
+    selector: 'app-select-worker',
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        FormFieldComponent,
+        TranslateModule
+    ],
+    templateUrl: './select-worker.component.html',
+    styleUrl: './select-worker.component.scss'
 })
 export class SelectWorkerComponent implements OnInit {
   public serviceProviderId$ = input.required<string>();

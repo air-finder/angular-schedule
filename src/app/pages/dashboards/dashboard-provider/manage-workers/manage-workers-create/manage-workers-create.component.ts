@@ -8,17 +8,16 @@ import { ButtonComponent } from '@components/button/button.component';
 import { UserService } from '@services/user/user.service';
 
 @Component({
-  selector: 'app-manage-workers-create',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FormFieldComponent,
-    ButtonComponent
-],
-  templateUrl: './manage-workers-create.component.html',
-  styleUrl: './manage-workers-create.component.scss'
+    selector: 'app-manage-workers-create',
+    imports: [
+        TranslateModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FormFieldComponent,
+        ButtonComponent
+    ],
+    templateUrl: './manage-workers-create.component.html',
+    styleUrl: './manage-workers-create.component.scss'
 })
 export class ManageWorkersCreateComponent {
 

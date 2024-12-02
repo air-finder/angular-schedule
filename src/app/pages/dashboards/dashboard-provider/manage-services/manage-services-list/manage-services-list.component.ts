@@ -8,17 +8,16 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
 
 @Component({
-  selector: 'app-manage-services-list',
-  standalone: true,
-  imports: [
-    IconButtonComponent,
-    IconComponent,
-    CurrencyPipe,
-    CardComponent,
-    TranslateModule
-  ],
-  templateUrl: './manage-services-list.component.html',
-  styleUrl: './manage-services-list.component.scss'
+    selector: 'app-manage-services-list',
+    imports: [
+        IconButtonComponent,
+        IconComponent,
+        CurrencyPipe,
+        CardComponent,
+        TranslateModule
+    ],
+    templateUrl: './manage-services-list.component.html',
+    styleUrl: './manage-services-list.component.scss'
 })
 export class ManageServicesListComponent implements AfterViewInit {
 

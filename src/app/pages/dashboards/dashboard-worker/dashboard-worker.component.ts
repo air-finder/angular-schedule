@@ -9,17 +9,16 @@ import { CurrencyPipe, DatePipe } from '@angular/common';
 import { DateHelper } from '@helpers/date.helper';
 
 @Component({
-  selector: 'app-dashboard-worker',
-  standalone: true,
-  imports: [
-    CardComponent,
-    IconButtonComponent,
-    IconComponent,
-    CurrencyPipe,
-    DatePipe
-  ],
-  templateUrl: './dashboard-worker.component.html',
-  styleUrl: './dashboard-worker.component.scss'
+    selector: 'app-dashboard-worker',
+    imports: [
+        CardComponent,
+        IconButtonComponent,
+        IconComponent,
+        CurrencyPipe,
+        DatePipe
+    ],
+    templateUrl: './dashboard-worker.component.html',
+    styleUrl: './dashboard-worker.component.scss'
 })
 export class DashboardWorkerComponent implements OnInit {
   protected appointments$ = signal<Appointment[]>([]);

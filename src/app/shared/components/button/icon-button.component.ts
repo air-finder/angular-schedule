@@ -2,11 +2,10 @@ import { Component, ElementRef, NgZone } from '@angular/core';
 import { AnchorBase, ButtonBase } from './button-base';
 
 @Component({
-  selector: 'button[icon-button],button[mini-icon-button]',
-  standalone: true,
-  imports: [],
-  templateUrl: './icon-button.component.html',
-  styleUrl: './icon-button.component.scss'
+    selector: 'button[icon-button],button[mini-icon-button]',
+    imports: [],
+    templateUrl: './icon-button.component.html',
+    styleUrl: './icon-button.component.scss'
 })
 export class IconButtonComponent extends ButtonBase {
   constructor(
@@ -18,11 +17,10 @@ export class IconButtonComponent extends ButtonBase {
 }
 
 @Component({
-  selector: 'a[icon-button],a[mini-icon-button]',
-  standalone: true,
-  imports: [],
-  templateUrl: './icon-button.component.html',
-  styleUrl: './icon-button.component.scss'
+    selector: 'a[icon-button],a[mini-icon-button]',
+    imports: [],
+    templateUrl: './icon-button.component.html',
+    styleUrl: './icon-button.component.scss'
 })
 export class IconAnchorComponent extends AnchorBase {
   constructor(

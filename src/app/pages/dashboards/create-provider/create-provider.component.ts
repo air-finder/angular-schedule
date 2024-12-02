@@ -13,21 +13,20 @@ import { ConfirmStepComponent } from './confirm-step/confirm-step.component';
 import { UserService } from '@services/user/user.service';
 
 @Component({
-  selector: 'app-create-provider',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ButtonComponent,
-    StepperComponent,
-    StepComponent,
-    ProviderStepComponent,
-    LocationStepComponent,
-    ConfirmStepComponent
-],
-  templateUrl: './create-provider.component.html',
-  styleUrl: './create-provider.component.scss'
+    selector: 'app-create-provider',
+    imports: [
+        TranslateModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ButtonComponent,
+        StepperComponent,
+        StepComponent,
+        ProviderStepComponent,
+        LocationStepComponent,
+        ConfirmStepComponent
+    ],
+    templateUrl: './create-provider.component.html',
+    styleUrl: './create-provider.component.scss'
 })
 export class CreateProviderComponent {
   form = new CreateProviderForm();

@@ -5,10 +5,9 @@ import { TranslateModule } from '@ngx-translate/core';
 type ContainerType = 'check' | 'container'
 
 @Component({
-  selector: 'form-field',
-  standalone: true,
-  imports: [ TranslateModule ],
-  template: `
+    selector: 'form-field',
+    imports: [TranslateModule],
+    template: `
     <ng-content select='input[type=radio], input[type=checkbox]'></ng-content>
     <ng-content select="label"></ng-content>
     @if(this.control?.hasValidator(requiredValidator) && type() !== "check") {
@@ -23,13 +22,13 @@ type ContainerType = 'check' | 'container'
       </div>
     }
   `,
-  styleUrl: './form-field.component.scss',
-  viewProviders: [
-    { provide: ControlContainer, useFactory: () => inject(ControlContainer, {skipSelf: true}) }
-  ],
-  host: {
-    '[class.check-container]': 'type() === "check"',
-  }
+    styleUrl: './form-field.component.scss',
+    viewProviders: [
+        { provide: ControlContainer, useFactory: () => inject(ControlContainer, { skipSelf: true }) }
+    ],
+    host: {
+        '[class.check-container]': 'type() === "check"',
+    }
 })
 export class FormFieldComponent {
   protected requiredValidator = Validators.required;

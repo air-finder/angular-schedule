@@ -6,20 +6,19 @@ import { AuthService } from '../core/service/auth.service';
 import { SessionUserService } from '../core/service/session-user.service';
 
 @Component({
-  selector: 'app-layout',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    TranslateModule,
-    AnchorComponent,
-    ButtonComponent,
-    RouterLink
-  ],
-  templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss',
-  host: {
-    class: 'main-layout'
-  }
+    selector: 'app-layout',
+    imports: [
+        RouterOutlet,
+        TranslateModule,
+        AnchorComponent,
+        ButtonComponent,
+        RouterLink
+    ],
+    templateUrl: './layout.component.html',
+    styleUrl: './layout.component.scss',
+    host: {
+        class: 'main-layout'
+    }
 })
 export class LayoutComponent {
   currentYear = new Date().getFullYear();

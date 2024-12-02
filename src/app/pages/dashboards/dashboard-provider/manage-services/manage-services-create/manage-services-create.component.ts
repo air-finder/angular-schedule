@@ -9,17 +9,16 @@ import { SessionUserService } from '@core/service/session-user.service';
 import { CreateServiceFormModel } from '@models/pages/dashboard/service-create-form.model';
 
 @Component({
-  selector: 'app-manage-services-create',
-  standalone: true,
-  imports: [    
-    FormsModule,
-    ReactiveFormsModule,
-    FormFieldComponent,
-    ButtonComponent,
-    TranslateModule
-  ],
-  templateUrl: './manage-services-create.component.html',
-  styleUrl: './manage-services-create.component.scss'
+    selector: 'app-manage-services-create',
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        FormFieldComponent,
+        ButtonComponent,
+        TranslateModule
+    ],
+    templateUrl: './manage-services-create.component.html',
+    styleUrl: './manage-services-create.component.scss'
 })
 export class ManageServicesCreateComponent {
   public onCreate = output();

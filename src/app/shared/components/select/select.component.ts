@@ -5,13 +5,12 @@ import { SelectOptionComponent } from './select-option/select-option.component';
 import { IconComponent } from '../icon/icon.component';
 
 @Component({
-  selector: 'custom-select',
-  standalone: true,
-  imports: [
-    FormsModule,
-    IconComponent
-  ],
-  template: `
+    selector: 'custom-select',
+    imports: [
+        FormsModule,
+        IconComponent
+    ],
+    template: `
     <input #input type="text" [ngModel]="display()" (focus)="openned.set(true)" (focusout)="onTouched && onTouched()" readonly
       [disabled]="isDisabled()" [placeholder]="placeholder()"/>
     <icon custom-icon [icon]="selectIcon()" class="select-icon"></icon>
@@ -21,7 +20,7 @@ import { IconComponent } from '../icon/icon.component';
       </div>
     }
   `,
-  styleUrl: './select.component.scss'
+    styleUrl: './select.component.scss'
 })
 export class SelectComponent<T> implements ControlValueAccessor {
   multiple = input(false, {transform: booleanAttribute});

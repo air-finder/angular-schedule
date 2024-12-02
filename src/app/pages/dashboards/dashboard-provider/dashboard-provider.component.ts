@@ -6,15 +6,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
 
 @Component({
-  selector: 'app-dashboard-provider',
-  standalone: true,
-  imports: [
-    ButtonComponent,
-    TranslateModule,
-    RouterLink
-  ],
-  templateUrl: './dashboard-provider.component.html',
-  styleUrl: './dashboard-provider.component.scss'
+    selector: 'app-dashboard-provider',
+    imports: [
+        ButtonComponent,
+        TranslateModule,
+        RouterLink
+    ],
+    templateUrl: './dashboard-provider.component.html',
+    styleUrl: './dashboard-provider.component.scss'
 })
 export class DashboardProviderComponent {
 

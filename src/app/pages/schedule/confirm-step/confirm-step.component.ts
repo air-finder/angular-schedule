@@ -6,11 +6,10 @@ import { ServiceSummary } from '@models/pages/schedule/confirm-step/service-summ
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-confirm-step',
-  standalone: true,
-  imports: [ DatePipe, CurrencyPipe, TranslateModule ],
-  templateUrl: './confirm-step.component.html',
-  styleUrl: './confirm-step.component.scss',
+    selector: 'app-confirm-step',
+    imports: [DatePipe, CurrencyPipe, TranslateModule],
+    templateUrl: './confirm-step.component.html',
+    styleUrl: './confirm-step.component.scss'
 })
 export class ConfirmStepComponent {
   form = input.required<ScheduleForm>();

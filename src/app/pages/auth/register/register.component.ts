@@ -13,20 +13,19 @@ import { Router } from '@angular/router';
 import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    StepperComponent,
-    StepComponent,
-    FormFieldComponent,
-    SelectComponent,
-    SelectOptionComponent,
-    ButtonComponent,
-    TranslateModule
-  ],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+    selector: 'app-register',
+    imports: [
+        ReactiveFormsModule,
+        StepperComponent,
+        StepComponent,
+        FormFieldComponent,
+        SelectComponent,
+        SelectOptionComponent,
+        ButtonComponent,
+        TranslateModule
+    ],
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
   private _stepper = viewChild(StepperComponent);

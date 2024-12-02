@@ -7,15 +7,14 @@ import { DEFAULT_THEME, ThemeService } from './core/service/theme.service';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    ToastComponent
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  animations: [routeAnimations]
+    selector: 'app-root',
+    imports: [
+        RouterOutlet,
+        ToastComponent
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    animations: [routeAnimations]
 })
 export class AppComponent {
   constructor(

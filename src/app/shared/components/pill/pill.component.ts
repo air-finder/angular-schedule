@@ -3,16 +3,15 @@ import { Component, effect, ElementRef, input } from '@angular/core';
 type Theme = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info'
 
 @Component({
-  selector: 'app-pill',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: 'app-pill',
+    imports: [],
+    template: `
     <span class="pill-span"><ng-content></ng-content></span>    
   `,
-  styleUrl: './pill.component.scss',
-  host: {
-    class: 'pill'
-  }
+    styleUrl: './pill.component.scss',
+    host: {
+        class: 'pill'
+    }
 })
 export class PillComponent {
   theme = input<Theme>('primary');

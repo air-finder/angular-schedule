@@ -4,11 +4,10 @@ import { SelectWorkerComponent } from "./select-worker/select-worker.component";
 import { ServiceStepForm } from './service-step.form';
 
 @Component({
-  selector: 'app-service-step',
-  standalone: true,
-  imports: [SelectServicesComponent, SelectWorkerComponent],
-  templateUrl: './service-step.component.html',
-  styleUrl: './service-step.component.scss'
+    selector: 'app-service-step',
+    imports: [SelectServicesComponent, SelectWorkerComponent],
+    templateUrl: './service-step.component.html',
+    styleUrl: './service-step.component.scss'
 })
 export class ServiceStepComponent {
   public serviceProviderId$ = input.required<string>();

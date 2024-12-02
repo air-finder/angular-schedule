@@ -6,17 +6,16 @@ import { ServiceWorkerStatus } from '@models/services/enums/service-worker-statu
 import { ServiceWorkerService } from '@services/service-worker/service-worker.service';
 
 @Component({
-  selector: 'app-worker-card',
-  standalone: true,
-  imports: [
-    IconButtonComponent,
-    IconComponent
-],
-  templateUrl: './worker-card.component.html',
-  styleUrl: './worker-card.component.scss',
-  host: {
-    class: 'card'
-  }
+    selector: 'app-worker-card',
+    imports: [
+        IconButtonComponent,
+        IconComponent
+    ],
+    templateUrl: './worker-card.component.html',
+    styleUrl: './worker-card.component.scss',
+    host: {
+        class: 'card'
+    }
 })
 export class WorkerCardComponent {
   public worker = input.required<ServiceWorkerDto>();
