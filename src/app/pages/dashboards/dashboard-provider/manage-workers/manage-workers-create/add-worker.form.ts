@@ -25,7 +25,7 @@ export class AddWorkerForm extends FormGroup<AddWorkerFormModel> {
     super({
       "work-start": new FormControl<string | null>(null, [Validators.required]),
       "work-end": new FormControl<string | null>(null, [Validators.required]),
-      "add-me": new FormControl<boolean>(false),
+      "add-me": new FormControl<boolean | null>(false),
       worker: new WorkerForm()
     })
 
@@ -39,7 +39,7 @@ export class AddWorkerForm extends FormGroup<AddWorkerFormModel> {
     return {
       workStart: this.workStart.value!,
       workEnd: this.workEnd.value!,
-      addMe: this.addMe.value!,
+      addMe: !!this.addMe.value,
       worker: this.controls.worker ? this.worker.GetWorker() : undefined
     }
   }

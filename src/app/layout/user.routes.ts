@@ -7,7 +7,7 @@ import { FirstAccessRegisterComponent } from "@pages/auth/first-access-register/
 export const routes: Routes = [
   { path: 'login', title: 'Login', component: LoginComponent },
   { path: 'forgot-password', title: 'Forgot Password', component: ForgotPasswordComponent },
-  { path: 'register', title: 'Register', component: RegisterComponent },
   { path: 'register/:id', title: 'Register', component: FirstAccessRegisterComponent },
+  { path: 'register', title: 'Register', component: RegisterComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
