@@ -4,6 +4,6 @@
   [class.worker__status--inactive]="worker().status === status.Inactive">
 </div>
 <h3 class="worker__name">{{worker().name}}</h3>
-<button icon-button class="worker__delete-button" (click)="deleteWorker()">
-  <icon custom-icon icon="delete"></icon>
+<button bv-icon class="worker__delete-button" (click)="deleteWorker()">
+  <bv-icon icon="delete"></bv-icon>
 </button>

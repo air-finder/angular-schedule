@@ -1,9 +1,0 @@
-@mixin get-theme($theme) {
-  $background: map-get($theme, background);
-  .icon-button {
-    background-color: transparent;
-    &.disabled {
-      background-color: map-get($background, disabled);
-    }
-  }
-}

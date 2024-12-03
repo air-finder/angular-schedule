@@ -1,16 +1,11 @@
 import { Component, viewChild } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { StepperComponent } from '../../../shared/components/stepper/stepper.component';
-import { StepComponent } from '../../../shared/components/stepper/step/step.component';
 import { RegisterForm } from './register.form';
-import { FormFieldComponent } from '../../../shared/components/form-field/form-field.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { SelectComponent } from '../../../shared/components/select/select.component';
-import { SelectOptionComponent } from '../../../shared/components/select/select-option/select-option.component';
 import { Gender } from '../../../models/services/enums/gender';
 import { PeopleService } from '../../../services/people/people.service';
 import { Router } from '@angular/router';
-import { ButtonComponent } from '../../../shared/components/button/button.component';
+import { ButtonComponent, FormFieldComponent, SelectComponent, SelectOptionComponent, StepComponent, StepperComponent } from '@brunovbsilva/material';
 
 @Component({
     selector: 'app-register',
@@ -35,7 +30,7 @@ export class RegisterComponent {
   constructor(
     private _peopleService: PeopleService,
     private _router: Router
-  ) { }
+  ) {}
 
   checkDisabled(): boolean {
     switch(this._stepper()?.currentIndex()) {

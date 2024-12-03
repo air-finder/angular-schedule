@@ -1,9 +1,9 @@
 <h2>{{'pages.schedule.service-step.professional-select' | translate}}</h2>
 <form [formGroup]="form()">
   @for (item of workers$(); track $index) {
-    <form-field controlName="serviceWorkerId" type="check">
+    <bv-form-field controlName="serviceWorkerId" type="check">
       <input type="radio" [id]="'worker-'+$index" formControlName="serviceWorkerId" [value]="item.id">
       <label [for]="'worker-'+$index">{{ item.name }}</label>
-    </form-field>
+    </bv-form-field>
   }
 </form>

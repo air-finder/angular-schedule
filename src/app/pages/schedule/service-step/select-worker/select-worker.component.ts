@@ -1,9 +1,9 @@
 import { Component, inject, input, OnInit } from '@angular/core';
 import { ServiceProviderService } from '../../../../services/service-provider/service-provider.service';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormFieldComponent } from "../../../../shared/components/form-field/form-field.component";
 import { TranslateModule } from '@ngx-translate/core';
 import { ServiceStepFormModel } from '@models/pages/schedule/service-step/service-step-form.model';
+import { FormFieldComponent } from '@brunovbsilva/material';
 
 @Component({
     selector: 'app-select-worker',

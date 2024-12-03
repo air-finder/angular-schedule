@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormFieldComponent } from '@components/form-field/form-field.component';
+import { FormFieldComponent } from '@brunovbsilva/material';
 import { CreateProviderFirstStepFormModel } from '@models/pages/dashboard/create-provider-form-first-step.model';
 import { TranslateModule } from '@ngx-translate/core';
 

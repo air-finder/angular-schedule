@@ -2,7 +2,6 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Gender } from "../../../models/services/enums/gender";
 import { AddUserRequest } from "../../../models/services/people/add-user.request";
 import { CustomValidators } from "@validators/custom-validators";
-import { DateHelper } from "@helpers/date.helper";
 import { RegisterFormModel } from "@models/pages/auth/register/register-form.model";
 import { PersonStepRegisterFormModel } from "@models/pages/auth/register/person-step-register-form.model";
 import { UserStepRegisterFormModel } from "@models/pages/auth/register/user-step-register-form.model";
@@ -30,7 +29,7 @@ export class RegisterForm extends FormGroup<RegisterFormModel> {
         email: new FormControl<string | null>(null, [Validators.required, CustomValidators.emailValidator]),
         phone: new FormControl<string | null>(null, [Validators.required, CustomValidators.phoneValidator]),
         gender: new FormControl<Gender | null>(Gender.Unknown),
-        birthday: new FormControl<Date | null>(null)
+        birthday: new FormControl<string | null>(null, [Validators.required])
       }),
       user: new FormGroup<UserStepRegisterFormModel>({
         login: new FormControl<string | null>(null, [Validators.required, CustomValidators.usernameValidator]),
@@ -50,7 +49,7 @@ export class RegisterForm extends FormGroup<RegisterFormModel> {
       email: this.person.value.email!,
       phone: this.person.value.phone!,
       gender: this.person.value.gender!,
-      birthday: this.person.value.birthday == null ? undefined : DateHelper.getTicksFromDate(this.person.value.birthday),
+      birthday: this.person.value.birthday!,
       login: this.user.value.login!,
       password: this.user.value.password!
     };

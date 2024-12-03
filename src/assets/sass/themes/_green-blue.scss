@@ -1,6 +1,6 @@
-@use '../../palettes/blue' as blue-palette;
-@use '../../palettes/purple' as purple-palette;
-@use '../../theme';
+@use '../palettes/blue' as blue-palette;
+@use '../palettes/purple' as purple-palette;
+@use '../../../../node_modules/@brunovbsilva/material/assets/sass/theme';
 
 $light-theme: theme.define-light-theme((
   palettes: (

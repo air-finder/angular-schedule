@@ -1,0 +1,164 @@
+{
+  "shared": {
+    "primitive-entity": {
+      "name": "Nome",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "login": "Login",
+      "password": "Senha",
+      "confirm-password": "Confirmar senha",
+      "new-password": "Nova senha",
+      "description": "Descrição",
+      "utc-time": "Horário UTC",
+      "zip-code": "CEP",
+      "street": "Rua",
+      "number": "Número",
+      "neighborhood": "Bairro",
+      "city": "Cidade",
+      "state": "Estado",
+      "country": "País",
+      "duration": "Duração",
+      "price": "Preço",
+      "birthday": "Data de nascimento"
+    },
+    "actions": {
+      "submit": "Enviar",
+      "next": "Próximo",
+      "back": "Voltar",
+      "cancel": "Cancelar",
+      "confirm": "Confirmar",
+      "previous": "Anterior",
+      "enter": "Entrar",
+      "clear": "Limpar"
+    }
+  },
+  "header": {
+    "buttons": {
+      "enter": "Entrar",
+      "logout": "Sair"
+    }
+  },
+  "footer": {
+    "links": {
+      "about": "Sobre",
+      "contact": "Contato",
+      "terms": "Termos",
+      "privacy": "Privacidade"
+    }
+  },
+  "pages": {
+    "login": {
+      "title": "Login",
+      "forgot-password-click": "Clique aqui",
+      "not-registered-yet": "Ainda não está registrado?",
+      "did-you-forget-your-password": "Esqueceu sua senha?",
+      "register-click": "Crie sua conta aqui"
+    },
+    "forgot-password": {
+      "forgot-password": "Esqueceu a senha",
+      "code": "Código"
+    },
+    "register": {
+      "register": "Registrar",
+      "gender": "Gênero",
+      "gender-male": "Masculino",
+      "gender-female": "Feminino",
+      "gender-unknown": "Prefiro não dizer",
+      "terms": "Termos e condições",
+      "privacy": "Política de privacidade",
+      "agree-terms": "Eu concordo com os termos e condições",
+      "agree-privacy": "Eu concordo com a política de privacidade",
+      "register-now": "Registrar agora",
+      "steps": {
+        "personal": "Pessoal",
+        "account": "Conta",
+        "terms": "Termos"
+      }
+    },
+    "schedule": {
+      "confirm-step": {
+        "title": "Confirme sua consulta",
+        "services": "Serviços",
+        "worker": "Profissional",
+        "schedule": "Agendamento",
+        "from": "De",
+        "to": "Até",
+        "personal-information": "Informações pessoais",
+        "total": "Total",
+        "payments-information": "** Não recebemos pagamentos por aqui; você pagará diretamente ao profissional **"
+      },
+      "schedule-step": {
+        "select-day": "Selecione um dia",
+        "select-time": "Selecione um horário",
+        "select-time-placeholder": "Selecione um dia para escolher o horário"
+      },
+      "service-step": {
+        "professional-select": "Selecione um profissional",
+        "service-select": "Selecione o serviço desejado"
+      }
+    },
+    "dashboard": {
+      "title": "Bem-vindo",
+      "subtitle": "O que você deseja visualizar hoje?",
+      "provider": "Painel do fornecedor",
+      "create-provider": "Registrar um fornecedor",
+      "worker": "Painel do profissional",
+      "user": "Configurações do usuário"
+    },
+    "create-provider": {
+      "confirm-step": {
+        "title": "Confirme suas informações",
+        "provider": "Fornecedor",
+        "location": "Localização"
+      }
+    },
+    "dashboard-provider": {
+      "service": "Gerenciar serviços",
+      "worker": "Gerenciar profissionais",
+      "analitics": "Ver análises"
+    },
+    "manage-services": {
+      "title": "Gerenciar serviços",
+      "add-service": "Adicionar serviço",
+      "current-services": "Serviços atuais",
+      "empty-list": "Nenhum serviço adicionado ainda"
+    },
+    "manage-workers": {
+      "title": "Gerenciar profissionais",
+      "add-worker": "Adicionar profissional",
+      "work-start": "Início do expediente",
+      "work-end": "Fim do expediente",
+      "add-me": "Adicionar-me como profissional",
+      "worker": "Detalhes do profissional",
+      "current-workers": "Profissionais atuais",
+      "empty-list": "Nenhum profissional adicionado ainda"
+    }
+  },
+  "form-field": {
+    "errors": {
+      "required": "Este campo é obrigatório",
+      "invalid-name": "Nome inválido",
+      "invalid-email": "E-mail inválido",
+      "invalid-phone": "Telefone inválido",
+      "invalid-password-length": "A senha deve ter pelo menos 10 caracteres",
+      "invalid-password-lowercase": "A senha deve conter pelo menos uma letra minúscula",
+      "invalid-password-uppercase": "A senha deve conter pelo menos uma letra maiúscula",
+      "invalid-password-number": "A senha deve conter pelo menos um número",
+      "invalid-password-special": "A senha deve conter pelo menos um caractere especial",
+      "password-match": "As senhas não coincidem"
+    }
+  },
+  "calendar": {
+    "label": {
+      "short": {
+        "sunday": "Dom",
+        "monday": "Seg",
+        "tuesday": "Ter",
+        "wednesday": "Qua",
+        "thursday": "Qui",
+        "friday": "Sex",
+        "saturday": "Sáb"
+      }
+    }
+  }
+}

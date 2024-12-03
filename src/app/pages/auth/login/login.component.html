@@ -1,15 +1,15 @@
 <h1 class="login-title">{{ 'pages.login.title' | translate }}</h1>
 
 <form [formGroup]="form" (submit)="test()">
-  <form-field controlName="login">
+  <bv-form-field controlName="login">
     <label for="login">{{ 'shared.primitive-entity.login' | translate }}</label>
     <input type="text" id="login" formControlName="login" [placeholder]="'shared.primitive-entity.login' | translate" autocomplete="off">
-  </form-field>
-  <form-field controlName="password">
+  </bv-form-field>
+  <bv-form-field controlName="password">
     <label for="password">{{ 'shared.primitive-entity.password' | translate }}</label>
     <input custom type="password" id="password" formControlName="password" [placeholder]="'shared.primitive-entity.password' | translate" autocomplete="new-password">
-  </form-field>
-  <button custom-button type="submit" [disabled]="form.invalid || loading()" theme="primary">
+  </bv-form-field>
+  <button bv type="submit" [disabled]="form.invalid || loading()" theme="primary">
     {{ 'shared.actions.enter' | translate }}
   </button>
 </form>
@@ -17,10 +17,10 @@
 <div class="messages">
   <p class="register-message">
     <span class="register-message-question">{{'pages.login.not-registered-yet' | translate}}</span>
-    <a routerLink="/register" routerLinkActive="router-link-active" custom-link>{{'pages.login.register-click' | translate}}</a>
+    <a routerLink="/register" routerLinkActive="router-link-active" bv-link>{{'pages.login.register-click' | translate}}</a>
   </p>
   <p class="forgot-password-message">
     <span class="register-message-question">{{'pages.login.did-you-forget-your-password' | translate}}</span>
-    <a routerLink="/forgot-password" routerLinkActive="router-link-active" custom-link>{{ 'pages.login.forgot-password-click' | translate }}</a>
+    <a routerLink="/forgot-password" routerLinkActive="router-link-active" bv-link>{{ 'pages.login.forgot-password-click' | translate }}</a>
   </p>
 </div>

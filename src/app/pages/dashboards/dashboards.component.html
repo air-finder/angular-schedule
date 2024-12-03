@@ -3,13 +3,13 @@
 
 <div class="anchor-buttons">
   @if (hasScope(Scopes.PROVIDER)) {
-    <button custom-button routerLink="provider">{{'pages.dashboard.provider' | translate}}</button>
+    <button bv routerLink="provider">{{'pages.dashboard.provider' | translate}}</button>
   }
   @if (hasScope(Scopes.ADULT) && !hasScope(Scopes.PROVIDER)) {
-    <button custom-button theme="secondary" routerLink="create-provider">{{'pages.dashboard.create-provider' | translate}}</button>
+    <button bv theme="secondary" routerLink="create-provider">{{'pages.dashboard.create-provider' | translate}}</button>
   }
   @if (hasScope(Scopes.WORKER) && hasScope(Scopes.CAN_WORK)) {
-    <button custom-button routerLink="worker">{{'pages.dashboard.worker' | translate}}</button>
+    <button bv routerLink="worker">{{'pages.dashboard.worker' | translate}}</button>
   }
-  <button custom-button routerLink="user" disabled>{{'pages.dashboard.user' | translate}}</button>
+  <button bv routerLink="user" disabled>{{'pages.dashboard.user' | translate}}</button>
 </div>

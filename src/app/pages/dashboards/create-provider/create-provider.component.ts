@@ -2,15 +2,13 @@ import { Component, viewChild } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateProviderForm } from './create-provider.form';
 import { TranslateModule } from '@ngx-translate/core';
-import { ButtonComponent } from '@components/button/button.component';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
 import { Router } from '@angular/router';
-import { StepperComponent } from "../../../shared/components/stepper/stepper.component";
-import { StepComponent } from "../../../shared/components/stepper/step/step.component";
 import { ProviderStepComponent } from "./provider-step/provider-step.component";
 import { LocationStepComponent } from "./location-step/location-step.component";
 import { ConfirmStepComponent } from './confirm-step/confirm-step.component';
 import { UserService } from '@services/user/user.service';
+import { ButtonComponent, StepComponent, StepperComponent } from '@brunovbsilva/material';
 
 @Component({
     selector: 'app-create-provider',

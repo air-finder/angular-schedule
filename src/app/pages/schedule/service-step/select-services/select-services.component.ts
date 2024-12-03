@@ -1,11 +1,11 @@
 import { AfterViewInit, Component, inject, input } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectServiceForm } from './select-service.form';
-import { FormFieldComponent } from '@components/form-field/form-field.component';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
 import { CurrencyPipe } from '@angular/common';
 import { Service } from '@models/services/dtos/service';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormFieldComponent } from '@brunovbsilva/material';
 
 @Component({
     selector: 'app-select-services',

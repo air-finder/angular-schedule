@@ -5,9 +5,6 @@ import { PersonalStepComponent } from "./personal-step/personal-step.component";
 import { ConfirmStepComponent } from "./confirm-step/confirm-step.component";
 import { ActivatedRoute, Router } from '@angular/router';
 import { ScheduleForm } from './schedule.form';
-import { StepperComponent } from '@components/stepper/stepper.component';
-import { StepComponent } from '@components/stepper/step/step.component';
-import { ButtonComponent } from '@components/button/button.component';
 import { ServiceWorkerService } from '@services/service-worker/service-worker.service';
 import { ScheduleStepModel } from '@models/pages/schedule/schedule-step/schedule-step.model';
 import { TimeSpanHelper } from '@helpers/time-span.helper';
@@ -15,6 +12,7 @@ import { ServiceProviderService } from '@services/service-provider/service-provi
 import { ScheduleService } from '@services/schedule/schedule.service';
 import { DatePipe } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { ButtonComponent, StepComponent, StepperComponent } from '@brunovbsilva/material';
 
 @Component({
     selector: 'app-schedule',

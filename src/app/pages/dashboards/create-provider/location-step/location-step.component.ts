@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, input } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormFieldComponent } from '@components/form-field/form-field.component';
+import { FormFieldComponent } from '@brunovbsilva/material';
 import { CreateProviderSecondStepFormModel } from '@models/pages/dashboard/create-provider-form-second-step.model';
 import { TranslateModule } from '@ngx-translate/core';
 import { ViaCepService } from '@services/via-cep/via-cep.service';

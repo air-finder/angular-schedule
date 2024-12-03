@@ -1,26 +1,26 @@
 <form [formGroup]="form" (submit)="submit()">    
   <h2 class="title">{{'pages.manage-services.add-service' | translate}}</h2>
-  <form-field controlName="name">
+  <bv-form-field controlName="name">
       <label for="name">{{'shared.primitive-entity.name' | translate}}</label>
       <input formControlName="name" id="name" type="text" [placeholder]="'shared.primitive-entity.name' | translate"/>
-  </form-field>
-  <form-field controlName="description">
+  </bv-form-field>
+  <bv-form-field controlName="description">
       <label for="description">{{'shared.primitive-entity.description' | translate}}</label>
       <input formControlName="description" id="description" type="text" [placeholder]="'shared.primitive-entity.description' | translate"/>
-  </form-field>
+  </bv-form-field>
   <div class="row-form">
-      <form-field controlName="price">
+      <bv-form-field controlName="price">
           <label for="price">{{'shared.primitive-entity.price' | translate}}</label>
           <input formControlName="price" id="price" type="number" [placeholder]="'shared.primitive-entity.price' | translate"/>
-      </form-field>
-      <form-field controlName="duration">
+      </bv-form-field>
+      <bv-form-field controlName="duration">
           <label for="duration">{{'shared.primitive-entity.duration' | translate}}</label>
           <input formControlName="duration" id="duration" type="number" [placeholder]="'shared.primitive-entity.duration' | translate"/>
-      </form-field>
+      </bv-form-field>
   </div>
 
   <div class="buttons-form">
-      <button custom-button type="button" (click)="clear()">{{'shared.actions.clear' | translate}}</button>
-      <button custom-button type="submit" theme="secondary">{{'shared.actions.submit' | translate}}</button>
+      <button bv type="button" (click)="clear()">{{'shared.actions.clear' | translate}}</button>
+      <button bv type="submit" theme="secondary">{{'shared.actions.submit' | translate}}</button>
   </div>
 </form>

@@ -1,8 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
 import { AfterViewInit, Component } from '@angular/core';
-import { IconButtonComponent } from '@components/button/icon-button.component';
-import { CardComponent } from '@components/card/card.component';
-import { IconComponent } from '@components/icon/icon.component';
+import { CardComponent, IconButtonComponent, IconComponent } from '@brunovbsilva/material';
 import { SessionUserService } from '@core/service/session-user.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';

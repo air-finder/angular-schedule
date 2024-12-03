@@ -6,5 +6,5 @@ export interface PersonStepRegisterFormModel {
   email: FormControl<string | null>;
   phone: FormControl<string | null>;
   gender: FormControl<Gender | null>;
-  birthday: FormControl<Date | null>;
+  birthday: FormControl<string | null>;
 }

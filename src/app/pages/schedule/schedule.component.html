@@ -1,16 +1,16 @@
-<stepper #stepper>
-  <step label="services">
+<bv-stepper #stepper>
+  <bv-step label="services">
     <app-service-step [form]="form.controls.serviceStep" [serviceProviderId$]="serviceProviderId$()" #serviceStep></app-service-step>
-  </step>
-  <step label="schedule">
+  </bv-step>
+  <bv-step label="schedule">
     <app-schedule-step [form]="form.controls.scheduleStep" [(scheduleStep$)]="scheduleStep$" #scheduleStep></app-schedule-step>
-  </step>
-  <step label="personal">
+  </bv-step>
+  <bv-step label="personal">
     <app-personal-step [form]="form.controls.personalStep" #personalStep></app-personal-step>
-  </step>
-  <step label="confirm">
+  </bv-step>
+  <bv-step label="confirm">
     <app-confirm-step [form]="form" #confirmStep></app-confirm-step>
-  </step>
-  <button custom-button theme="secondary" (click)="previousStep()" [disabled]="stepper.currentIndex() === 0">{{'shared.actions.previous' | translate}}</button>
-  <button custom-button (click)="nextStep()" [disabled]="getDisabled()">{{'shared.actions.' + (stepper.currentIndex() === 3 ? 'submit' : 'next') | translate}}</button>
-</stepper>
+  </bv-step>
+  <button bv theme="secondary" (click)="previousStep()" [disabled]="stepper.currentIndex() === 0">{{'shared.actions.previous' | translate}}</button>
+  <button bv (click)="nextStep()" [disabled]="getDisabled()">{{'shared.actions.' + (stepper.currentIndex() === 3 ? 'submit' : 'next') | translate}}</button>
+</bv-stepper>

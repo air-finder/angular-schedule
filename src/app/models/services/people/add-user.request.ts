@@ -5,7 +5,7 @@ export interface AddUserRequest {
   email: string;
   phone?: string;
   gender?: Gender;
-  birthday?: number;
+  birthday?: string;
   login: string;
   password: string;
 }

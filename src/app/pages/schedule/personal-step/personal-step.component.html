@@ -1,14 +1,14 @@
 <form [formGroup]="form()">
-  <form-field controlName="name">
+  <bv-form-field controlName="name">
     <label for="name">{{'shared.primitive-entity.name' | translate}}</label>
     <input type="text" id="name" formControlName="name" [placeholder]="'shared.primitive-entity.name' | translate">
-  </form-field>
-  <form-field controlName="email">
+  </bv-form-field>
+  <bv-form-field controlName="email">
     <label for="email">{{'shared.primitive-entity.email' | translate}}</label>
     <input type="email" id="email" formControlName="email" [placeholder]="'shared.primitive-entity.email' | translate">
-  </form-field>
-  <form-field controlName="phone">
+  </bv-form-field>
+  <bv-form-field controlName="phone">
     <label for="phone">{{'shared.primitive-entity.phone' | translate}}</label>
     <input type="tel" id="phone" formControlName="phone" [placeholder]="'shared.primitive-entity.phone' | translate">
-  </form-field>
+  </bv-form-field>
 </form>

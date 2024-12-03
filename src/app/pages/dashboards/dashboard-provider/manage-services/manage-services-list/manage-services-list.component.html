@@ -1,17 +1,17 @@
 <h2 class="title">{{'pages.manage-services.current-services' | translate}}</h2>
 @defer {
   @for (item of services$(); track $index) {
-    <card class="card-service">
+    <bv-card class="card-service">
       <h4 card-header>{{item.name}}</h4>
       <ng-content card-body>
         <p>{{item.description}}</p>
         <p>{{'price' | translate}}: {{item.price | currency : 'BRL'}}</p>
         <p>{{'duration (minutes)' | translate}}: {{item.duration}}</p>
       </ng-content>
-      <button icon-button type="button" theme="danger" (click)="delete(item.id)">
-        <icon custom-icon icon="delete"></icon>
+      <button bv-icon type="button" theme="danger" (click)="delete(item.id)">
+        <bv-icon icon="delete"></bv-icon>
       </button>
-    </card>
+    </bv-card>
   }
   @empty {
     <p>{{'pages.manage-services.empty-list' | translate}}</p>

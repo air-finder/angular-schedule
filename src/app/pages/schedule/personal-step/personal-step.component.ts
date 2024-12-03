@@ -1,8 +1,8 @@
 import { Component, input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { FormFieldComponent } from "../../../shared/components/form-field/form-field.component";
 import { TranslateModule } from '@ngx-translate/core';
 import { PersonalStepFormModel } from '@models/pages/schedule/personal-step/personal-step-form.model';
+import { FormFieldComponent } from '@brunovbsilva/material';
 
 @Component({
     selector: 'app-personal-step',

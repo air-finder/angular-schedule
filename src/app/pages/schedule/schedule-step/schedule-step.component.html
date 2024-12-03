@@ -1,7 +1,7 @@
 <h2>{{'pages.schedule.schedule-step.select-day' | translate}}</h2>
 <form [formGroup]="form()">
   @if(scheduleStep$().serviceWorkerId) {
-    <calendar formControlName="date" [availableDates]="availableDates$()" #calendar></calendar>
+    <bv-calendar formControlName="date" [availableDates]="availableDates$()" #calendar></bv-calendar>
   }
 </form>
 
@@ -10,7 +10,7 @@
   @if(times$().length) {
     <div class="buttons">
       @for (item of times$(); track $index) {
-        <button custom-button (click)="selectTime(item.date)" [theme]="item.theme">{{item.date | date: 'HH:mm'}}</button>
+        <button bv (click)="selectTime(item.date)" [theme]="item.theme">{{item.date | date: 'HH:mm'}}</button>
       }
     </div>
   } @else {

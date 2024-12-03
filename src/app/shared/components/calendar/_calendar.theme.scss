@@ -1,5 +1,0 @@
-@use './calendar.component.scss' as calendar;
-
-@mixin get-theme($theme) {
-  @include calendar.get-theme($theme);
-}

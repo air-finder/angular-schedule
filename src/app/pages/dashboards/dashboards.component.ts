@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { SessionUserService } from '@core/service/session-user.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { Scopes } from '../../shared/constants/scopes.constants';
-import { ButtonComponent } from '@components/button/button.component';
 import { RouterLink } from '@angular/router';
+import { ButtonComponent } from '@brunovbsilva/material';
 
 @Component({
     selector: 'app-dashboards',

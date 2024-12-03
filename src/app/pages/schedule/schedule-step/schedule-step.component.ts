@@ -3,25 +3,24 @@ import { ScheduleStepModel } from '../../../models/pages/schedule/schedule-step/
 import { ServiceWorkerService } from '@services/service-worker/service-worker.service';
 import { TimeSpanHelper } from '@helpers/time-span.helper';
 import { TimeModel } from '@models/pages/schedule/schedule-step/time.model';
-import { CalendarComponent } from "../../../shared/components/calendar/calendar.component";
-import { ButtonComponent } from '@components/button/button.component';
 import { DatePipe } from '@angular/common';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScheduleStepFormModel } from '@models/pages/schedule/schedule-step/schedule-step-form.model';
 import { TranslateModule } from '@ngx-translate/core';
+import { ButtonComponent, CalendarComponent } from '@brunovbsilva/material';
 
 @Component({
-    selector: 'app-schedule-step',
-    imports: [
-        CalendarComponent,
-        ButtonComponent,
-        DatePipe,
-        FormsModule,
-        ReactiveFormsModule,
-        TranslateModule
-    ],
-    templateUrl: './schedule-step.component.html',
-    styleUrl: './schedule-step.component.scss'
+  selector: 'app-schedule-step',
+  imports: [
+    CalendarComponent,
+    ButtonComponent,
+    DatePipe,
+    FormsModule,
+    ReactiveFormsModule,
+    TranslateModule
+  ],
+  templateUrl: './schedule-step.component.html',
+  styleUrl: './schedule-step.component.scss'
 })
 export class ScheduleStepComponent implements AfterViewInit {
   scheduleStep$ = model.required<ScheduleStepModel>();

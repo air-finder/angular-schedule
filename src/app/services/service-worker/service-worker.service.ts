@@ -35,6 +35,10 @@ export class ServiceWorkerService extends BaseService{
       });
   }
 
+  async active() {
+    return await this.PatchAsync('active');
+  }
+
   async delete(workerId: string) {
     return await this.DeleteAsync(`${workerId}`);
   }

@@ -1,12 +1,11 @@
 import { Component, output } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ButtonComponent } from '@components/button/button.component';
-import { FormFieldComponent } from '@components/form-field/form-field.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
 import { CreateServiceForm } from './create-service.form';
 import { SessionUserService } from '@core/service/session-user.service';
 import { CreateServiceFormModel } from '@models/pages/dashboard/service-create-form.model';
+import { ButtonComponent, FormFieldComponent } from '@brunovbsilva/material';
 
 @Component({
     selector: 'app-manage-services-create',

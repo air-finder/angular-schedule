@@ -1,7 +1,7 @@
 <h1>Appointments</h1>
 
 @for (appointment of appointments$(); track $index) {
-  <card>
+  <bv-card>
     <ng-container card-header>
       <h2>{{appointment.name}}</h2>
     </ng-container>
@@ -14,9 +14,9 @@
       <p>{{getDate(appointment.start) | date: 'dd/MM/YYYY HH:mm'}} - {{getDate(appointment.end) | date: 'HH:mm'}}</p>
     </ng-container>
     @if(appointment.phone) {
-      <button icon-button (click)="openWhatsapp(appointment.phone)">
-        <icon custom-icon icon="whatsapp"></icon>
+      <button bv-icon (click)="openWhatsapp(appointment.phone)">
+        <bv-icon icon="whatsapp"></bv-icon>
       </button>
     }
-  </card>
+  </bv-card>
 }

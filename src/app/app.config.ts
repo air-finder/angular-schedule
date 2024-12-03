@@ -30,8 +30,8 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     { provide: TitleStrategy, useClass: AppTitle },
-    DatePipe,
     { provide: DATE_PIPE_DEFAULT_OPTIONS, useValue: { locale: 'pt-BR' } },
-    CurrencyPipe
+    DatePipe,
+    CurrencyPipe,
   ]
 };

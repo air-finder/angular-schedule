@@ -1,6 +1,5 @@
 import { Component, computed, input, output } from '@angular/core';
-import { IconButtonComponent } from '@components/button/icon-button.component';
-import { IconComponent } from '@components/icon/icon.component';
+import { IconButtonComponent, IconComponent } from '@brunovbsilva/material';
 import { ServiceWorkerDto } from '@models/services/dtos/service-worker';
 import { ServiceWorkerStatus } from '@models/services/enums/service-worker-status';
 import { ServiceWorkerService } from '@services/service-worker/service-worker.service';

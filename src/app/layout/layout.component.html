@@ -3,26 +3,25 @@
   @if (isAuthenticated$()) {
     <div class="main-header-user">
       <span class="main-header-name">{{sessionUser$().profile.name}}</span>
-      <button custom-button (click)="logout()">{{'header.buttons.logout' | translate}}</button>
+      <button bv (click)="logout()">{{'header.buttons.logout' | translate}}</button>
     </div>
   }
   @else {
     <div class="main-header-actions">
-      <button routerLink="/login" custom-button>{{'header.buttons.enter' | translate}}</button>
+      <button bv routerLink="/login">{{'header.buttons.enter' | translate}}</button>
     </div>
   }
 </header>
 
 <main>
-  <router-outlet></router-outlet>
-  
+  <router-outlet></router-outlet>  
   <footer class="main-footer">
     <hr class="main-footer-separator">
     <div class="footer-box">
-      <a routerLink="/contact" custom-link>{{'footer.links.contact' | translate}}</a>
-      <a routerLink="/about" custom-link>{{'footer.links.about' | translate}}</a>
-      <a routerLink="/terms" custom-link>{{'footer.links.terms' | translate}}</a>
-      <a routerLink="/privacy" custom-link>{{'footer.links.privacy' | translate}}</a>
+      <a routerLink="/contact" bv-link>{{'footer.links.contact' | translate}}</a>
+      <a routerLink="/about" bv-link>{{'footer.links.about' | translate}}</a>
+      <a routerLink="/terms" bv-link>{{'footer.links.terms' | translate}}</a>
+      <a routerLink="/privacy" bv-link>{{'footer.links.privacy' | translate}}</a>
     </div>
     <p>© {{currentYear}} Secretária Virtual</p>
   </footer>

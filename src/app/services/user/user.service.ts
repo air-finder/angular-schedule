@@ -8,6 +8,7 @@ import { ForgotPasswordUpdateRequest } from '../../models/services/users/forgot-
 import { environment } from '../../../environments/environment';
 import { LoginResponse } from '@models/services/users/login.response';
 import { AuthService } from '@core/service/auth.service';
+import { FirstAccessRequest } from '@models/services/users/first-access.request';
 
 @Injectable({
   providedIn: 'root'
@@ -47,5 +48,10 @@ export class UserService extends BaseService {
 
   async forgotPasswordUpdate(request: ForgotPasswordUpdateRequest) {
     return await this.PatchAsync<null>('password/token-update', request);
+  }
+
+  async firstAccessRegister(request: FirstAccessRequest) {
+    return await this.PatchAsync<LoginResponse>("first-access", request)
+      .then(response => this._authService.login(response.result));
   }
 }

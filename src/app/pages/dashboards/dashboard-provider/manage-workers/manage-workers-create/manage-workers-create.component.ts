@@ -3,9 +3,8 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
 import { AddWorkerForm, AddWorkerFormModel } from './add-worker.form';
-import { FormFieldComponent } from "../../../../../shared/components/form-field/form-field.component";
-import { ButtonComponent } from '@components/button/button.component';
 import { UserService } from '@services/user/user.service';
+import { ButtonComponent, FormFieldComponent } from '@brunovbsilva/material';
 
 @Component({
     selector: 'app-manage-workers-create',

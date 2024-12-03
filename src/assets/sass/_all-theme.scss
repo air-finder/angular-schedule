@@ -1,26 +1,10 @@
 @use '../../app/layout/layout.theme' as layout;
-@use '../../app/shared/components/stepper/stepper.theme' as stepper;
-@use '../../app/shared/components/form-field/form-field.theme' as form-field;
-@use '../../app/shared/components/toast/toast.theme' as toast;
-@use '../../app/shared/components/button/button-theme' as button;
-@use '../../app/shared/components/select/select.theme' as select;
-@use '../../app/shared/components/calendar/calendar.theme' as calendar;
-@use 'themes/components/input-theme' as input;
-@use '../../app/shared/components/card/card' as card;
-@use '../../app/shared/components/pill/pill.theme' as pill;
+@use './../../../node_modules/@brunovbsilva/material/assets/sass/style' as bvsilva;
 
 @mixin all-components-theme($theme) {
   @include project-theme($theme);
-  @include stepper.get-theme($theme);
-  @include form-field.get-theme($theme);
-  @include toast.get-theme($theme);
-  @include input.get-theme($theme);
-  @include button.get-theme($theme);
-  @include select.get-theme($theme);
   @include layout.get-theme($theme);
-  @include calendar.get-theme($theme);
-  @include card.get-theme($theme);
-  @include pill.get-theme($theme);
+  @include bvsilva.all-components-theme($theme);
 }
 
 @mixin project-theme($theme) {
