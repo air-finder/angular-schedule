@@ -1,4 +1,4 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, LOCALE_ID } from '@angular/core';
 import { provideRouter, TitleStrategy } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -9,7 +9,9 @@ import { HttpClient, provideHttpClient, withFetch, withInterceptors } from '@ang
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HttpInterceptors } from './core/security/interceptor';
 import { AppTitle } from './app.title';
-import { CurrencyPipe, DATE_PIPE_DEFAULT_OPTIONS, DatePipe } from '@angular/common';
+import { CurrencyPipe, DatePipe, registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+registerLocaleData(ptBr)
 
 function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -30,7 +32,7 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     { provide: TitleStrategy, useClass: AppTitle },
-    { provide: DATE_PIPE_DEFAULT_OPTIONS, useValue: { locale: 'pt-BR' } },
+    { provide: LOCALE_ID, useValue: 'pt-PT' },
     DatePipe,
     CurrencyPipe,
   ]

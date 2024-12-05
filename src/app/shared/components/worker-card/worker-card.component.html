@@ -1,4 +1,4 @@
-<div class="worker__status" 
+<!-- <div class="worker__status" 
   [class.worker__status--active]="worker().status === status.Active"
   [class.worker__status--pending]="worker().status === status.Pending"
   [class.worker__status--inactive]="worker().status === status.Inactive">
@@ -6,4 +6,11 @@
 <h3 class="worker__name">{{worker().name}}</h3>
 <button bv-icon class="worker__delete-button" (click)="deleteWorker()">
   <bv-icon icon="delete"></bv-icon>
-</button>
+</button> -->
+
+<bv-card [theme]="getTheme()">
+  <h3 class="worker__name" card-header>{{worker().name}}</h3>
+  <button bv-icon class="worker__delete-button" (click)="deleteWorker()" card-header>
+    <bv-icon icon="delete"></bv-icon>
+  </button>
+</bv-card>

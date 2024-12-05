@@ -1,11 +1,5 @@
 :host {
-  height: 100%;
-  width: 80%;
-  max-width: 500px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: .5rem;
-  padding: 2rem 0;
+  gap: 0.5rem;
 }

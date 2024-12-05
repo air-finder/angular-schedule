@@ -1,6 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { WorkerCardComponent } from '@components/worker-card/worker-card.component';
-import { SessionUserService } from '@core/service/session-user.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
 

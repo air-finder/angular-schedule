@@ -1,25 +1,28 @@
 @use '../../app/layout/layout.theme' as layout;
-@use './../../../node_modules/@brunovbsilva/material/assets/sass/style' as bvsilva;
+@use '../../../node_modules/@brunovbsilva/material/assets/sass/style' as bvsilva;
+@use '../../app/pages/dashboards/dashboard-worker/dashboard-worker.component.scss' as dashboard-worker;
+@use "sass:map";
 
 @mixin all-components-theme($theme) {
   @include project-theme($theme);
   @include layout.get-theme($theme);
+  @include dashboard-worker.get-theme($theme);
   @include bvsilva.all-components-theme($theme);
 }
 
 @mixin project-theme($theme) {
-  $background: map-get($theme, background);
-  $foreground: map-get($theme, foreground);
-  $primary: map-get($theme, primary);
-  $secondary: map-get($theme, secondary);
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
+  $primary: map.get($theme, primary);
+  $secondary: map.get($theme, secondary);
   * {
-    color: map-get($foreground, base);
-    color-scheme: map-get($foreground, color-scheme);
+    color: map.get($foreground, base);
+    color-scheme: map.get($foreground, color-scheme);
   }
   .outside-layout {
-    background: linear-gradient(map-get($primary, default), map-get($secondary, default));
+    background: linear-gradient(map.get($primary, default), map.get($secondary, default));
     .content {
-      background: map-get($background, card);
+      background: map.get($background, card);
     }
   }
 }

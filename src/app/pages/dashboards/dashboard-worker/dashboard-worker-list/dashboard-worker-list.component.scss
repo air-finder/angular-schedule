@@ -1,0 +1,38 @@
+@use 'sass:map';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+@mixin indicator-trace {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 5rem);
+  height: 0;
+}
+
+.day-indicator {
+  text-align: center;
+  position: relative;
+  &::before {
+    @include indicator-trace;
+    left: 0;
+  }
+  &::after {
+    @include indicator-trace;
+    right: 0;
+  }
+}
+
+@mixin get-theme($theme) {
+  $foreground: map.get($theme, 'foreground');
+  .day-indicator {
+    color: map.get($foreground, 'hint');
+    &::before, &::after {
+      border: 1px solid map.get($foreground, 'hint');
+    }
+  }
+}

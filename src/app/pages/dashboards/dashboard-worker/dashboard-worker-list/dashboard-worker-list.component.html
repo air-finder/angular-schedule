@@ -1,0 +1,22 @@
+@for (group of groupedAppointments$(); track $index) {
+  <h2 class="subtitle-3 day-indicator">{{group.date | date: 'dd MMMM'}}</h2>
+  @for (appointment of group.appointments; track $index) {
+    <bv-card accordion [opened]="false" [theme]="getTheme(appointment.end)">
+      <h2 card-header>{{appointment.name}}</h2>
+      <span card-header>{{getDate(appointment.start) | date: 'HH:mm'}}</span>
+      <ng-container card-body>
+        @for (service of appointment.services; track $index) {
+          <p>{{service.name}} - {{service.price / 100 | currency: 'BRL'}}</p>
+        }
+      </ng-container>
+      @if(appointment.phone) {
+        <button bv-icon (click)="openWhatsapp(appointment.phone)">
+          <bv-icon icon="whatsapp"></bv-icon>
+        </button>
+      }
+    </bv-card>
+  }
+  @empty {
+    <p>{{'pages.dashboard-worker.no-appointments' | translate}}</p>
+  }
+}

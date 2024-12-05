@@ -1,5 +1,5 @@
 import { Component, computed, input, output } from '@angular/core';
-import { IconButtonComponent, IconComponent } from '@brunovbsilva/material';
+import { CardComponent, IconButtonComponent, IconComponent } from '@brunovbsilva/material';
 import { ServiceWorkerDto } from '@models/services/dtos/service-worker';
 import { ServiceWorkerStatus } from '@models/services/enums/service-worker-status';
 import { ServiceWorkerService } from '@services/service-worker/service-worker.service';
@@ -8,17 +8,18 @@ import { ServiceWorkerService } from '@services/service-worker/service-worker.se
     selector: 'app-worker-card',
     imports: [
         IconButtonComponent,
-        IconComponent
+        IconComponent,
+        CardComponent
     ],
     templateUrl: './worker-card.component.html',
     styleUrl: './worker-card.component.scss',
-    host: {
-        class: 'card'
-    }
+    // host: {
+    //     class: 'bv-card'
+    // }
 })
 export class WorkerCardComponent {
   public worker = input.required<ServiceWorkerDto>();
-  public onDelete = output();
+  public delete = output();
   protected status = ServiceWorkerStatus;
   status$ = computed(() => {
     switch(this.worker().status) {
@@ -37,6 +38,17 @@ export class WorkerCardComponent {
 
   protected async deleteWorker() {
     await this._workerService.delete(this.worker().id)
-      .then(() => this.onDelete.emit());
+      .then(() => this.delete.emit());
   }
+
+  protected getTheme = computed(() => {
+    switch(this.worker().status) {
+      case this.status.Active:
+        return 'success';
+      case this.status.Inactive:
+        return 'danger';
+      case this.status.Pending:
+        return 'warning';
+    }
+  })
 }

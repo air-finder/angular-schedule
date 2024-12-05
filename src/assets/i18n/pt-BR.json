@@ -44,7 +44,8 @@
       "contact": "Contato",
       "terms": "Termos",
       "privacy": "Privacidade"
-    }
+    },
+    "project-name": "CB Agenda"
   },
   "pages": {
     "login": {
@@ -132,6 +133,14 @@
       "worker": "Detalhes do profissional",
       "current-workers": "Profissionais atuais",
       "empty-list": "Nenhum profissional adicionado ainda"
+    },
+    "dashboard-worker": {
+      "title": "Seu painel",
+      "filter": "Filtro",
+      "today": "Hoje",
+      "this-week": "Esta semana",
+      "this-month": "Este mês",
+      "all": "Tudo"
     }
   },
   "form-field": {

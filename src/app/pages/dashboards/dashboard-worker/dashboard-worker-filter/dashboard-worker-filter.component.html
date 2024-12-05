@@ -1,0 +1,14 @@
+<bv-card>
+  <ng-container card-header>
+    <h2>{{'pages.dashboard-worker.filter' | translate}}</h2>
+  </ng-container>
+  <ng-container card-body>
+    <div class="pills">
+      @for (filterItem of [filter['today'], filter['this-week'], filter['this-month'], filter['all']]; track $index) {
+        <bv-pill theme="secondary" [active]="filter$() === filterItem" (click)="setFilter(filterItem)">
+          {{'pages.dashboard-worker.' + filter[filterItem] | translate}}
+        </bv-pill>
+      }
+    </div>
+  </ng-container>
+</bv-card>

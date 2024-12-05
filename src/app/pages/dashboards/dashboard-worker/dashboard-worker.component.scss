@@ -1,11 +1,21 @@
-:host {
-  height: 100%;
-  width: 80%;
-  max-width: 500px;
-  margin: 0 auto;
+@use './dashboard-worker-filter/dashboard-worker-filter.component.scss' as filter;
+@use './dashboard-worker-list/dashboard-worker-list.component.scss' as list;
+
+.pills {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: .25rem;
+  row-gap: .25rem;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: .5rem;
-  padding: 2rem 0;
+}
+
+@mixin get-theme($theme) {
+  @include filter.get-theme($theme);
+  @include list.get-theme($theme);
 }

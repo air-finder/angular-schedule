@@ -1,28 +1,28 @@
-:host {
-  position: relative;
-  display: flex;
-  gap: .5rem;
-  align-items: center;
-  justify-content: space-between;
-  padding: .5rem;
-  border-radius: .5rem;
-}
+// :host {
+//   position: relative;
+//   display: flex;
+//   gap: .5rem;
+//   align-items: center;
+//   justify-content: space-between;
+//   padding: .5rem;
+//   border-radius: .5rem;
+// }
 
-.worker__status {
-  width: .5rem;
-  height: .5rem;
-  border-radius: 50%;
-  &--active {
-    background-color: #00FF00;
-  }
-  &--inactive {
-    background-color: #FF0000;
-  }
-  &--pending {
-    background-color: #FFA500;
-  }
-}
+// .worker__status {
+//   width: .5rem;
+//   height: .5rem;
+//   border-radius: 50%;
+//   &--active {
+//     background-color: #00FF00;
+//   }
+//   &--inactive {
+//     background-color: #FF0000;
+//   }
+//   &--pending {
+//     background-color: #FFA500;
+//   }
+// }
 
-.worker__name {
-  flex: 1;
-}
+// .worker__name {
+//   flex: 1;
+// }

@@ -44,7 +44,8 @@
       "contact": "Contact",
       "terms": "Terms",
       "privacy": "Privacy"
-    }
+    },
+    "project-name": "CB Scheduler"
   },
   "pages": {
     "login": {
@@ -132,6 +133,14 @@
       "worker": "Worker details",
       "current-workers": "Current workers",
       "empty-list": "No workers added yet"
+    },
+    "dashboard-worker": {
+      "title": "Your panel",
+      "filter": "Filter",
+      "today": "Today",
+      "this-week": "This week",
+      "this-month": "This month",
+      "all": "All"
     }
   },
   "form-field": {

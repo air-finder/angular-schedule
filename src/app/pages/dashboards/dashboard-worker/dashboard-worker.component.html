@@ -1,22 +1,3 @@
-<h1>Appointments</h1>
-
-@for (appointment of appointments$(); track $index) {
-  <bv-card>
-    <ng-container card-header>
-      <h2>{{appointment.name}}</h2>
-    </ng-container>
-    <ng-container card-body>
-      <h3>services</h3>
-      @for (service of appointment.services; track $index) {
-        <p>{{service.name}} - {{service.price / 100 | currency: 'BRL'}}</p>
-      }
-      <h3>horário</h3>
-      <p>{{getDate(appointment.start) | date: 'dd/MM/YYYY HH:mm'}} - {{getDate(appointment.end) | date: 'HH:mm'}}</p>
-    </ng-container>
-    @if(appointment.phone) {
-      <button bv-icon (click)="openWhatsapp(appointment.phone)">
-        <bv-icon icon="whatsapp"></bv-icon>
-      </button>
-    }
-  </bv-card>
-}
+<h1>{{'pages.dashboard-worker.title' | translate}}</h1>
+<app-dashboard-worker-filter (changeFilter)="list.refreshAppointments($event)"></app-dashboard-worker-filter>
+<app-dashboard-worker-list #list></app-dashboard-worker-list>

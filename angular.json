@@ -99,7 +99,7 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "local"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -107,11 +107,17 @@
             "production": {
               "buildTarget": "angular-template:build:production"
             },
+            "stage": {
+              "buildTarget": "angular-template:build:stage"
+            },
             "development": {
               "buildTarget": "angular-template:build:development"
+            },
+            "local": {
+              "buildTarget": "angular-template:build:local"
             }
           },
-          "defaultConfiguration": "development",
+          "defaultConfiguration": "local",
           "options": {
             "host": "0.0.0.0",
             "port": 4200

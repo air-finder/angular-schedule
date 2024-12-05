@@ -2,7 +2,6 @@ import { Component, signal } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../services/user/user.service';
 import { LoginRequest } from '../../../models/services/users/login.request';
-import { AuthService } from '../../../core/service/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AnchorComponent, ButtonComponent, FormFieldComponent } from '@brunovbsilva/material';
@@ -30,7 +29,6 @@ export class LoginComponent {
 
   constructor(
     private userService: UserService,
-    private authService: AuthService,
     private _router: Router
   ) {}
 

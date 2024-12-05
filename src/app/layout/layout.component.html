@@ -14,7 +14,9 @@
 </header>
 
 <main>
-  <router-outlet></router-outlet>  
+  <div class="main-content">
+    <router-outlet></router-outlet>  
+  </div>
   <footer class="main-footer">
     <hr class="main-footer-separator">
     <div class="footer-box">
@@ -23,6 +25,6 @@
       <a routerLink="/terms" bv-link>{{'footer.links.terms' | translate}}</a>
       <a routerLink="/privacy" bv-link>{{'footer.links.privacy' | translate}}</a>
     </div>
-    <p>© {{currentYear}} Secretária Virtual</p>
+    <p>© {{currentYear}} {{ 'footer.project-name' | translate }}</p>
   </footer>
 </main>
