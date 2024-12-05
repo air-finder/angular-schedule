@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build-dev
+RUN npm run build-prd
 
 FROM nginx:latest
 RUN rm -rf /usr/share/nginx/html/*
