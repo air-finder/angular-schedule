@@ -47,7 +47,7 @@ jobs:
       - name: Build Docker image
         run: |
           REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2 | tr '[:upper:]' '[:lower:]')
-          docker build --build-arg BUILD_COMMAND="npm run build-dev" . -t brunovbs/$REPO_NAME-dev:latest
+          docker build --build-arg BUILD_COMMAND="npm run build-prd" . -t brunovbs/$REPO_NAME-dev:latest
 
       - name: Publish Docker image
         run: |
