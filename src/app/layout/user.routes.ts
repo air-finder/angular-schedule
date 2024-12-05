@@ -5,9 +5,25 @@ import { ForgotPasswordComponent } from "../pages/auth/forgot-password/forgot-pa
 import { FirstAccessRegisterComponent } from "@pages/auth/first-access-register/first-access-register.component";
 
 export const routes: Routes = [
-  { path: 'login', title: 'Login', component: LoginComponent },
-  { path: 'forgot-password', title: 'Forgot Password', component: ForgotPasswordComponent },
-  { path: 'register/:id', title: 'Register', component: FirstAccessRegisterComponent },
-  { path: 'register', title: 'Register', component: RegisterComponent },
+  { 
+    path: 'login', 
+    title: 'title.login', 
+    component: LoginComponent 
+  },
+  { 
+    path: 'forgot-password', 
+    title: 'title.forgot-password', 
+    component: ForgotPasswordComponent
+  },
+  { 
+    path: 'register/:id', 
+    title: 'title.register', 
+    component: FirstAccessRegisterComponent
+  },
+  { 
+    path: 'register', 
+    title: 'title.register', 
+    component: RegisterComponent
+  },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];

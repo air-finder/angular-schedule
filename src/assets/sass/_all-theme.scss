@@ -1,12 +1,12 @@
 @use '../../app/layout/layout.theme' as layout;
 @use '../../../node_modules/@brunovbsilva/material/assets/sass/style' as bvsilva;
-@use '../../app/pages/dashboards/dashboard-worker/dashboard-worker.component.scss' as dashboard-worker;
+@use '../../app/pages/dashboards/my-panel/my-panel.component.scss' as my-panel;
 @use "sass:map";
 
 @mixin all-components-theme($theme) {
   @include project-theme($theme);
   @include layout.get-theme($theme);
-  @include dashboard-worker.get-theme($theme);
+  @include my-panel.get-theme($theme);
   @include bvsilva.all-components-theme($theme);
 }
 

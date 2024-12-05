@@ -13,9 +13,9 @@ export class AppTitle extends TitleStrategy {
     super();
   }
 
-  updateTitle(snapshot: RouterStateSnapshot): void {
+  async updateTitle(snapshot: RouterStateSnapshot): Promise<void> {
     const title = this.buildTitle(snapshot);
-    this._titleService.setTitle(title);
+    await this._titleService.setTitle(title);
     if(title) this._title.setTitle(this._titleService.title());
   }
 

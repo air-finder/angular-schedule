@@ -6,6 +6,7 @@ import { Gender } from '../../../models/services/enums/gender';
 import { PeopleService } from '../../../services/people/people.service';
 import { Router } from '@angular/router';
 import { ButtonComponent, FormFieldComponent, SelectComponent, SelectOptionComponent, StepComponent, StepperComponent } from '@brunovbsilva/material';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
     selector: 'app-register',
@@ -17,7 +18,8 @@ import { ButtonComponent, FormFieldComponent, SelectComponent, SelectOptionCompo
         SelectComponent,
         SelectOptionComponent,
         ButtonComponent,
-        TranslateModule
+        TranslateModule,
+        NgxMaskDirective
     ],
     templateUrl: './register.component.html',
     styleUrl: './register.component.scss'

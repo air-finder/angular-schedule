@@ -13,12 +13,12 @@ export class LocationStepForm extends FormGroup<CreateProviderSecondStepFormMode
   constructor() {
     super({
       'zip-code': new FormControl<string | null>('', [Validators.required, Validators.maxLength(8)]),
-      street: new FormControl<string | null>('', [Validators.required, Validators.maxLength(80)]),
+      street: new FormControl<string | null>({ value: '', disabled: true }, [Validators.required, Validators.maxLength(80)]),
       number: new FormControl<string | null>('', [Validators.maxLength(10)]),
-      neighborhood: new FormControl<string | null>('', [Validators.required, Validators.maxLength(80)]),
-      city: new FormControl<string | null>('', [Validators.required, Validators.maxLength(80)]),
-      state: new FormControl<string | null>('', [Validators.required, Validators.maxLength(80)]),
-      country: new FormControl<string | null>('', [Validators.required, Validators.maxLength(80)])
+      neighborhood: new FormControl<string | null>({ value: '', disabled: true }, [Validators.required, Validators.maxLength(80)]),
+      city: new FormControl<string | null>({ value: '', disabled: true }, [Validators.required, Validators.maxLength(80)]),
+      state: new FormControl<string | null>({ value: '', disabled: true }, [Validators.required, Validators.maxLength(80)]),
+      country: new FormControl<string | null>({ value: '', disabled: true }, [Validators.required, Validators.maxLength(80)])
     } as CreateProviderSecondStepFormModel);
   }
 

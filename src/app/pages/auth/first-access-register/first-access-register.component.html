@@ -3,7 +3,7 @@
     <form [formGroup]="form.person">
       <bv-form-field controlName="phone">
         <label for="phone">{{ 'shared.primitive-entity.phone' | translate }}</label>
-        <input type="tel" id="phone" formControlName="phone" [placeholder]="'shared.primitive-entity.phone' | translate">
+        <input type="tel" id="phone" formControlName="phone" mask="(00) 00000 0000||(00) 0000 0000" [placeholder]="'shared.primitive-entity.phone' | translate">
       </bv-form-field>
       <bv-form-field controlName="birthday">
         <label for="birthday">{{ 'shared.primitive-entity.birthday' | translate }}</label>

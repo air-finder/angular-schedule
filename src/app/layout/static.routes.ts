@@ -6,10 +6,10 @@ import { TermsComponent } from "../pages/static/terms/terms.component";
 import { PrivacyComponent } from "../pages/static/privacy/privacy.component";
 
 export const routes: Routes = [
-  { path: 'page-not-found', title: 'Page Not Found', component: PageNotFoundComponent },
-  { path: 'contact', title: 'Contact', component: ContactComponent },
-  { path: 'about', title: 'About', component: AboutComponent },
-  { path: 'terms', title: 'Terms', component: TermsComponent },
-  { path: 'privacy', title: 'Privacy', component: PrivacyComponent },
+  { path: 'page-not-found', title: 'title.page-not-found', component: PageNotFoundComponent },
+  { path: 'contact', title: 'title.contact', component: ContactComponent },
+  { path: 'about', title: 'title.about', component: AboutComponent },
+  { path: 'terms', title: 'title.terms', component: TermsComponent },
+  { path: 'privacy', title: 'title.privacy', component: PrivacyComponent },
   { path: '**', redirectTo: 'page-not-found' }
 ]

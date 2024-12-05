@@ -1,5 +1,7 @@
 <header class="main-header sm-shadow">
-  <img src="assets/icon-72x72.png" alt="image logo">
+  <a routerLink="/">
+    <img src="assets/icon.png" alt="image logo">
+  </a>
   @if (isAuthenticated$()) {
     <div class="main-header-user">
       <span class="main-header-name">{{sessionUser$().profile.name}}</span>
@@ -15,6 +17,16 @@
 
 <main>
   <div class="main-content">
+    @if (showContentHeader$()) {
+      <div class="main-content__header">
+        @if (showBackButton$()) {
+          <button bv-icon (click)="goBack()">
+            <bv-icon icon="back"></bv-icon>
+          </button>
+        }
+        <h1>{{ title$() }}</h1>
+      </div>
+    }
     <router-outlet></router-outlet>  
   </div>
   <footer class="main-footer">

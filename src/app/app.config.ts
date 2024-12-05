@@ -11,6 +11,7 @@ import { HttpInterceptors } from './core/security/interceptor';
 import { AppTitle } from './app.title';
 import { CurrencyPipe, DatePipe, registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
+import { provideEnvironmentNgxMask } from 'ngx-mask';
 registerLocaleData(ptBr)
 
 function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -31,6 +32,11 @@ export const appConfig: ApplicationConfig = {
         loader: { provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] }
       })
     ),
+    provideEnvironmentNgxMask({
+      thousandSeparator: '.',
+      decimalMarker: ',',
+      allowNegativeNumbers: false
+    }),
     { provide: TitleStrategy, useClass: AppTitle },
     { provide: LOCALE_ID, useValue: 'pt-PT' },
     DatePipe,

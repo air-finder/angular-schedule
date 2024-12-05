@@ -1,0 +1,13 @@
+@if(provider$()) {
+    <bv-card theme="secondary">
+        <h2 card-header>{{ provider$()!.name }}</h2>
+        <p card-body>{{ provider$()!.description }}</p>
+        <button bv theme="secondary" [routerLink]="'/schedule/'+provider$()!.id">
+            {{ 'pages.my-business.link-to-schedule' | translate }}
+        </button>
+    </bv-card>
+}
+
+<button bv routerLink="services">{{'pages.my-business.service' | translate}}</button>
+<button bv routerLink="workers">{{'pages.my-business.worker' | translate}}</button>
+<button bv routerLink="analitics" disabled>{{'pages.my-business.analitics' | translate}}</button>

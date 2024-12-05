@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { UserService } from '@services/user/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceWorkerService } from '@services/service-worker/service-worker.service';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-first-access-register',
@@ -19,7 +20,8 @@ import { ServiceWorkerService } from '@services/service-worker/service-worker.se
     FormsModule,
     ReactiveFormsModule,
     ButtonComponent,
-    TranslateModule
+    TranslateModule,
+    NgxMaskDirective
   ],
   templateUrl: './first-access-register.component.html',
   styleUrl: './first-access-register.component.scss'

@@ -19,7 +19,8 @@
       "country": "País",
       "duration": "Duração",
       "price": "Preço",
-      "birthday": "Data de nascimento"
+      "birthday": "Data de nascimento",
+      "business-code": "CNPJ"
     },
     "actions": {
       "submit": "Enviar",
@@ -99,11 +100,10 @@
       }
     },
     "dashboard": {
-      "title": "Bem-vindo",
       "subtitle": "O que você deseja visualizar hoje?",
-      "provider": "Painel do fornecedor",
-      "create-provider": "Registrar um fornecedor",
-      "worker": "Painel do profissional",
+      "provider": "Meu negócio",
+      "create-provider": "Registrar meu negócio",
+      "worker": "Meu painel",
       "user": "Configurações do usuário"
     },
     "create-provider": {
@@ -113,19 +113,18 @@
         "location": "Localização"
       }
     },
-    "dashboard-provider": {
+    "my-business": {
       "service": "Gerenciar serviços",
       "worker": "Gerenciar profissionais",
-      "analitics": "Ver análises"
+      "analitics": "Ver análises",
+      "link-to-schedule": "Link para agendar"
     },
     "manage-services": {
-      "title": "Gerenciar serviços",
       "add-service": "Adicionar serviço",
       "current-services": "Serviços atuais",
       "empty-list": "Nenhum serviço adicionado ainda"
     },
     "manage-workers": {
-      "title": "Gerenciar profissionais",
       "add-worker": "Adicionar profissional",
       "work-start": "Início do expediente",
       "work-end": "Fim do expediente",
@@ -134,8 +133,7 @@
       "current-workers": "Profissionais atuais",
       "empty-list": "Nenhum profissional adicionado ainda"
     },
-    "dashboard-worker": {
-      "title": "Seu painel",
+    "my-panel": {
       "filter": "Filtro",
       "today": "Hoje",
       "this-week": "Esta semana",
@@ -169,5 +167,23 @@
         "saturday": "Sáb"
       }
     }
+  },
+  "title": {
+    "dashboard": "Dashboard",
+    "provider": "Meu negócio",
+    "provider-services": "Serviços",
+    "provider-workers": "Profissionais",
+    "my-business-analitics": "Ver métricas",
+    "worker": "Meu painel",
+    "user": "Usuário",
+    "create-provider": "Registre seu negócio",
+    "login": "Login",
+    "forgot-password": "Esqueceu a senha",
+    "register": "Registrar",
+    "page-not-found": "Página não encontrada",
+    "contact": "Contato",
+    "about": "Sobre",
+    "terms": "Termos",
+    "privacy": "Privacidade"
   }
 }

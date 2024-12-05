@@ -99,7 +99,6 @@
       }
     },
     "dashboard": {
-      "title": "Welcome",
       "subtitle": "What do you want to view today?",
       "provider": "Provider dashboard",
       "create-provider": "Register a provider",
@@ -113,19 +112,18 @@
         "location": "Location"
       }
     },
-    "dashboard-provider": {
+    "my-business": {
       "service": "Manage services",
       "worker": "Manage workers",
-      "analitics": "View analitics"
+      "analitics": "View analitics",
+      "link-to-schedule": "Link to schedule"
     },
     "manage-services": {
-      "title": "Manage services",
       "add-service": "Add service",
       "current-services": "Current services",
       "empty-list": "No services added yet"
     },
     "manage-workers": {
-      "title": "Manage workers",
       "add-worker": "Add worker",
       "work-start": "Work start",
       "work-end": "Work end",
@@ -134,7 +132,7 @@
       "current-workers": "Current workers",
       "empty-list": "No workers added yet"
     },
-    "dashboard-worker": {
+    "my-panel": {
       "title": "Your panel",
       "filter": "Filter",
       "today": "Today",
@@ -169,5 +167,23 @@
         "saturday": "Sat"
       }
     }
+  },
+  "title": {
+    "dashboard": "Dashboard",
+    "provider": "Manage provider",
+    "provider-services": "Manage services",
+    "provider-workers": "Manage workers",
+    "my-business-analitics": "View analitics",
+    "worker": "Manage worker",
+    "user": "User settings",
+    "create-provider": "Register a provider",
+    "login": "Login",
+    "forgot-password": "Forgot password",
+    "register": "Register",
+    "page-not-found": "Page not found",
+    "contact": "Contact",
+    "about": "About",
+    "terms": "Terms",
+    "privacy": "Privacy"
   }
 }
