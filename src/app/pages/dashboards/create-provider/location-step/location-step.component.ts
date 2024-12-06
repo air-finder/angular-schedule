@@ -4,6 +4,7 @@ import { FormFieldComponent } from '@brunovbsilva/material';
 import { CreateProviderSecondStepFormModel } from '@models/pages/dashboard/create-provider-form-second-step.model';
 import { TranslateModule } from '@ngx-translate/core';
 import { ViaCepService } from '@services/via-cep/via-cep.service';
+import { NgxMaskDirective } from 'ngx-mask';
 import { lastValueFrom } from 'rxjs';
 
 @Component({
@@ -12,7 +13,8 @@ import { lastValueFrom } from 'rxjs';
         FormsModule,
         ReactiveFormsModule,
         TranslateModule,
-        FormFieldComponent
+        FormFieldComponent,
+        NgxMaskDirective
     ],
     templateUrl: './location-step.component.html',
     styleUrl: './location-step.component.scss'

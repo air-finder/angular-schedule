@@ -3,6 +3,7 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormFieldComponent } from '@brunovbsilva/material';
 import { CreateProviderFirstStepFormModel } from '@models/pages/dashboard/create-provider-form-first-step.model';
 import { TranslateModule } from '@ngx-translate/core';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
     selector: 'app-provider-step',
@@ -10,7 +11,8 @@ import { TranslateModule } from '@ngx-translate/core';
         TranslateModule,
         FormsModule,
         ReactiveFormsModule,
-        FormFieldComponent
+        FormFieldComponent,
+        NgxMaskDirective
     ],
     templateUrl: './provider-step.component.html',
     styleUrl: './provider-step.component.scss'

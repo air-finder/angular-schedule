@@ -9,7 +9,8 @@
   </bv-form-field>
   <bv-form-field controlName="business-code">
     <label for="business-code">{{ 'shared.primitive-entity.business-code' | translate }}</label>
-    <input type="text" id="business-code" formControlName="business-code" [placeholder]="'shared.primitive-entity.business-code' | translate" autocomplete="off"/>
+    <input type="tel" id="business-code" formControlName="business-code" mask="99.999.999/9999-99"
+      [placeholder]="'shared.primitive-entity.business-code' | translate" autocomplete="off"/>
   </bv-form-field>
   <bv-form-field controlName="utc-time">
     <label for="utc-time">{{ 'shared.primitive-entity.utc-time' | translate }}</label>

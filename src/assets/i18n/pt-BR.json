@@ -152,7 +152,9 @@
       "invalid-password-uppercase": "A senha deve conter pelo menos uma letra maiúscula",
       "invalid-password-number": "A senha deve conter pelo menos um número",
       "invalid-password-special": "A senha deve conter pelo menos um caractere especial",
-      "password-match": "As senhas não coincidem"
+      "password-match": "As senhas não coincidem",
+      "invalid-business-code": "CNPJ inválido",
+      "invalid-customer-code": "CPF inválido"
     }
   },
   "calendar": {

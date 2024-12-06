@@ -152,7 +152,9 @@
       "invalid-password-uppercase": "Password must have at least one uppercase letter",
       "invalid-password-number": "Password must have at least one number",
       "invalid-password-special": "Password must have at least one special character",
-      "password-match": "Passwords do not match"
+      "password-match": "Passwords do not match",
+      "invalid-business-code": "Invalid business code",
+      "invalid-customer-code": "Invalid customer code"
     }
   },
   "calendar": {

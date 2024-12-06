@@ -1,7 +1,8 @@
 <form [formGroup]="form()">
   <bv-form-field controlName="zip-code">
     <label for="zip-code">{{ 'shared.primitive-entity.zip-code' | translate }}</label>
-    <input type="text" id="zip-code" formControlName="zip-code" [placeholder]="'shared.primitive-entity.zip-code' | translate" autocomplete="off"/>
+    <input type="text" id="zip-code" formControlName="zip-code" mask="99999-999"
+      [placeholder]="'shared.primitive-entity.zip-code' | translate" autocomplete="off"/>
   </bv-form-field>
   <bv-form-field controlName="street">
     <label for="street">{{ 'shared.primitive-entity.street' | translate }}</label>
@@ -9,7 +10,8 @@
   </bv-form-field>
   <bv-form-field controlName="number">
     <label for="number">{{ 'shared.primitive-entity.number' | translate }}</label>
-    <input type="text" id="number" formControlName="number" [placeholder]="'shared.primitive-entity.number' | translate" autocomplete="off"/>
+    <input type="tel" id="number" formControlName="number" mask="999999"
+      [placeholder]="'shared.primitive-entity.number' | translate" autocomplete="off"/>
   </bv-form-field>
   <bv-form-field controlName="neighborhood">
     <label for="neighborhood">{{ 'shared.primitive-entity.neighborhood' | translate }}</label>
