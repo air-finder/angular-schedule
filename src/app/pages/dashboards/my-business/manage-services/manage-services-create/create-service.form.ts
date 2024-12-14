@@ -9,7 +9,7 @@ export class CreateServiceForm extends FormGroup<CreateServiceFormModel> {
       name: new FormControl<string | null>(null, [Validators.required, CustomValidators.nameValidator]),
       description: new FormControl<string | null>(null, [Validators.required]),
       price: new FormControl<string | null>('0', [Validators.required]),
-      duration: new FormControl<number | null>(0, [Validators.required, Validators.min(15)]),
+      duration: new FormControl<number | null>(0, [Validators.required]),
     });
   }
 

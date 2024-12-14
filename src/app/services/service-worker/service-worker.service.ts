@@ -39,6 +39,10 @@ export class ServiceWorkerService extends BaseService{
     return await this.PatchAsync('active');
   }
 
+  async activeWorker(id: string) {
+    return await this.PatchAsync(`${id}/active`);
+  }
+
   async delete(workerId: string) {
     return await this.DeleteAsync(`${workerId}`);
   }

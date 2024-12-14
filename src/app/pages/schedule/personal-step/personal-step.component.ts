@@ -3,13 +3,15 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { PersonalStepFormModel } from '@models/pages/schedule/personal-step/personal-step-form.model';
 import { FormFieldComponent } from '@brunovbsilva/material';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
     selector: 'app-personal-step',
     imports: [
         ReactiveFormsModule,
         FormFieldComponent,
-        TranslateModule
+        TranslateModule,
+        NgxMaskDirective
     ],
     templateUrl: './personal-step.component.html',
     styleUrl: './personal-step.component.scss'

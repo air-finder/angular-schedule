@@ -1,26 +1,30 @@
-<form [formGroup]="form" (submit)="submit()">    
-  <h2 class="title">{{'pages.manage-services.add-service' | translate}}</h2>
-  <bv-form-field controlName="name">
-      <label for="name">{{'shared.primitive-entity.name' | translate}}</label>
-      <input formControlName="name" id="name" type="text" [placeholder]="'shared.primitive-entity.name' | translate"/>
-  </bv-form-field>
-  <bv-form-field controlName="description">
-      <label for="description">{{'shared.primitive-entity.description' | translate}}</label>
-      <input formControlName="description" id="description" type="text" [placeholder]="'shared.primitive-entity.description' | translate"/>
-  </bv-form-field>
-  <div class="row-form">
-      <bv-form-field controlName="price">
-          <label for="price">{{'shared.primitive-entity.price' | translate}}</label>
-          <input formControlName="price" id="price" type="text" prefix="R$" mask="separator.2" [leadZero]="true" [placeholder]="'shared.primitive-entity.price' | translate"/>
-      </bv-form-field>
-      <bv-form-field controlName="duration">
-          <label for="duration">{{'shared.primitive-entity.duration' | translate}}</label>
-          <input formControlName="duration" id="duration" type="tel" suffix=" (min)" mask="separator.0" [placeholder]="'shared.primitive-entity.duration' | translate"/>
-      </bv-form-field>
-  </div>
+<form [formGroup]="form" (submit)="submit()">
+    <h2 class="title">{{'pages.manage-services.add-service' | translate}}</h2>
+    <bv-form-field controlName="name">
+        <label for="name">{{'shared.primitive-entity.name' | translate}}</label>
+        <input formControlName="name" id="name" type="text" [placeholder]="'shared.primitive-entity.name' | translate" />
+    </bv-form-field>
+    <bv-form-field controlName="description">
+        <label for="description">{{'shared.primitive-entity.description' | translate}}</label>
+        <input formControlName="description" id="description" type="text" [placeholder]="'shared.primitive-entity.description' | translate" />
+    </bv-form-field>
+    <div class="row-form">
+        <bv-form-field controlName="price">
+            <label for="price">{{'shared.primitive-entity.price' | translate}}</label>
+            <input formControlName="price" id="price" type="text" prefix="R$" mask="separator.2" [leadZero]="true" [placeholder]="'shared.primitive-entity.price' | translate" />
+        </bv-form-field>
+        <bv-form-field controlName="duration">
+            <label for="duration">{{'shared.primitive-entity.duration' | translate}}</label>
+            <bv-select formControlName="duration" id="duration" [placeholder]="'shared.primitive-entity.duration' | translate">
+                @for (item of options; track $index) {
+                    <bv-select-option [display]="item.display" [value]="item.value"></bv-select-option>
+                }
+            </bv-select>
+        </bv-form-field>
+    </div>
 
-  <div class="buttons-form">
-      <button bv type="button" (click)="clear()">{{'shared.actions.clear' | translate}}</button>
-      <button bv type="submit" theme="secondary">{{'shared.actions.submit' | translate}}</button>
-  </div>
+    <div class="buttons-form">
+        <button bv type="button" (click)="clear()">{{'shared.actions.clear' | translate}}</button>
+        <button bv type="submit" theme="secondary">{{'shared.actions.submit' | translate}}</button>
+    </div>
 </form>

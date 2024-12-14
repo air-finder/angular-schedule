@@ -12,43 +12,47 @@ import { ServiceWorkerService } from '@services/service-worker/service-worker.se
         CardComponent
     ],
     templateUrl: './worker-card.component.html',
-    styleUrl: './worker-card.component.scss',
-    // host: {
-    //     class: 'bv-card'
-    // }
+    styleUrl: './worker-card.component.scss'
 })
 export class WorkerCardComponent {
   public worker = input.required<ServiceWorkerDto>();
-  public delete = output();
+  public update = output();
   protected status = ServiceWorkerStatus;
   status$ = computed(() => {
     switch(this.worker().status) {
-      case this.status.Active:
+      case ServiceWorkerStatus.Active:
         return 'success';
-      case this.status.Inactive:
+      case ServiceWorkerStatus.Inactive:
         return 'danger';
-      case this.status.Pending:
+      case ServiceWorkerStatus.Pending:
         return 'warning';
       default:
         return 'info';
     }
   });
 
-  constructor(private _workerService: ServiceWorkerService) {}
+  constructor(
+    private _workerService: ServiceWorkerService
+  ) {}
 
   protected async deleteWorker() {
     await this._workerService.delete(this.worker().id)
-      .then(() => this.delete.emit());
+      .then(() => this.update.emit());
   }
 
   protected getTheme = computed(() => {
     switch(this.worker().status) {
-      case this.status.Active:
+      case ServiceWorkerStatus.Active:
         return 'success';
-      case this.status.Inactive:
+      case ServiceWorkerStatus.Inactive:
         return 'danger';
-      case this.status.Pending:
+      case ServiceWorkerStatus.Pending:
         return 'warning';
     }
   })
+
+  protected async activeWorker() {
+    await this._workerService.activeWorker(this.worker().id)
+      .then(() => this.update.emit());
+  }
 }

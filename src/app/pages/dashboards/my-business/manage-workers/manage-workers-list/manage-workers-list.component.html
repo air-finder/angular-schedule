@@ -1,7 +1,7 @@
 <h2>{{'pages.manage-workers.current-workers' | translate}}</h2>
 
 @for (worker of workers$(); track $index) {
-  <app-worker-card [worker]="worker" (onDelete)="refreshList()"></app-worker-card>
+  <app-worker-card [worker]="worker" (update)="refreshList()"></app-worker-card>
 }
 @empty {
   <p>{{'pages.manage-workers.empty-list' | translate}}</p>
