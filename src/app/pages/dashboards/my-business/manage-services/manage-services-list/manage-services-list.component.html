@@ -1,5 +1,5 @@
 <h2 class="title">{{'pages.manage-services.current-services' | translate}}</h2>
-@defer {
+@defer (when !isLoading) {
   @for (item of services$(); track $index) {
     <bv-card class="card-service">
       <h4 card-header>{{item.name}}</h4>
@@ -14,12 +14,12 @@
     </bv-card>
   }
   @empty {
-    <p>{{'pages.manage-services.empty-list' | translate}}</p>
+    <app-empty-message>{{'pages.manage-services.empty-list' | translate}}</app-empty-message>
   }
 }
-@loading (minimum 200ms) {
-  <div class="card-service card-service--loading phantom"></div>
-  <div class="card-service card-service--loading phantom"></div>
-  <div class="card-service card-service--loading phantom"></div>
-  <div class="card-service card-service--loading phantom"></div>
+@placeholder (minimum 200ms) {
+  <div class="card-loading phantom"></div>
+  <div class="card-loading phantom"></div>
+  <div class="card-loading phantom"></div>
+  <div class="card-loading phantom"></div>
 }

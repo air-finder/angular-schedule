@@ -1,8 +1,17 @@
 <h2>{{'pages.manage-workers.current-workers' | translate}}</h2>
 
-@for (worker of workers$(); track $index) {
-  <app-worker-card [worker]="worker" (update)="refreshList()"></app-worker-card>
+@defer (when !isLoading) {
+  @for (worker of workers$(); track $index) {
+    <app-worker-card [worker]="worker" (update)="refreshList()"></app-worker-card>
+  }
+  @empty {
+    <app-empty-message>{{'pages.manage-workers.empty-list' | translate}}</app-empty-message>
+  }
 }
-@empty {
-  <p>{{'pages.manage-workers.empty-list' | translate}}</p>
+@placeholder (minimum 200ms) {
+  <div class="card-loading phantom"></div>
+  <div class="card-loading phantom"></div>
+  <div class="card-loading phantom"></div>
+  <div class="card-loading phantom"></div>
+  <div class="card-loading phantom"></div>
 }

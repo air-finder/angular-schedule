@@ -26,12 +26,14 @@ export class UserService extends BaseService {
   }
 
   async refreshToken() {
-    const refreshToken = this._authService.refreshToken();
-    if (refreshToken) {
-      return await this.PostAsync<LoginResponse>('refresh-token', { refreshToken: refreshToken })
-        .then(response => this._authService.login(response.result));
+    const refreshToken = this._authService.refreshToken;
+    if (refreshToken() == null) this._authService.setLocalRefreshToken();
+    if (refreshToken()) {
+      return await this.PostAsync<LoginResponse>('refresh-token', { refreshToken: refreshToken() })
+        .then(response => this._authService.login(response.result))
+        .catch(() => this._authService.logout());
     }
-    this._authService.logout();
+    else this._authService.logout();
   }
 
   async password(request: UpdatePasswordRequest) {

@@ -1,9 +1,22 @@
 @if(provider$()) {
-    <bv-card theme="secondary">
-        <h2 card-header>{{ provider$()!.name }}</h2>
+    <bv-card [theme]="getTheme(provider$()?.type)" class="provider-card">
+        <div card-header class="provider-card__header">
+            <h2>{{ provider$()!.name }}</h2>
+            @switch (provider$()?.type) {
+                @case (providerType.Basic) { <bv-icon icon="basic-crown" [title]="'pages.my-business.basic-crown' | translate"></bv-icon> }
+                @case (providerType.Pro) { <bv-icon icon="pro-crown" [title]="'pages.my-business.pro-crown' | translate"></bv-icon> }
+                @case (providerType.Ultra) { <bv-icon icon="ultra-crown" [title]="'pages.my-business.ultra-crown' | translate"></bv-icon> }
+            }
+        </div>
         <p card-body>{{ provider$()!.description }}</p>
-        <button bv theme="secondary" [routerLink]="'/schedule/'+provider$()!.id">
-            {{ 'pages.my-business.link-to-schedule' | translate }}
+        <button bv-icon theme="primary" routerLink="/plans" disabled [title]="'pages.my-business.edit-provider' | translate">
+            <bv-icon icon="edit"></bv-icon>
+        </button>
+        <button bv-icon theme="secondary"
+            [disabled]="provider$()?.type === providerType.None"
+            [routerLink]="'/schedule/'+provider$()!.id" 
+            [title]="'pages.my-business.link-to-schedule' | translate">
+            <bv-icon icon="calendar"></bv-icon>
         </button>
     </bv-card>
 }

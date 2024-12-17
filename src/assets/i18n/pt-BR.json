@@ -104,7 +104,8 @@
       "provider": "Meu negócio",
       "create-provider": "Registrar meu negócio",
       "worker": "Meu painel",
-      "user": "Configurações do usuário"
+      "user": "Configurações do usuário",
+      "check-plans": "Ver planos"
     },
     "create-provider": {
       "confirm-step": {
@@ -117,7 +118,10 @@
       "service": "Gerenciar serviços",
       "worker": "Gerenciar profissionais",
       "analitics": "Ver análises",
-      "link-to-schedule": "Link para agendar"
+      "link-to-schedule": "Link para agendar",
+      "manage-plans": "Gerenciar planos",
+      "pro-crown": "PRO",
+      "ultra-crown": "ULTRA"
     },
     "manage-services": {
       "add-service": "Adicionar serviço",
@@ -138,7 +142,31 @@
       "today": "Hoje",
       "this-week": "Esta semana",
       "this-month": "Este mês",
-      "all": "Tudo"
+      "all": "Tudo",
+      "no-appointments": "Nenhum agendamento encontrado para este filtro"
+    }
+  },
+  "plans": {
+    "basic": "Basic",
+    "pro": "Pro",
+    "ultra": "Ultra",
+    "monthly": "Mensal",
+    "yearly": "Anual",
+    "month": "mês",
+    "year": "ano",
+    "buy-now": "Comprar agora",
+    "features": {
+      "basic-schedule": "Até 1 mês de agendamento",
+      "basic-services": "Até 10 serviços cadastrados",
+      "basic-workers": "Até 1 trabalhador cadastrado",
+      "pro-schedule": "Até 3 meses de agendamento",
+      "pro-services": "Serviços ilimitados",
+      "pro-workers": "Até 1 trabalhador cadastrado",
+      "ultra-schedule": "Até 3 meses de agendamento",
+      "ultra-services": "Serviços ilimitados",
+      "ultra-workers": "Até 6 trabalhadores cadastrados",
+      "email-reminders": "Lembretes por e-mail",
+      "whatsapp-reminders": "Lembretes por WhatsApp"
     }
   },
   "form-field": {
@@ -170,6 +198,14 @@
       }
     }
   },
+  "static": {
+    "page-not-found": {
+      "title": "Oops!",
+      "subtitle": "404 - Page not found",
+      "body": "A página que você está procurando não existe ou foi removida.",
+      "button": "Ir para a página inicial"
+    }
+  },
   "title": {
     "dashboard": "Dashboard",
     "provider": "Meu negócio",
@@ -186,6 +222,7 @@
     "contact": "Contato",
     "about": "Sobre",
     "terms": "Termos",
-    "privacy": "Privacidade"
+    "privacy": "Privacidade",
+    "plans": "Escolha um plano"
   }
 }

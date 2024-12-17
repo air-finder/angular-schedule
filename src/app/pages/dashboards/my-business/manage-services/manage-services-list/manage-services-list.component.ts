@@ -4,20 +4,24 @@ import { CardComponent, IconButtonComponent, IconComponent } from '@brunovbsilva
 import { SessionUserService } from '@core/service/session-user.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
+import { EmptyMessageComponent } from "../../../../../shared/components/empty-message/empty-message.component";
 
 @Component({
     selector: 'app-manage-services-list',
     imports: [
-        IconButtonComponent,
-        IconComponent,
-        CurrencyPipe,
-        CardComponent,
-        TranslateModule
-    ],
+    IconButtonComponent,
+    IconComponent,
+    CurrencyPipe,
+    CardComponent,
+    TranslateModule,
+    EmptyMessageComponent
+],
     templateUrl: './manage-services-list.component.html',
     styleUrl: './manage-services-list.component.scss'
 })
 export class ManageServicesListComponent implements AfterViewInit {
+
+  protected isLoading = true;
 
   constructor(
     private _providerService: ServiceProviderService,
@@ -31,7 +35,9 @@ export class ManageServicesListComponent implements AfterViewInit {
   }
 
   public refreshServices() {
-    this._providerService.getServices(this._sessionUser.sessionUser$().profile.serviceProvider!.id);
+    this._providerService
+      .getServices(this._sessionUser.sessionUser$().profile.serviceProvider!.id)
+      .finally(() => this.isLoading = false);
   }
 
   public delete(id: string) {

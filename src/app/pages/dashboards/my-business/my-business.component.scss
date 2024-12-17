@@ -3,3 +3,12 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.provider-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: .5rem;
+  flex: 1;
+  min-width: 0;
+}

@@ -7,6 +7,10 @@ import { MyBusinessAnaliticsComponent } from "@pages/dashboards/my-business/my-b
 import { DashboardUserComponent } from "@pages/dashboards/dashboard-user/dashboard-user.component";
 import { MyPanelComponent } from "@pages/dashboards/my-panel/my-panel.component";
 import { DashboardsComponent } from "@pages/dashboards/dashboards.component";
+import { PlansComponent } from "@pages/plans/plans.component";
+import { SessionUserService } from "@core/service/session-user.service";
+import { inject } from "@angular/core";
+import { Scopes } from "../shared/constants/scopes.constants";
 
 export const routes: Routes = [
   { 
@@ -14,6 +18,15 @@ export const routes: Routes = [
     title: "title.dashboard", 
     data: { showBackButton: false }, 
     component: DashboardsComponent 
+  },
+  {
+    path: 'refresh',
+    title: "title.dashboard",
+    data: { 
+      showBackButton: false,
+      refresh: true
+    },
+    component: DashboardsComponent
   },
   { 
     path: 'provider', 
@@ -52,6 +65,12 @@ export const routes: Routes = [
     },
     title: "title.create-provider", 
     component: CreateProviderComponent 
+  },
+  {
+    path: 'plans',
+    canMatch: [() => inject(SessionUserService).hasScope(Scopes.NONE)],
+    title: 'title.plans',
+    component: PlansComponent
   },
   { path: 'login', redirectTo: '', pathMatch: 'full' }
 ]

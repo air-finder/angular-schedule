@@ -6,7 +6,12 @@ import { TermsComponent } from "../pages/static/terms/terms.component";
 import { PrivacyComponent } from "../pages/static/privacy/privacy.component";
 
 export const routes: Routes = [
-  { path: 'page-not-found', title: 'title.page-not-found', component: PageNotFoundComponent },
+  { 
+    path: 'page-not-found',
+    title: 'title.page-not-found',
+    data: { showContentHeader: false },
+    component: PageNotFoundComponent
+  },
   { path: 'contact', title: 'title.contact', component: ContactComponent },
   { path: 'about', title: 'title.about', component: AboutComponent },
   { path: 'terms', title: 'title.terms', component: TermsComponent },

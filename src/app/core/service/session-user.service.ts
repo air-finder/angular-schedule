@@ -10,12 +10,14 @@ export class SessionUserService {
   
   private helper = new JwtHelperService();
   private decodedToken$ = computed(() => this.helper.decodeToken(this._authService.token()!));
+
   sessionUser$ = computed<SessionUser>(() => {
     return {
       scopes: JSON.parse(this.decodedToken$().scopes),
       profile: JSON.parse(this.decodedToken$().profile)
     }
   });
+  userId$ = computed(() => this.sessionUser$().profile.id);
 
   constructor(private _authService: AuthService) { }
 

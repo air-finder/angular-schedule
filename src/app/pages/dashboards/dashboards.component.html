@@ -1,10 +1,13 @@
 <p>{{'pages.dashboard.subtitle' | translate}}</p>
 
 <div class="anchor-buttons">
+  @if (hasScope(Scopes.NONE)) {
+    <button bv routerLink="plans">{{'pages.dashboard.check-plans' | translate}}</button>
+  }
   @if (hasScope(Scopes.PROVIDER)) {
     <button bv routerLink="provider">{{'pages.dashboard.provider' | translate}}</button>
   }
-  @if (hasScope(Scopes.ADULT) && !hasScope(Scopes.PROVIDER)) {
+  @if (hasScope(Scopes.ADULT) && !hasScope(Scopes.PROVIDER) && !hasScope(Scopes.NONE)) {
     <button bv theme="secondary" routerLink="create-provider">{{'pages.dashboard.create-provider' | translate}}</button>
   }
   @if (hasScope(Scopes.WORKER) && hasScope(Scopes.CAN_WORK)) {

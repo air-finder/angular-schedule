@@ -1,26 +1,11 @@
 :host {
   display: flex;
-  flex-wrap: wrap;
-  align-items: start;
+  flex-direction: column;
   gap: .5rem;
-  position: relative;
-  .title {
-      flex: 100%;
-  }
-  .card {
-      width: 100%;
-      flex: 100%;
-      &--loading {
-          aspect-ratio: 1/1;
-      }
-  }
 }
 
-@media screen and (min-width: 625px) {
-  :host {
-      .card {
-          width: calc(50% - .25rem);
-          flex: calc(50% - .25rem);
-      }
-  }
+.card-loading {
+  height: 180px;
+  width: 100%;
+  border-radius: .5rem;
 }

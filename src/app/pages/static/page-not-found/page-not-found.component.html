@@ -1,1 +1,14 @@
-<p>page-not-found works!</p>
+<div class="main-container">
+  <h1 class="main-title">
+    {{ 'static.page-not-found.title' | translate }}
+  </h1>
+  <h2 class="main-subtitle">
+    {{ 'static.page-not-found.subtitle' | translate }}
+  </h2>
+  <p>
+    {{ 'static.page-not-found.body' | translate }}
+  </p>
+  <button bv theme="primary" class="main-button" routerLink="">
+    {{ 'static.page-not-found.button' | translate }}
+  </button>
+</div>

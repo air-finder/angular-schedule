@@ -1,0 +1,70 @@
+<div class="filter">
+  <div class="wrapper">
+    <bv-pill [active]="paymentMethod === 'month'"
+      (click)="paymentMethod = 'month'"
+      theme="secondary">
+      {{ 'plans.monthly' | translate }}
+    </bv-pill>
+    <bv-pill [active]="paymentMethod === 'year'"
+      (click)="paymentMethod = 'year'"
+      theme="secondary">
+      {{ 'plans.yearly' | translate }}
+    </bv-pill>
+  </div>
+</div>
+
+<div class="plans">
+  @defer(when _plans().length) {
+    @if(paymentMethod === 'month') {
+      @for (plan of plansMonth(); track $index) {
+        <bv-card class="card" [theme]="plan.theme">
+          <div card-header class="card__header">
+            <div class="card__header--title">
+              <h1>{{ plan.title | translate }}</h1>
+              @if(plan.mostPopular) {
+                <bv-icon icon="popular"></bv-icon>
+              }
+            </div>
+            <h2>{{ plan.price | currency: 'BRL' }} <span class="caption">/{{ 'plans.month' | translate }}</span></h2>
+          </div>
+          <div card-body class="card__body">
+            @for (feature of plan.features; track $index) {
+              <p class="caption">{{ feature | translate }}</p>
+            }
+          </div>
+          <button bv class="card__buy-button" (click)="createInvoice(plan.planType)">
+            {{ 'plans.buy-now' | translate }}
+          </button>
+        </bv-card>
+      }
+    } 
+    @else {
+      @for (plan of plansYear(); track $index) {
+        <bv-card class="card" [theme]="plan.theme">
+          <div card-header class="card__header">
+            <div class="card__header--title">
+              <h1>{{ plan.title | translate }}</h1>
+              @if(plan.mostPopular) {
+                <bv-icon icon="popular"></bv-icon>
+              }
+            </div>
+            <h2>{{ plan.price | currency: 'BRL' }} <span class="caption">/{{ 'plans.year' | translate }}</span></h2>
+          </div>
+          <div card-body class="card__body">
+            @for (feature of plan.features; track $index) {
+              <p class="caption">{{ feature | translate }}</p>
+            }
+          </div>
+          <button bv class="card__buy-button" (click)="createInvoice(plan.planType)">
+            {{ 'plans.buy-now' | translate }}
+          </button>
+        </bv-card>
+      }
+    }
+  }
+  @placeholder (minimum 200ms) {
+    <div class="plan-loading phantom"></div>
+    <div class="plan-loading phantom"></div>
+    <div class="plan-loading phantom"></div>
+  }
+</div>

@@ -115,8 +115,7 @@
     "my-business": {
       "service": "Manage services",
       "worker": "Manage workers",
-      "analitics": "View analitics",
-      "link-to-schedule": "Link to schedule"
+      "analitics": "View analitics"
     },
     "manage-services": {
       "add-service": "Add service",
@@ -168,6 +167,14 @@
         "friday": "Fri",
         "saturday": "Sat"
       }
+    }
+  },
+  "static": {
+    "page-not-found": {
+      "title": "Oops!",
+      "subtitle": "404 - Page not found",
+      "body": "The page you are looking for does not exist or has been removed.",
+      "button": "Go to homepage"
     }
   },
   "title": {

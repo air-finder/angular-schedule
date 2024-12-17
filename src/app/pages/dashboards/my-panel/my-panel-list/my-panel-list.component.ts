@@ -7,6 +7,7 @@ import { Appointment } from '@models/services/dtos/appointment';
 import { GetWorkerAppointmentsRequest } from '@models/services/schedules';
 import { TranslateModule } from '@ngx-translate/core';
 import { ScheduleService } from '@services/schedule/schedule.service';
+import { EmptyMessageComponent } from "../../../../shared/components/empty-message/empty-message.component";
 
 interface GroupedAppointment {
   date: Date;
@@ -21,12 +22,14 @@ interface GroupedAppointment {
     IconComponent,
     TranslateModule,
     CurrencyPipe,
-    DatePipe
-  ],
+    DatePipe,
+    EmptyMessageComponent
+],
   templateUrl: './my-panel-list.component.html',
   styleUrl: './my-panel-list.component.scss'
 })
 export class MyPanelListComponent {
+  isLoading = true;
   private appointments$ = signal<Appointment[]>([]);
   protected groupedAppointments$ = computed<GroupedAppointment[]>(() => {
     const grouped = this.appointments$().reduce((acc, appointment) => {
@@ -50,7 +53,8 @@ export class MyPanelListComponent {
   public async refreshAppointments(request: GetWorkerAppointmentsRequest) {
     request.serviceWorkerId = this._sessionUserService.sessionUser$().profile.serviceWorker!.id;
     await this._scheduleService.getWorkerAppointments(request)
-      .then(result => this.appointments$.set(result.result));
+      .then(result => this.appointments$.set(result.result))
+      .finally(() => this.isLoading = false);
   }
 
   protected openWhatsapp(phone: string) {

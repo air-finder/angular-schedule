@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { ChangeDetectorRef, Component, output, signal } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { ServiceProviderService } from '@services/service-provider/service-provider.service';
@@ -32,7 +32,7 @@ export class ManageServicesCreateComponent {
   public create = output();
   form: FormGroup<CreateServiceFormModel> = new CreateServiceForm();
   private _form = this.form as CreateServiceForm;
-  protected options: SelectOption[] = [
+  protected options$ = signal<SelectOption[]>([
     { display: '15 min', value: 15 },
     { display: '30 min', value: 30 },
     { display: '45 min', value: 45 },
@@ -49,11 +49,11 @@ export class ManageServicesCreateComponent {
     { display: '3 hr 30 min', value: 210 },
     { display: '3 hr 45 min', value: 225 },
     { display: '4 hr', value: 240 }
-  ];
+  ]);
 
   constructor(
     private _providerService: ServiceProviderService,
-    private _sessionUser: SessionUserService
+    private _sessionUser: SessionUserService,
   ) {}
 
   submit() {

@@ -27,6 +27,12 @@
   }
 }
 
+.card-loading {
+  height: 52px;
+  width: 100%;
+  border-radius: .5rem;
+}
+
 @mixin get-theme($theme) {
   $foreground: map.get($theme, 'foreground');
   .day-indicator {

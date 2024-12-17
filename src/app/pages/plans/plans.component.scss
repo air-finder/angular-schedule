@@ -1,0 +1,63 @@
+:host {
+  min-height: 420px;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  .wrapper {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    gap: .25rem;
+    border: 1.5px solid #ce93d8;
+    border-radius: 1rem;
+    padding: .05rem;
+  }
+  }
+
+.plans {
+  display: flex;
+  gap: .5rem;
+  padding: 2rem 0 1rem;
+  overflow-x: auto;
+  .card {
+    min-width: 235px;
+    .card__header {
+      margin-top:.5rem;
+      width: 100%;
+      .card__header--title {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .card__body {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      min-height: 180px;
+      justify-content: center;
+    }
+    .card__buy-button {
+      margin-bottom: .5rem;
+    }
+  }
+}
+
+.plan-loading {  
+  min-width: 235px;
+  min-height: 350px;
+  border-radius: .5rem;
+}
+
+@media screen and (min-width: 955px) {
+  .plans {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    gap: 1rem;
+    padding: 2rem 0 1rem;
+    overflow: visible;
+  }
+}
+
